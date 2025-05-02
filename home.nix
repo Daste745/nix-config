@@ -18,4 +18,14 @@
       enableFishIntegration = true;
     };
   };
+
+  services = {
+    gpg-agent = {
+      enable = true;
+      enableSshSupport = true;
+      extraConfig = ''
+        pinentry-program "/mnt/c/Program Files (x86)/Gpg4win/bin/pinentry.exe"
+      '';
+    };
+  };
 }
