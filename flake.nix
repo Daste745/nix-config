@@ -35,13 +35,11 @@
             environment.systemPackages = with pkgs; [
               file
               tree
-              vim
               wget
               htop
               fastfetch
               git
               tmux
-              direnv
             ];
 
             programs.fish.enable = true;
