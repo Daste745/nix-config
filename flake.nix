@@ -7,16 +7,17 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
-    # home-manager.url = "github:nix-community/home-manager";
-    # home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager.url = "github:nix-community/home-manager/release-24.11";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixos-wsl, ... }: {
+  outputs = inputs@{ self, nixpkgs, nixos-wsl, home-manager, ... }: {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
           nixos-wsl.nixosModules.default
+          home-manager.nixosModules.home-manager
           ({ pkgs, ... }: {
             system.stateVersion = "24.11";
 
@@ -45,6 +46,13 @@
 
             programs.fish.enable = true;
 
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "backup";
+              users.stefan = import ./home.nix;
+            };
+
             nix = {
               settings = {
                 experimental-features = [
@@ -54,13 +62,6 @@
               };
             };
           })
-          # home-manager.nixosModules.home-manager
-          # {
-          #   home-manager.useGlobalPkgs = true;
-          #   home-manager.useUserPackages = true;
-          #   home-manager.backupFileExtension = "backup";
-          #   home-manager.users.stefan = /home/stefan/.nix-config/home.nix;
-          # }
         ];
       };
     };

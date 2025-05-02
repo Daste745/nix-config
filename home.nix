@@ -7,10 +7,11 @@
   };
 
   programs = {
+    home-manager.enable = true;
     fish = {
       enable = true;
       shellAbbrs = {
-        nrs = "sudo nixos-rebuild switch";
+        nrs = "sudo nixos-rebuild switch --flake ~/.nix-config";
       };
     };
     zoxide = {
