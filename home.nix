@@ -98,6 +98,16 @@
       enable = true;
       enableFishIntegration = true;
     };
+    direnv = {
+      enable = true;
+      config = {
+        global = {
+          load_dotenv = false;
+          strict_env = true;
+          hide_env_diff = false;
+        };
+      };
+    };
   };
 
   services = {
