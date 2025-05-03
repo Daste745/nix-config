@@ -39,6 +39,8 @@
               htop
               fastfetch
               git
+              nix-output-monitor
+              gnupg
             ];
 
             programs.fish.enable = true;
