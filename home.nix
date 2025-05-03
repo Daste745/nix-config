@@ -195,6 +195,8 @@
         # }
       ];
       extraConfig = ''
+        set -g renumber-windows on
+
         # Open splits in the current pane's directory
         bind \\ split-window -h -c "#{pane_current_path}"
         bind | split-window -v -c "#{pane_current_path}"
