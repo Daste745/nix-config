@@ -39,7 +39,6 @@
               htop
               fastfetch
               git
-              tmux
             ];
 
             programs.fish.enable = true;
