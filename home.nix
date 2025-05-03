@@ -179,6 +179,7 @@
         {
           plugin = resurrect;
           extraConfig = ''
+            set -g @resurrect-dir '/home/stefan/.cache/tmux/resurrect'
             set -g @resurrect-capture-pane-contents 'on'
           '';
         }
