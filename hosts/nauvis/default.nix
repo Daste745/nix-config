@@ -13,6 +13,8 @@
     shell = pkgs.fish;
   };
 
+  networking.hostName = "nauvis";
+
   environment.systemPackages = with pkgs; [
     file
     tree
