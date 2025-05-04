@@ -29,7 +29,7 @@
         chmod = "chmod -v";
 
         # Nix
-        nrs = "sudo nixos-rebuild switch --flake ~/.nix-config";
+        nrs = "sudo nixos-rebuild switch --flake ~/.nix-config &| nom";
         ns = "nix shell nixpkgs#";
 
         # Git
