@@ -41,6 +41,7 @@
               git
               nix-output-monitor
               gnupg
+              ripgrep
             ];
 
             programs.fish.enable = true;
