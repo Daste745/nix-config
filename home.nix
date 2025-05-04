@@ -30,6 +30,7 @@
 
         # Nix
         nrs = "sudo nixos-rebuild switch --flake ~/.nix-config";
+        ns = "nix shell nixpkgs#";
 
         # Git
         ## Common
