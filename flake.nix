@@ -11,10 +11,11 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, nixos-wsl, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, nixos-wsl, home-manager, ... }: {
     nixosConfigurations = {
       nauvis = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
         modules = [
           nixos-wsl.nixosModules.default
           home-manager.nixosModules.home-manager
