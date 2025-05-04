@@ -30,7 +30,7 @@
 
         # Nix
         nrs = "sudo nixos-rebuild switch --flake ~/.nix-config &| nom";
-        ns = "nix shell nixpkgs#";
+        ns = { expansion = "nom shell nixpkgs#%"; setCursor = "%"; };
 
         # Git
         ## Common
