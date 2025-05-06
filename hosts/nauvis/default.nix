@@ -34,6 +34,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
+    extraSpecialArgs = { inherit pkgs; };
     users.stefan = import ./home.nix;
   };
 
