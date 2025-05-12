@@ -32,6 +32,7 @@ in
     services.gpg-agent = {
       enable = true;
       enableSshSupport = true;
+      enableFishIntegration = true;
       extraConfig = lib.concatStringsSep "\n" extraConfigParts;
     };
   };
