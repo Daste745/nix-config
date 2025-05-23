@@ -1,7 +1,7 @@
 {
   imports = [
     ./fish.nix
-    ./git.nix
+    ./git
     ./tmux.nix
     ./vim.nix
   ];

@@ -1,3 +1,8 @@
+{ pkgs, ... }:
+let
+  mkGitCommand =
+    name: pkgs.writeShellScriptBin name (builtins.readFile ./commands/${name});
+in
 {
   programs.git = {
     enable = true;
@@ -32,4 +37,8 @@
       branch-migrations = "!f() { git diff --name-only \$(git branch-base \$1) @ | rg migrations; }; f";
     };
   };
+
+  home.packages = [
+    (mkGitCommand "git-fixup")
+  ];
 }
