@@ -8,6 +8,7 @@ in
 
   # https://wiki.archlinux.org/title/XDG_Base_Directory
   home.sessionVariables = {
+    HISTFILE = "${stateHome}/bash_history";
     LESSHISTFILE = "${stateHome}/lesshst";
     WGETRC = wgetrc; # Because wget history location can't be configured via env
     NODE_REPL_HISTORY = "${dataHome}/node_repl_history";
