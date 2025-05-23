@@ -88,6 +88,32 @@
       '';
       fish_vcs_prompt = "fish_git_prompt $argv";
       last_history_item = "echo $history[1]";
+      tmpdir = "cd (mktemp -d /tmp/XXXXXXX)";
+      forever = ''
+        if test -z "$argv"
+          echo "Usage: forever [-q] <command>"
+          return 1
+        end
+
+        argparse --stop-nonopt --name "forever" "q" -- $argv
+        or return
+
+        set verbose true
+        if test -n "$_flag_q"
+          set verbose false
+        end
+
+        while true
+          $verbose && echo "[forever] $argv"
+          $argv
+          set -l signal (fish_status_to_signal "$status")
+          if test $signal = "SIGINT"
+            $verbose && echo "[forever] Received SIGINT, exiting..."
+            break
+          end
+          sleep 0.1s
+        end
+      '';
       activate_venv = ''
         for venv_dir in "venv" ".venv"
             if test -d "$venv_dir" -a -f "$venv_dir/bin/activate.fish"
