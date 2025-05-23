@@ -1,6 +1,7 @@
 {
   programs.vim = {
     enable = true;
+    defaultEditor = true;
     extraConfig = ''
       " Disable compatibility with vi
       set nocompatible
