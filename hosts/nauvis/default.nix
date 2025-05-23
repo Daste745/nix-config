@@ -25,6 +25,7 @@
     nix-output-monitor
     gnupg
     ripgrep
+    xdg-utils
   ];
 
   programs.fish.enable = true;
