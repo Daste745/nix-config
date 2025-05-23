@@ -9,6 +9,7 @@
   imports = [
     ../../home/modules
     ../../home/services
+    ../../home/xdg.nix
   ];
 
   services.gpg-agent.pinentryProgramPath =
