@@ -1,7 +1,6 @@
 { pkgs, ... }:
 let
-  mkGitCommand =
-    name: pkgs.writeShellScriptBin name (builtins.readFile ./commands/${name});
+  mkGitCommand = name: pkgs.writeShellScriptBin name (builtins.readFile ./commands/${name});
 in
 {
   programs.git = {

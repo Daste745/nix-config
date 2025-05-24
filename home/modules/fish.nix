@@ -1,9 +1,10 @@
 { pkgs, ... }:
 let
-  nrsAbbr = if pkgs.stdenv.hostPlatform.isLinux then
-    "sudo nixos-rebuild switch --flake ~/.nix-config &| nom"
-  else
-    "sudo darwin-rebuild switch --flake ~/.nix-config &| nom";
+  nrsAbbr =
+    if pkgs.stdenv.hostPlatform.isLinux then
+      "sudo nixos-rebuild switch --flake ~/.nix-config &| nom"
+    else
+      "sudo darwin-rebuild switch --flake ~/.nix-config &| nom";
 in
 {
   home.shell.enableFishIntegration = true;
@@ -16,9 +17,14 @@ in
       takeown = "sudo chown -v $(whoami):$(whoami)";
       e = "open .";
       ## Last command, like !! in bash and zsh
-      "!!" = { function = "last_history_item"; position = "anywhere"; };
+      "!!" = {
+        function = "last_history_item";
+        position = "anywhere";
+      };
       # Activate a python virtual environment
-      acv = { function = "activate_venv"; };
+      acv = {
+        function = "activate_venv";
+      };
 
       # Add verbose and interactive by default
       cp = "cp -vi";
@@ -29,7 +35,10 @@ in
 
       # Nix
       nrs = nrsAbbr;
-      ns = { expansion = "nom shell nixpkgs#%"; setCursor = "%"; };
+      ns = {
+        expansion = "nom shell nixpkgs#%";
+        setCursor = "%";
+      };
 
       # Git
       ## Common

@@ -11,6 +11,5 @@
     ../../home/xdg.nix
   ];
 
-  services.gpg-agent.pinentryProgramPath =
-    "/mnt/c/Program Files (x86)/Gpg4win/bin/pinentry.exe";
+  services.gpg-agent.pinentryProgramPath = "/mnt/c/Program Files (x86)/Gpg4win/bin/pinentry.exe";
 }

@@ -20,7 +20,7 @@
   ];
 
   programs.fish.enable = true;
-  programs.nix-ld.enable = true;  # For VSCode server on WSL
+  programs.nix-ld.enable = true; # For VSCode server on WSL
 
   home-manager = {
     useGlobalPkgs = true;

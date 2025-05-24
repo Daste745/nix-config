@@ -17,26 +17,34 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, nix-darwin, nixos-wsl, home-manager, ... }: {
-    nixosConfigurations = {
-      nauvis = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          nixos-wsl.nixosModules.default
-          home-manager.nixosModules.home-manager
-          ./hosts/nauvis
-        ];
+  outputs =
+    inputs@{
+      nixpkgs,
+      nix-darwin,
+      nixos-wsl,
+      home-manager,
+      ...
+    }:
+    {
+      nixosConfigurations = {
+        nauvis = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            nixos-wsl.nixosModules.default
+            home-manager.nixosModules.home-manager
+            ./hosts/nauvis
+          ];
+        };
+      };
+      darwinConfigurations = {
+        aquilo = nix-darwin.lib.darwinSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            home-manager.darwinModules.home-manager
+            ./hosts/aquilo
+          ];
+        };
       };
     };
-    darwinConfigurations = {
-      aquilo = nix-darwin.lib.darwinSystem {
-        specialArgs = { inherit inputs; };
-        modules = [
-          home-manager.darwinModules.home-manager
-          ./hosts/aquilo
-        ];
-      };
-    };
-  };
 }
