@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
   system.stateVersion = 6;
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -37,6 +37,9 @@
     extraSpecialArgs = { inherit pkgs; };
     users.stefan = import ./home.nix;
   };
+
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+  ];
 
   nix = {
     settings = {
