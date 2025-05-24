@@ -17,6 +17,7 @@
       git_commit.tag_disabled = false;
       git_metrics.disabled = false;
       direnv.disabled = false;
+      nix_shell.symbol = "❄️ "; # Default has 2 spaces after the symbol
     };
   };
 }
