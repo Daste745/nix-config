@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   system.stateVersion = 6;
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -24,6 +24,8 @@
     gnupg
     ripgrep
     xdg-utils
+    nixd
+    nil
   ];
 
   programs.fish.enable = true;

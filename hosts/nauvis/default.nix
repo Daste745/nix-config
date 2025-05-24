@@ -26,6 +26,8 @@
     gnupg
     ripgrep
     xdg-utils
+    nixd
+    nil
   ];
 
   programs.fish.enable = true;

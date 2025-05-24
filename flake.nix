@@ -17,7 +17,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nix-darwin, nixos-wsl, home-manager, ... }: {
+  outputs = inputs@{ nixpkgs, nix-darwin, nixos-wsl, home-manager, ... }: {
     nixosConfigurations = {
       nauvis = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
