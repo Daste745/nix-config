@@ -12,6 +12,8 @@
     xdg-utils
     nixd
     nil
+    nixfmt-rfc-style
+    nixfmt-tree
     nix-output-monitor
   ];
 
