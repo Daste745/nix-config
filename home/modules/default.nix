@@ -26,9 +26,10 @@
   programs.home-manager.enable = true;
 
   imports = [
+    ./git
     ./fish.nix
     ./mise.nix
-    ./git
+    ./starship.nix
     ./tmux.nix
     ./vim.nix
   ];
