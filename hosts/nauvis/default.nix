@@ -15,7 +15,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     shell = pkgs.fish;
-    openssh.authorizedKeys.keys = (import ../../ssh.nix).publicKeys;
+    openssh.authorizedKeys.keys = (import ../../assets/ssh.nix).publicKeys;
   };
 
   networking.hostName = "nauvis";
