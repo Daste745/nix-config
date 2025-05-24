@@ -8,6 +8,7 @@
     htop
     fastfetch
     pfetch
+    fzf
     ripgrep
     xdg-utils
     nixd
