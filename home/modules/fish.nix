@@ -1,3 +1,10 @@
+{ pkgs, ... }:
+let
+  nrsAbbr = if pkgs.stdenv.hostPlatform.isLinux then
+    "sudo nixos-rebuild switch --flake ~/.nix-config &| nom"
+  else
+    "sudo darwin-rebuild switch --flake ~/.nix-config &| nom";
+in
 {
   home.shell.enableFishIntegration = true;
 
@@ -21,7 +28,7 @@
       chmod = "chmod -v";
 
       # Nix
-      nrs = "sudo nixos-rebuild switch --flake ~/.nix-config &| nom";
+      nrs = nrsAbbr;
       ns = { expansion = "nom shell nixpkgs#%"; setCursor = "%"; };
 
       # Git
