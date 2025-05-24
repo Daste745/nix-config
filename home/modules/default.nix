@@ -15,6 +15,7 @@
     ripgrep
     ripgrep-all
     hyperfine
+    git-crypt
     xdg-utils
     nixd
     nil
