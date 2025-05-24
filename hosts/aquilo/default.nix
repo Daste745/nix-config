@@ -12,25 +12,12 @@
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
-  # TODO)) Move some of this to user packages
   environment.systemPackages = with pkgs; [
-    file
-    tree
-    wget
-    htop
-    fastfetch
     git
-    nix-output-monitor
-    gnupg
-    ripgrep
-    xdg-utils
-    nixd
-    nil
   ];
 
   programs.fish.enable = true;
   environment.shells = [ pkgs.fish ];
-  # programs.nix-ld.enable = true;  # For VSCode server on WSL?
 
   home-manager = {
     useGlobalPkgs = true;

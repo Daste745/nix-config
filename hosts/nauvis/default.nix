@@ -16,18 +16,7 @@
   networking.hostName = "nauvis";
 
   environment.systemPackages = with pkgs; [
-    file
-    tree
-    wget
-    htop
-    fastfetch
     git
-    nix-output-monitor
-    gnupg
-    ripgrep
-    xdg-utils
-    nixd
-    nil
   ];
 
   programs.fish.enable = true;
@@ -43,10 +32,10 @@
 
   nix = {
     settings = {
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
   };
 }

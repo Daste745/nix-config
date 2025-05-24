@@ -1,4 +1,3 @@
-{ config, pkgs, ... }:
 {
   home = {
     username = "stefan";
@@ -14,6 +13,4 @@
 
   services.gpg-agent.pinentryProgramPath =
     "/mnt/c/Program Files (x86)/Gpg4win/bin/pinentry.exe";
-
-  programs.home-manager.enable = true;
 }

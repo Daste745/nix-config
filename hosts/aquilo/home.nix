@@ -2,7 +2,6 @@
 {
   home = {
     username = "stefan";
-    # TODO)) homeDirectory (???)
     stateVersion = "24.11";
   };
 
@@ -16,6 +15,4 @@
     ../../home/xdg.nix
     ./alacritty.nix
   ];
-
-  programs.home-manager.enable = true;
 }
