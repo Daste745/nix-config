@@ -1,10 +1,11 @@
 {
   services.openssh = {
     enable = true;
-    settings = {
-      PasswordAuthentication = false;
-      PermitRootLogin = "no";
-      AllowUsers = [ "stefan" ];
-    };
+    # NOTE)) Using extraConfig instead of settings for interoperability with nix-darwin
+    extraConfig = ''
+      PasswordAuthentication no
+      PermitRootLogin no
+      AllowUsers stefan
+    '';
   };
 }
