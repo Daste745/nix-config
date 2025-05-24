@@ -8,8 +8,14 @@
     htop
     fastfetch
     pfetch
+    dust
     fzf
+    fselect
+    tokei
     ripgrep
+    ripgrep-all
+    hyperfine
+    mise # Still using in most of my projects
     xdg-utils
     nixd
     nil
