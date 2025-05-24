@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   system.stateVersion = 6;
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -24,6 +24,7 @@
   ];
 
   programs.fish.enable = true;
+  environment.shells = [ pkgs.fish ];
   # programs.nix-ld.enable = true;  # For VSCode server on WSL?
 
   # TODO))
