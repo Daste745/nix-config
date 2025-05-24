@@ -15,7 +15,6 @@
     ripgrep
     ripgrep-all
     hyperfine
-    mise # Still using in most of my projects
     xdg-utils
     nixd
     nil
@@ -28,6 +27,7 @@
 
   imports = [
     ./fish.nix
+    ./mise.nix
     ./git
     ./tmux.nix
     ./vim.nix
