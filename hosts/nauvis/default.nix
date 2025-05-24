@@ -2,6 +2,10 @@
 {
   system.stateVersion = "24.11";
 
+  imports = [
+    ../../modules/ssh.nix
+  ];
+
   wsl = {
     enable = true;
     defaultUser = "stefan";
@@ -11,6 +15,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     shell = pkgs.fish;
+    openssh.authorizedKeys.keys = (import ../../ssh.nix).publicKeys;
   };
 
   networking.hostName = "nauvis";

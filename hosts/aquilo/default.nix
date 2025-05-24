@@ -3,6 +3,10 @@
   system.stateVersion = 6;
   nixpkgs.hostPlatform = "aarch64-darwin";
 
+  imports = [
+    ../../modules/ssh.nix
+  ];
+
   users.users.stefan = {
     shell = pkgs.fish;
     home = "/Users/stefan";
