@@ -3,7 +3,10 @@
   system.stateVersion = 6;
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-  users.users.stefan.shell = pkgs.fish;
+  users.users.stefan = {
+    shell = pkgs.fish;
+    home = "/Users/stefan";
+  };
 
   networking.hostName = "aquilo";
 
@@ -27,14 +30,13 @@
   environment.shells = [ pkgs.fish ];
   # programs.nix-ld.enable = true;  # For VSCode server on WSL?
 
-  # TODO))
-  # home-manager = {
-  #   useGlobalPkgs = true;
-  #   useUserPackages = true;
-  #   backupFileExtension = "backup";
-  #   extraSpecialArgs = { inherit pkgs; };
-  #   users.stefan = import ./home.nix;
-  # };
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    backupFileExtension = "backup";
+    extraSpecialArgs = { inherit pkgs; };
+    users.stefan = import ./home.nix;
+  };
 
   nix = {
     settings = {
