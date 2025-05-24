@@ -13,7 +13,9 @@ in
       display = "inline";
       background = "dark";
     };
-    # TODO: Private directory-scoped configs
+    includes = [
+      { path = "~/.user.gitconfig"; }
+    ];
     extraConfig = {
       init = {
         defualtBranch = "main";
