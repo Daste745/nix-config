@@ -149,5 +149,6 @@ in
         hide_env_diff = false;
       };
     };
+    nix-direnv.enable = true;
   };
 }
