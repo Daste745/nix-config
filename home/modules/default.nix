@@ -22,6 +22,7 @@
     nixfmt-rfc-style
     nixfmt-tree
     nix-output-monitor
+    nix-index
   ];
 
   programs.home-manager.enable = true;
