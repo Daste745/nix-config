@@ -37,6 +37,34 @@
     builtins.elem (lib.getName pkg) [
     ];
 
+  system = {
+    primaryUser = "stefan";
+    startup.chime = false;
+    defaults = {
+      dock = {
+        autohide = true;
+        tilesize = 60;
+        mineffect = "genie";
+        magnification = false;
+        launchanim = true;
+        showhidden = false;
+        show-recents = false;
+        minimize-to-application = true;
+        # TODO)) persistent-apps = {};
+      };
+      finder = {
+        AppleShowAllExtensions = true;
+        ShowPathbar = true;
+        FXPreferredViewStyle = "Nlsv"; # List view
+      };
+      menuExtraClock = {
+        Show24Hour = true;
+        ShowDate = 1;
+        ShowSeconds = true;
+      };
+    };
+  };
+
   nix = {
     settings = {
       experimental-features = [
