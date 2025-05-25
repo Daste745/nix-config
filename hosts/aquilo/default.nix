@@ -61,6 +61,7 @@
         Show24Hour = true;
         ShowDate = 1;
         ShowSeconds = true;
+        FlashDateSeparators = false;
       };
     };
   };
