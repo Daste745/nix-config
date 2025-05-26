@@ -13,7 +13,10 @@
         trim_at = "";
         format = "[$hostname]($style) [$ssh_symbol]($style)in ";
       };
-      status.disabled = false;
+      status = {
+        disabled = false;
+        format = "[$status]($style) ";
+      };
       git_commit.tag_disabled = false;
       git_metrics.disabled = false;
       direnv.disabled = false;
