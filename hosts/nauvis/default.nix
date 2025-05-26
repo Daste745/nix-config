@@ -41,6 +41,9 @@
         "nix-command"
         "flakes"
       ];
+      trusted-users = [
+        "stefan"
+      ];
     };
   };
 }
