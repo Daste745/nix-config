@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+inputs@{ lib, pkgs, ... }:
 {
   system.stateVersion = 6;
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -28,7 +28,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
-    extraSpecialArgs = { inherit pkgs; };
+    extraSpecialArgs = { inherit inputs; };
     users.stefan = import ./home.nix;
   };
 

@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+inputs@{ lib, pkgs, ... }:
 {
   system.stateVersion = "24.11";
 
@@ -31,7 +31,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
-    extraSpecialArgs = { inherit pkgs; };
+    extraSpecialArgs = { inherit inputs; };
     users.stefan = import ./home.nix;
   };
 
