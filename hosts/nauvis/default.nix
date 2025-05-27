@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
 {
   system.stateVersion = "24.11";
 
@@ -15,7 +15,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     shell = pkgs.fish;
-    openssh.authorizedKeys.keys = (import ../../assets/ssh.nix).publicKeys;
+    openssh.authorizedKeys.keys = lib.attrValues (import ../../assets/ssh.nix).users;
   };
 
   networking.hostName = "nauvis";

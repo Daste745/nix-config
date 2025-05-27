@@ -10,7 +10,7 @@
   users.users.stefan = {
     shell = pkgs.fish;
     home = "/Users/stefan";
-    openssh.authorizedKeys.keys = (import ../../assets/ssh.nix).publicKeys;
+    openssh.authorizedKeys.keys = lib.attrValues (import ../../assets/ssh.nix).users;
   };
 
   networking.hostName = "aquilo";
