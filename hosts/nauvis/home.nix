@@ -1,3 +1,4 @@
+{ inputs, ... }:
 {
   home = {
     username = "stefan";
@@ -6,6 +7,7 @@
   };
 
   imports = [
+    inputs.agenix.homeManagerModules.default
     ../../home/modules
     ../../home/services
     ../../home/xdg.nix

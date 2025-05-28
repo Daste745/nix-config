@@ -40,6 +40,7 @@
           modules = [
             nixos-wsl.nixosModules.default
             home-manager.nixosModules.home-manager
+            agenix.nixosModules.default
             ./hosts/nauvis
           ];
         };
@@ -49,6 +50,7 @@
           specialArgs = { inherit inputs; };
           modules = [
             home-manager.darwinModules.home-manager
+            agenix.darwinModules.default
             ./hosts/aquilo
           ];
         };

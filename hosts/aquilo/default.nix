@@ -1,4 +1,9 @@
-inputs@{ lib, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
   system.stateVersion = 6;
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -19,6 +24,7 @@ inputs@{ lib, pkgs, ... }:
 
   environment.systemPackages = with pkgs; [
     git
+    inputs.agenix.packages.${system}.default
   ];
 
   programs.fish.enable = true;
@@ -29,7 +35,7 @@ inputs@{ lib, pkgs, ... }:
     useUserPackages = true;
     backupFileExtension = "backup";
     extraSpecialArgs = { inherit inputs; };
-    users.stefan = import ./home.nix;
+    users.stefan = ./home.nix;
   };
 
   nixpkgs.config.allowUnfreePredicate =

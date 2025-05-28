@@ -1,4 +1,9 @@
-inputs@{ lib, pkgs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}:
 {
   system.stateVersion = "24.11";
 
@@ -22,6 +27,7 @@ inputs@{ lib, pkgs, ... }:
 
   environment.systemPackages = with pkgs; [
     git
+    inputs.agenix.packages.${system}.default
   ];
 
   programs.fish.enable = true;
@@ -32,7 +38,7 @@ inputs@{ lib, pkgs, ... }:
     useUserPackages = true;
     backupFileExtension = "backup";
     extraSpecialArgs = { inherit inputs; };
-    users.stefan = import ./home.nix;
+    users.stefan = ./home.nix;
   };
 
   nix = {
