@@ -34,6 +34,6 @@
     ./starship.nix
     ./tmux.nix
     ./vim.nix
-    (import ./wakatime.nix { inherit pkgs; })
+    ./wakatime.nix
   ];
 }

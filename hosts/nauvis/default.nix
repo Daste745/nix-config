@@ -20,6 +20,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     shell = pkgs.fish;
+    home = "/home/stefan";
     openssh.authorizedKeys.keys = lib.attrValues (import ../../assets/ssh.nix).users;
   };
 
