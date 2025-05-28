@@ -1,3 +1,7 @@
+{ config, ... }:
+let
+  inherit (config.xdg) stateHome;
+in
 {
   programs.vim = {
     enable = true;
@@ -41,6 +45,7 @@
       set nobackup
       set nowb
       set noswapfile
+      set viminfofile=${stateHome}/vim/viminfo
     '';
   };
 }
