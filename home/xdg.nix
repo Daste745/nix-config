@@ -24,6 +24,8 @@ in
     SQLITE_HISTORY = "${stateHome}/sqlite_history";
     PSQL_HISTORY = "${stateHome}/psql_history";
     MYSQL_HISTFILE = "${dataHome}/mysql_history";
+    REDISCLI_HISTFILE = "${dataHome}/redis/rediscli_history";
+    REDISCLI_RCFILE = "${configHome}/redis/rediscli";
   };
 
   home.file."${wgetrc}".text = ''
