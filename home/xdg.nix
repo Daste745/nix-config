@@ -7,6 +7,7 @@ let
     stateHome
     ;
   wgetrc = "${configHome}/wgetrc";
+  npmrc = "${configHome}/npm/npmrc";
 in
 {
   xdg.enable = true;
@@ -17,10 +18,11 @@ in
     LESSHISTFILE = "${stateHome}/lesshst";
     WGETRC = wgetrc; # Because wget history location can't be configured via env
     NODE_REPL_HISTORY = "${dataHome}/node_repl_history";
-    NPM_CONFIG_USERCONFIG = "${configHome}/npm/npmrc";
+    NPM_CONFIG_USERCONFIG = npmrc;
     BUN_INSTALL = "${dataHome}/bun";
     PYTHON_HISTORY = "${stateHome}/python_history"; # Python >= 3.13
     CARGO_HOME = "${dataHome}/cargo";
+    DOCKER_CONFIG = "${configHome}/docker";
     SQLITE_HISTORY = "${stateHome}/sqlite_history";
     PSQL_HISTORY = "${stateHome}/psql_history";
     MYSQL_HISTFILE = "${dataHome}/mysql_history";
@@ -30,5 +32,11 @@ in
 
   home.file."${wgetrc}".text = ''
     hsts-file = ${cacheHome}/wget-hsts
+  '';
+
+  home.file."${npmrc}".text = ''
+    prefix=${dataHome}/npm
+    cache=${cacheHome}/npm
+    logs-dir=${stateHome}/npm/logs
   '';
 }
