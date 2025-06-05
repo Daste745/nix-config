@@ -17,4 +17,6 @@
     ../../home/xdg.nix
     ./alacritty.nix
   ];
+
+  modules.git.signingKey = (import ../../assets/ssh.nix).users.aquilo;
 }

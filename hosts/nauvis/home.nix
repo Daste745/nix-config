@@ -13,5 +13,6 @@
     ../../home/xdg.nix
   ];
 
+  modules.git.signingKey = (import ../../assets/ssh.nix).users.nauvis;
   services.gpg-agent.pinentryProgramPath = "/mnt/c/Program Files (x86)/Gpg4win/bin/pinentry.exe";
 }
