@@ -11,6 +11,7 @@
     dust
     fzf
     fselect
+    gnupg
     tokei
     ripgrep
     ripgrep-all
