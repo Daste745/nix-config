@@ -7,6 +7,9 @@
 let
   cfg = config.modules.git;
   mkGitCommand = name: pkgs.writeShellScriptBin name (builtins.readFile ./commands/${name});
+  allUserSshKeys = lib.attrValues (import ../../../assets/ssh.nix).users;
+  # TODO)) Maybe scope these to only the email they are used for (?)
+  allowedSignersEntries = lib.map (key: "* " + key) allUserSshKeys;
 in
 {
   options = {
@@ -34,6 +37,7 @@ in
         { path = "~/.user.gitconfig"; }
       ];
       signing = {
+        # TODO)) Per-directory signing key
         key = cfg.signingKey;
         format = "ssh";
         signByDefault = true;
@@ -52,6 +56,9 @@ in
         worktree = {
           useRelativePaths = true;
         };
+        gpg = {
+          ssh.allowedSignersFile = "~/.ssh/allowed_signers";
+        };
       };
       aliases = {
         lg = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'";
@@ -64,6 +71,8 @@ in
         branch-migrations = "!f() { git diff --name-only \$(git branch-base \$1) @ | rg migrations; }; f";
       };
     };
+
+    home.file.".ssh/allowed_signers".text = lib.concatStringsSep "\n" allowedSignersEntries;
 
     home.packages = [
       (mkGitCommand "git-fixup")
