@@ -8,7 +8,6 @@
   home.packages = with pkgs; [
     maple-mono.truetype
     maple-mono.NF
-    # TODO)) Install this as an .app
     localsend
     vlc-bin
   ];
