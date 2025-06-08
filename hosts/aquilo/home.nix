@@ -10,6 +10,7 @@
     maple-mono.NF
     # TODO)) Install this as an .app
     localsend
+    vlc-bin
   ];
 
   imports = [
