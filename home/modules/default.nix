@@ -23,6 +23,7 @@
     nixfmt-rfc-style
     nixfmt-tree
     nix-output-monitor
+    comma
   ];
 
   programs.home-manager.enable = true;
