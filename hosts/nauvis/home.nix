@@ -8,6 +8,7 @@
 
   imports = [
     inputs.agenix.homeManagerModules.default
+    inputs.nix-index-database.hmModules.nix-index
     ../../home/modules
     ../../home/services
     ../../home/xdg.nix

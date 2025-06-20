@@ -23,7 +23,6 @@
     nixfmt-rfc-style
     nixfmt-tree
     nix-output-monitor
-    nix-index
   ];
 
   programs.home-manager.enable = true;
@@ -32,6 +31,7 @@
     ./git
     ./fish.nix
     ./mise.nix
+    ./nix-index.nix
     ./ssh.nix
     ./starship.nix
     ./tmux.nix
