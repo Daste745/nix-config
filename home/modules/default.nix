@@ -28,11 +28,12 @@
 
   programs.home-manager.enable = true;
 
+  programs.nix-index.enable = true;
+
   imports = [
     ./git
     ./fish.nix
     ./mise.nix
-    ./nix-index.nix
     ./ssh.nix
     ./starship.nix
     ./tmux.nix
