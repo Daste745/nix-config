@@ -9,6 +9,7 @@
 
   imports = [
     ../../modules/ssh.nix
+    ../../modules/tailscale.nix
   ];
 
   wsl = {
