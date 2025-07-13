@@ -5,6 +5,7 @@
     prefix = "C-a";
     mouse = true;
     clock24 = true;
+    escapeTime = 0;
     plugins = with pkgs.tmuxPlugins; [
       # TODO: ofirgall/tmux-window-name - will require setting up python
       yank
