@@ -1,22 +1,22 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    killall
     file
     tree
+    unzip
     wget
     curl
+    httpie
     htop
     fastfetch
-    pfetch
     dust
     fzf
-    fselect
     gnupg
     tokei
     ripgrep
     ripgrep-all
     hyperfine
-    git-crypt
     xdg-utils
     nixd
     nil
@@ -24,6 +24,7 @@
     nixfmt-tree
     nix-output-monitor
     comma
+    dix
   ];
 
   programs.home-manager.enable = true;
