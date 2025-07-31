@@ -141,6 +141,21 @@ in
         end
         echo "# No venv found"
       '';
+      dix_fzf = ''
+        set nix_profiles_path /nix/var/nix/profiles/
+
+        # TODO: This is a mess, clean it up at some point :^)
+        find $nix_profiles_path -maxdepth 1 -type l \
+          | cut -d '/' -f 6 \
+          | sort -t '-' -k 2 -n -r \
+          | fzf --multi 2 \
+                --prompt "Select 2 systems to compare " \
+                --preview-window=right,80% \
+                --preview "script -qe -c \"cat {+f} | sort -t '-' -k 2 -n | awk '{print \\\"$nix_profiles_path\\\" \\\$1}' | tr \\n ' ' | xargs dix\" /dev/null" \
+            | sort -t '-' -k 2 -n \
+            | awk "{print \"$nix_profiles_path\" \$1}" \
+            | tr \\n ' ' | xargs dix
+      '';
     };
   };
 
