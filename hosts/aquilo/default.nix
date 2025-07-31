@@ -82,5 +82,9 @@
         "stefan"
       ];
     };
+    registry = {
+      nixpkgs.flake = inputs.nixpkgs;
+    };
+    nixPath = [ "nixpkgs=flake:nixpkgs" ];
   };
 }
