@@ -19,7 +19,10 @@
 
   users.users.stefan = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [
+      "wheel"
+      "docker"
+    ];
     shell = pkgs.fish;
     home = "/home/stefan";
     openssh.authorizedKeys.keys = lib.attrValues (import ../../assets/ssh.nix).users;
@@ -42,6 +45,8 @@
     extraSpecialArgs = { inherit inputs; };
     users.stefan = ./home.nix;
   };
+
+  virtualisation.docker.enable = true;
 
   nix = {
     settings = {
