@@ -3,12 +3,18 @@
   programs.mise = {
     enable = true;
     enableFishIntegration = true;
+    # https://mise.jdx.dev/configuration/settings.html
     settings = {
       status = {
         show_tools = true;
         show_env = true;
       };
-      idiomatic_version_file_enable_tools = [ ];
+    };
+    # https://mise.jdx.dev/configuration.html
+    globalConfig = {
+      settings = {
+        idiomatic_version_file_enable_tools = [ ];
+      };
     };
   };
 }
