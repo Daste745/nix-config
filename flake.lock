@@ -149,7 +149,8 @@
         "nix-darwin": "nix-darwin",
         "nix-index-database": "nix-index-database",
         "nixos-wsl": "nixos-wsl",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "templates": "templates"
       }
     },
     "systems": {
@@ -166,6 +167,17 @@
         "repo": "default",
         "type": "github"
       }
+    },
+    "templates": {
+      "locked": {
+        "path": "./templates",
+        "type": "path"
+      },
+      "original": {
+        "path": "./templates",
+        "type": "path"
+      },
+      "parent": []
     }
   },
   "root": "root",
