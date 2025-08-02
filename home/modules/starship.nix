@@ -19,7 +19,14 @@
       };
       git_commit.tag_disabled = false;
       git_metrics.disabled = false;
-      direnv.disabled = false;
+      direnv = {
+        disabled = false;
+        allowed_msg = "🟢";
+        not_allowed_msg = "❔";
+        denied_msg = "🚫";
+        loaded_msg = "✅";
+        unloaded_msg = "❌";
+      };
       nix_shell.symbol = "❄️ "; # Default has 2 spaces after the symbol
     };
   };
