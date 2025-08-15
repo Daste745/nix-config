@@ -157,6 +157,9 @@ in
             | tr \\n ' ' | xargs dix
       '';
     };
+    interactiveShellInit = ''
+      ssh-add -q
+    '';
   };
 
   programs.zoxide = {
