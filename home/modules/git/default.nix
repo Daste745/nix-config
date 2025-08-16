@@ -10,6 +10,7 @@ let
   allUserSshKeys = lib.attrValues (import ../../../assets/ssh.nix).users;
   # TODO)) Maybe scope these to only the email they are used for (?)
   allowedSignersEntries = lib.map (key: "* " + key) allUserSshKeys;
+  inherit (config.xdg) configHome;
 in
 {
   options = {
@@ -35,6 +36,7 @@ in
       };
       includes = [
         { path = "~/.user.gitconfig"; }
+        { path = "${configHome}/git/user-config"; }
       ];
       signing = {
         # TODO)) Per-directory signing key
