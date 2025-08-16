@@ -23,6 +23,8 @@ in
     PYTHON_HISTORY = "${stateHome}/python_history"; # Python >= 3.13
     CARGO_HOME = "${dataHome}/cargo";
     DOCKER_CONFIG = "${configHome}/docker";
+    GRADLE_USER_HOME = "${dataHome}/gradle";
+    WAKATIME_HOME = "${configHome}/wakatime";
     SQLITE_HISTORY = "${stateHome}/sqlite_history";
     PSQL_HISTORY = "${stateHome}/psql_history";
     MYSQL_HISTFILE = "${dataHome}/mysql_history";
