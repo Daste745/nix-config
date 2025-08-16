@@ -21,5 +21,5 @@
     ./alacritty.nix
   ];
 
-  modules.git.signingKey = (import ../../assets/ssh.nix).users.aquilo;
+  modules.git.signingKey = (import ../../assets/keys.nix).user.aquilo;
 }

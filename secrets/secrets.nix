@@ -1,9 +1,9 @@
 let
-  keys = import ../assets/ssh.nix;
+  keys = import ../assets/keys.nix;
 in
 {
   "wakatime-cfg.age".publicKeys = [
-    keys.users.nauvis
-    keys.users.aquilo
+    keys.user.nauvis
+    keys.user.aquilo
   ]
 }

@@ -25,7 +25,7 @@
     ];
     shell = pkgs.fish;
     home = "/home/stefan";
-    openssh.authorizedKeys.keys = lib.attrValues (import ../../assets/ssh.nix).users;
+    openssh.authorizedKeys.keys = lib.attrValues (import ../../assets/keys.nix).user;
   };
 
   networking.hostName = "nauvis";
