@@ -12,6 +12,7 @@
     ../../home/modules
     ../../home/services
     ../../home/xdg.nix
+    ./zed.nix
   ];
 
   modules.git.signingKey = (import ../../assets/keys.nix).user.nauvis;
