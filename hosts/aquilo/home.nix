@@ -19,6 +19,7 @@
     ../../home/services
     ../../home/xdg.nix
     ./alacritty.nix
+    ./ghostty.nix
   ];
 
   modules.git.signingKey = (import ../../assets/keys.nix).user.aquilo;

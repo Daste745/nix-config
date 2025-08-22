@@ -3,7 +3,7 @@
   services.skhd = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
     enable = true;
     config = ''
-      ctrl + cmd - return : open -n -a Alacritty
+      ctrl + cmd - return : open -n -a Ghostty
     '';
   };
 }
