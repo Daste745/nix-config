@@ -158,6 +158,9 @@ in
       '';
     };
     interactiveShellInit = ''
+      while ! pgrep -f ssh-agent > /dev/null
+        sleep 1s
+      end
       ssh-add -q
     '';
   };
