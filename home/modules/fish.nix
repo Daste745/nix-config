@@ -158,10 +158,14 @@ in
       '';
     };
     interactiveShellInit = ''
-      while ! pgrep -f ssh-agent > /dev/null
-        sleep 1s
+      function __ssh_agent_after_start
+        while ! pgrep -f ssh-agent > /dev/null
+            sleep 1s
+        end
+        ssh-add -q
       end
-      ssh-add -q
+      # Run the ssh-agent after-start hook in the background
+      __ssh_agent_after_start &> /dev/null
     '';
   };
 
