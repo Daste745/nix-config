@@ -3,6 +3,7 @@ let
 in
 {
   "wakatime-cfg.age".publicKeys = [
+    keys.bootstrap
     keys.user.nauvis
     keys.user.aquilo
   ];
