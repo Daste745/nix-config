@@ -1,1 +1,5 @@
 *.swp
+
+# VM build outputs
+result
+*.qcow2

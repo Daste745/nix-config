@@ -37,7 +37,7 @@
       agenix,
       ...
     }:
-    {
+    rec {
       nixosConfigurations = {
         nauvis = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
@@ -49,6 +49,15 @@
             ./hosts/nauvis
           ];
         };
+        thinkpad = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            home-manager.nixosModules.home-manager
+            agenix.nixosModules.default
+            ./hosts/thinkpad
+          ];
+        };
       };
       darwinConfigurations = {
         aquilo = nix-darwin.lib.darwinSystem {
@@ -58,6 +67,13 @@
             agenix.darwinModules.default
             ./hosts/aquilo
           ];
+        };
+      };
+      # nix run .#apps.<name>
+      apps = {
+        thinkpad-vm = {
+          type = "app";
+          program = "${nixosConfigurations.thinkpad.config.system.build.vm}/bin/run-thinkpad-vm";
         };
       };
     };
