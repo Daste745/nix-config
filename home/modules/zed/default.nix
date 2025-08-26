@@ -6,6 +6,7 @@
 }:
 let
   cfg = config.modules.zed;
+  mkOutOfStoreSymlink = config.lib.file.mkOutOfStoreSymlink;
 in
 {
   options.modules.zed = {
@@ -35,5 +36,10 @@ in
       home.packages = lib.optionals cfg.wslCompatScript.enable [
         wslCompatScript
       ];
+      xdg.configFile = {
+        # FIXME)) ~/.nix-config shouldn't be hardcoded
+        # FIXME)) config.home.homeDirectory is not always there
+        zed.source = mkOutOfStoreSymlink "${config.home.homeDirectory}/.nix-config/home/modules/zed/config";
+      };
     };
 }

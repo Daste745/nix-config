@@ -1,0 +1,273 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "auto_update": false,
+  "ui_font_family": "Maple Mono",
+  "ui_font_fallbacks": ["Zed Plex Mono"],
+  "ui_font_size": 14,
+  "buffer_font_family": "Maple Mono",
+  "buffer_font_fallbacks": ["Zed Plex Mono"],
+  "buffer_font_size": 14,
+  "buffer_font_weight": 300,
+  "buffer_line_height": {
+    "custom": 1.5
+  },
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Ayu Mirage"
+  },
+  "icon_theme": "Colored Zed Icons Theme Dark",
+  "use_system_path_prompts": false,
+  "tab_bar": {
+    "show_nav_history_buttons": false
+  },
+  "tabs": {
+    "file_icons": true,
+    "git_status": true
+  },
+  "preview_tabs": {
+    "enable_preview_from_code_navigation": true
+  },
+  "gutter": {
+    "line_numbers": false
+  },
+  "cursor_blink": false,
+  "scrollbar": {
+    "show": "never"
+  },
+  "project_panel": {
+    "indent_size": 10
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "notification_panel": {
+    "button": false
+  },
+  "diagnostics": {
+    "include_warnings": false,
+    "inline": {
+      "enabled": true,
+      "update_debounce_ms": 150,
+      "padding": 4,
+      "min_column": 0,
+      "max_severity": null
+    }
+  },
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "edit_predictions": {
+    "mode": "eager"
+  },
+  "agent": {
+    "default_profile": "write",
+    "model_parameters": [],
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
+    }
+  },
+  "vertical_scroll_margin": 5,
+  "use_smartcase_search": true,
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    "**/__pycache__",
+    "**/.ruff_cache",
+    "**/.mypy_cache",
+    "**/.pytest_cache",
+    ".yarn.lock",
+    "**/.yarn"
+  ],
+  "vim_mode": true,
+  "vim": {
+    "use_system_clipboard": "always",
+    "use_smartcase_find": true
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+      "delay_ms": 200
+    }
+  },
+  "terminal": {
+    "line_height": "standard",
+    "env": {
+      "GIT_EDITOR": "zed --wait"
+    },
+    "detect_venv": {
+      "on": {
+        "activate_script": "fish"
+      }
+    },
+    "toolbar": {
+      "breadcrumbs": false
+    }
+  },
+  "load_direnv": "direct",
+  "auto_install_extensions": {
+    "colored-zed-icons-theme": true,
+    "docker-compose": true,
+    "dockerfile": true,
+    "emmet": true,
+    "fish": true,
+    "git-firefly": true,
+    "html": true,
+    "log": true,
+    "make": true,
+    "ruff": true,
+    "scss": true,
+    "sql": true,
+    "toml": true,
+    "wakatime": true,
+    "zig": true,
+    "xml": true
+  },
+  "languages": {
+    "Python": {
+      "show_wrap_guides": true,
+      "wrap_guides": [100],
+      "language_servers": ["!pylsp", "..."],
+      // "language_servers": ["!pyright", "..."],
+      "format_on_save": [
+        {
+          "code_actions": {
+            "source.fixAll.ruff": true
+          }
+        },
+        {
+          "external": {
+            "command": ".venv/bin/python",
+            "arguments": ["-m", "isort", "-"]
+          }
+        },
+        {
+          // https://github.com/zed-industries/zed/discussions/6597
+          "external": {
+            "command": ".venv/bin/python",
+            "arguments": ["-m", "black", "-", "--fast"]
+          }
+        }
+      ]
+    },
+    "JavaScript": {
+      "formatter": {
+        "code_actions": {
+          "source.fixAll.eslint": true
+        }
+      }
+    },
+    "TypeScript": {
+      "formatter": {
+        "code_actions": {
+          "source.fixAll.eslint": true
+        }
+      }
+    },
+    "TSX": {
+      "formatter": {
+        "code_actions": {
+          "source.fixAll.eslint": true
+        }
+      }
+    },
+    "Rust": {
+      "format_on_save": "language_server"
+    },
+    "Zig": {
+      "format_on_save": "language_server",
+      "code_actions_on_format": {
+        "source.organizeImports": true
+      }
+    },
+    "C": {
+      "format_on_save": "language_server"
+    },
+    "C++": {
+      "format_on_save": "language_server"
+    },
+    "Git Commit": {
+      "show_wrap_guides": true,
+      "wrap_guides": [72]
+    }
+  },
+  "lsp": {
+    "pyright": {
+      "settings": {
+        "python": {
+          "pythonPath": ".venv/bin/python"
+        },
+        "python.analysis": {
+          "typeCheckingMode": "standard"
+          // "typeCheckingMode": "standard" // Don't typecheck with pyright (when using pylsp)
+        }
+      }
+    },
+    "pylsp": {
+      "binary": {
+        "path": ".venv/bin/pylsp"
+      },
+      "settings": {
+        "plugins": {
+          "pylsp_mypy": {
+            "enabled": true,
+            "live_mode": true,
+            "dmypy": false,
+            "strict": true,
+            "report_progress": true
+          },
+          // TODO: Black
+          "isort": { "enabled": true },
+          "rope": { "enabled": true },
+          "rope_autoimport": { "enabled": true },
+          "rope_completion": { "enabled": true },
+          "pyflakes": { "enabled": false },
+          "mccabe": { "enabled": false },
+          "pycodestyle": { "enabled": false },
+          "autopep8": { "enabled": false },
+          "pylint": { "enabled": false },
+          "yapf": { "enabled": false }
+        }
+      }
+    },
+    "rust-analyzer": {
+      "initialization_options": {
+        "rust": {
+          "analyzerTargetDir": true
+        },
+        "cargo": {
+          "allTargets": false
+        },
+        "check": {
+          "workspace": false
+        }
+      }
+    },
+    "zls": {
+      "initialization_options": {
+        "enable_build_on_save": true
+      }
+    },
+    "nil": {
+      "initialization_options": {
+        "formatting": {
+          "command": ["nixfmt"]
+        }
+      }
+    }
+  }
+}

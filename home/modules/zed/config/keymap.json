@@ -1,0 +1,90 @@
+[
+  {
+    "bindings": {
+      "ctrl-j": "menu::SelectNext",
+      "ctrl-k": "menu::SelectPrevious",
+      "ctrl-shift-r": "projects::OpenRecent",
+      "ctrl-f5": "debugger::Detach"
+    }
+  },
+  {
+    "context": "VimControl && !menu",
+    "bindings": {
+      "ctrl-shift-j": "editor::ExpandExcerptsDown",
+      "ctrl-shift-k": "editor::ExpandExcerptsUp"
+    }
+  },
+  {
+    "context": "Pane && !menu",
+    "bindings": {
+      "ctrl-\\": "pane::SplitRight",
+      "ctrl-|": "pane::SplitDown"
+    }
+  },
+  {
+    "context": "Editor && !menu",
+    "bindings": {
+      "ctrl-f": "buffer_search::Deploy",
+      "ctrl-b": "workspace::ToggleLeftDock",
+      "ctrl-\\": "pane::SplitRight",
+      "ctrl-|": "pane::SplitDown",
+      "ctrl-alt-left": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "left" }
+      ],
+      "ctrl-alt-right": [
+        "workspace::MoveItemToPaneInDirection",
+        { "direction": "right" }
+      ]
+    }
+  },
+  {
+    "context": "Workspace",
+    "bindings": {
+      "ctrl-1": ["workspace::ActivatePane", 0],
+      "ctrl-2": ["workspace::ActivatePane", 1],
+      "ctrl-3": ["workspace::ActivatePane", 2],
+      "ctrl-4": ["workspace::ActivatePane", 3],
+      "ctrl-5": ["workspace::ActivatePane", 4],
+      "ctrl-6": ["workspace::ActivatePane", 5],
+      "ctrl-7": ["workspace::ActivatePane", 6],
+      "ctrl-8": ["workspace::ActivatePane", 7],
+      "ctrl-9": ["workspace::ActivatePane", 8]
+    }
+  },
+  {
+    "context": "Editor && vim_mode == normal",
+    "bindings": {
+      "space space": "pane::TogglePreviewTab",
+      "space B": "git::Blame",
+      "space c": "workspace::ToggleCenteredLayout",
+      "space b": "editor::ToggleBreakpoint",
+      "g r": "editor::FindAllReferences", // from helix keymap
+      "g t": "editor::GoToTypeDefinition",
+      "g b": "editor::BlameHover",
+      "shift-alt-c": "workspace::CopyRelativePath"
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == insert || vim_mode == normal)",
+    "bindings": {
+      "ctrl-j": "editor::ContextMenuNext",
+      "ctrl-k": "editor::ContextMenuPrevious"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
+    "bindings": {
+      "v": "editor::SelectLargerSyntaxNode",
+      "V": "editor::SelectSmallerSyntaxNode"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      // Close terminal when toggling out of it
+      "ctrl-`": "workspace::ToggleBottomDock",
+      "ctrl-j": null
+    }
+  }
+]
