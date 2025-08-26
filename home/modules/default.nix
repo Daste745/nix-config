@@ -33,6 +33,7 @@
 
   imports = [
     ./git
+    ./zed
     ./fish.nix
     ./mise.nix
     ./ssh.nix

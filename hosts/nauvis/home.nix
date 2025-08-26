@@ -12,9 +12,9 @@
     ../../home/modules
     ../../home/services
     ../../home/xdg.nix
-    ./zed.nix
   ];
 
   modules.git.signingKey = (import ../../assets/keys.nix).user.nauvis;
+  modules.zed.wslCompatScript.enable = true;
   services.gpg-agent.pinentryProgramPath = "/mnt/c/Program Files (x86)/Gpg4win/bin/pinentry.exe";
 }
