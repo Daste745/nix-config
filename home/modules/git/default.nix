@@ -13,14 +13,12 @@ let
   inherit (config.xdg) configHome;
 in
 {
-  options = {
-    modules.git = {
-      signingKey = lib.mkOption {
-        type = lib.types.str;
-        description = ''
-          SSH key for signing commits with git.
-        '';
-      };
+  options.modules.git = {
+    signingKey = lib.mkOption {
+      type = lib.types.str;
+      description = ''
+        SSH key for signing commits with git.
+      '';
     };
   };
 
