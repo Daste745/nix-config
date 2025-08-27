@@ -9,9 +9,7 @@
   imports = [
     inputs.agenix.homeManagerModules.default
     inputs.nix-index-database.homeModules.nix-index
-    ../../home/modules
-    ../../home/services
-    ../../home/xdg.nix
+    ../../home
   ];
 
   modules.git.signingKey = (import ../../assets/keys.nix).user.nauvis;

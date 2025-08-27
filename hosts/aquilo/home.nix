@@ -15,9 +15,7 @@
   imports = [
     inputs.agenix.homeManagerModules.default
     inputs.nix-index-database.homeModules.nix-index
-    ../../home/modules
-    ../../home/services
-    ../../home/xdg.nix
+    ../../home
     ./alacritty.nix
     ./ghostty.nix
   ];
