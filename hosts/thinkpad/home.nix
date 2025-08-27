@@ -13,5 +13,6 @@
     ./hyprland.nix
   ];
 
+  graphical.enable = true;
   modules.git.signingKey = (import ../../assets/keys.nix).user.thinkpad;
 }

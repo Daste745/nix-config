@@ -16,9 +16,8 @@
     inputs.agenix.homeManagerModules.default
     inputs.nix-index-database.homeModules.nix-index
     ../../home
-    ./alacritty.nix
-    ./ghostty.nix
   ];
 
+  graphical.enable = true;
   modules.git.signingKey = (import ../../assets/keys.nix).user.aquilo;
 }

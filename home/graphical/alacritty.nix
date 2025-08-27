@@ -1,5 +1,6 @@
+{ lib, config, ... }:
 {
-  programs.alacritty = {
+  programs.alacritty = lib.mkIf config.graphical.enable {
     enable = true;
     settings = {
       window.startup_mode = "Maximized";

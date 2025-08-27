@@ -1,22 +1,23 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
+let
+  inherit (lib) getExe;
+in
 {
   home.packages = with pkgs; [
-    # TODO)) ghostty
-    kitty
     xfce.thunar
     wofi
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
-    settings = with pkgs; {
+    settings = {
       "$mod" = "CTRL_SHIFT";
-      "$terminal" = lib.getBin kitty;
-      "$fileManager" = lib.getBin xfce.thunar;
-      "$menu" = "wofi --show drun";
+      "$terminal" = getExe pkgs.ghostty;
+      "$fileManager" = getExe pkgs.xfce.thunar;
+      "$menu" = "${getExe pkgs.wofi} --show drun";
       bind = [
         "$mod, Q, killactive"
-        "$mod, enter, exec, $terminal"
+        "$mod, return, exec, $terminal"
         "$mod, E, exec, $fileManager"
         "$mod, R, exec, $menu"
 
