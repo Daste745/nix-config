@@ -6,6 +6,15 @@ let
     home-manager
     agenix
     ;
+
+  mkCommonModules = hostname: [
+    ./assets
+    ./hosts/common.nix
+    ./hosts/${hostname}
+    {
+      networking.hostName = hostname;
+    }
+  ];
 in
 {
   mkNixosConfiguration =
@@ -17,10 +26,8 @@ in
       modules = [
         home-manager.nixosModules.home-manager
         agenix.nixosModules.default
-        ./assets
-        ./hosts/common.nix
-        ./hosts/${hostname}
       ]
+      ++ (mkCommonModules hostname)
       ++ extraModules;
     };
 
@@ -32,10 +39,8 @@ in
       modules = [
         home-manager.darwinModules.home-manager
         agenix.darwinModules.default
-        ./assets
-        ./hosts/common.nix
-        ./hosts/${hostname}
       ]
+      ++ (mkCommonModules hostname)
       ++ extraModules;
     };
 }

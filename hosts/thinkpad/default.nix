@@ -6,8 +6,6 @@
 
   system.stateVersion = "25.11";
 
-  networking.hostName = "thinkpad";
-
   boot.loader = {
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;

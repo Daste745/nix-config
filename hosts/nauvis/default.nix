@@ -5,8 +5,6 @@
 
   system.stateVersion = "24.11";
 
-  networking.hostName = "nauvis";
-
   wsl = {
     enable = true;
     defaultUser = "stefan";

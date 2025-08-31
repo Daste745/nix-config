@@ -2,8 +2,6 @@
   system.stateVersion = 6;
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-  networking.hostName = "aquilo";
-
   users.users.stefan.home = "/Users/stefan";
 
   home-manager.users.stefan = ./home.nix;
