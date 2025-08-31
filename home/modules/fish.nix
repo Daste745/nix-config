@@ -144,10 +144,11 @@ in
       dix_fzf =
         let
           profilesPath = "/nix/var/nix/profiles/";
-          _previewCommand = "cat {+f} | sort -t '-' -k 2 -n | awk '{print \\\"${profilesPath}\\\" \\\$1}' | tr \\n ' ' | xargs dix";
+          # NOTE: `\\\\\\\` resolves to `\\\`, because we're 2 levels deep in string literals
+          _previewCommand = "cat {+f} | sort -t '-' -k 2 -n | awk '{print \\\\\\\"${profilesPath}\\\\\\\" \\\\\\\$1}' | tr \\n ' ' | xargs dix";
           previewCommand =
             if pkgs.stdenv.hostPlatform.isLinux then
-              "script -eq -c \"${_previewCommand}\" /dev/null"
+              "script -eq -c \\\"${_previewCommand}\\\" /dev/null"
             else
               # TODO: Use `script` on MacOS for colored preview
               _previewCommand;
