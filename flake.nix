@@ -30,51 +30,29 @@
 
   outputs =
     inputs@{
-      nixpkgs,
-      nix-darwin,
       nixos-wsl,
-      home-manager,
-      agenix,
       ...
     }:
+    let
+      util = import ./util.nix inputs;
+    in
     rec {
       nixosConfigurations = {
-        nauvis = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
+        nauvis = util.mkNixosConfiguration "nauvis" {
+          extraModules = [
             nixos-wsl.nixosModules.default
-            home-manager.nixosModules.home-manager
-            agenix.nixosModules.default
-            ./assets
-            ./hosts/common.nix
-            ./hosts/nauvis
           ];
         };
-        thinkpad = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = { inherit inputs; };
-          modules = [
-            home-manager.nixosModules.home-manager
-            agenix.nixosModules.default
-            ./assets
-            ./hosts/common.nix
-            ./hosts/thinkpad
-          ];
+        thinkpad = util.mkNixosConfiguration "thinkpad" {
+          extraModules = [ ];
         };
       };
       darwinConfigurations = {
-        aquilo = nix-darwin.lib.darwinSystem {
-          specialArgs = { inherit inputs; };
-          modules = [
-            home-manager.darwinModules.home-manager
-            agenix.darwinModules.default
-            ./assets
-            ./hosts/common.nix
-            ./hosts/aquilo
-          ];
+        aquilo = util.mkDarwinConfiguration "aquilo" {
+          extraModules = [ ];
         };
       };
+
       # nix run .#apps.<name>
       apps = {
         thinkpad-vm = {
