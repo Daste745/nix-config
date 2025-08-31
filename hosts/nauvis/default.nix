@@ -2,8 +2,12 @@
   inputs,
   lib,
   pkgs,
+  config,
   ...
 }:
+let
+  assets = config.assets;
+in
 {
   system.stateVersion = "24.11";
 
@@ -25,7 +29,7 @@
     ];
     shell = pkgs.fish;
     home = "/home/stefan";
-    openssh.authorizedKeys.keys = lib.attrValues (import ../../assets/keys.nix).user;
+    openssh.authorizedKeys.keys = lib.attrValues assets.keys.user;
   };
 
   networking.hostName = "nauvis";

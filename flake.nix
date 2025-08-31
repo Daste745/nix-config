@@ -46,6 +46,7 @@
             nixos-wsl.nixosModules.default
             home-manager.nixosModules.home-manager
             agenix.nixosModules.default
+            ./assets
             ./hosts/nauvis
           ];
         };
@@ -55,6 +56,7 @@
           modules = [
             home-manager.nixosModules.home-manager
             agenix.nixosModules.default
+            ./assets
             ./hosts/thinkpad
           ];
         };
@@ -65,6 +67,7 @@
           modules = [
             home-manager.darwinModules.home-manager
             agenix.darwinModules.default
+            ./assets
             ./hosts/aquilo
           ];
         };

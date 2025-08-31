@@ -2,8 +2,12 @@
   inputs,
   lib,
   pkgs,
+  config,
   ...
 }:
+let
+  assets = config.assets;
+in
 {
   system.stateVersion = 6;
   nixpkgs.hostPlatform = "aarch64-darwin";
@@ -15,7 +19,7 @@
   users.users.stefan = {
     shell = pkgs.fish;
     home = "/Users/stefan";
-    openssh.authorizedKeys.keys = lib.attrValues (import ../../assets/keys.nix).user;
+    openssh.authorizedKeys.keys = lib.attrValues assets.keys.user;
   };
 
   networking.hostName = "aquilo";
