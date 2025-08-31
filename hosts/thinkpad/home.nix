@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 {
   home = {
     username = "stefan";
@@ -9,10 +9,11 @@
   imports = [
     inputs.agenix.homeManagerModules.default
     inputs.nix-index-database.homeModules.nix-index
+    ../../assets
     ../../home
     ./hyprland.nix
   ];
 
   graphical.enable = true;
-  modules.git.signingKey = (import ../../assets/keys.nix).user.thinkpad;
+  modules.git.signingKey = config.assets.keys.user.thinkpad;
 }

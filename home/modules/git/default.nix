@@ -7,7 +7,7 @@
 let
   cfg = config.modules.git;
   mkGitCommand = name: pkgs.writeShellScriptBin name (builtins.readFile ./commands/${name});
-  allUserSshKeys = lib.attrValues (import ../../../assets/keys.nix).user;
+  allUserSshKeys = lib.attrValues config.assets.keys.user;
   # TODO)) Maybe scope these to only the email they are used for (?)
   allowedSignersEntries = lib.map (key: "* " + key) allUserSshKeys;
   inherit (config.xdg) configHome;
