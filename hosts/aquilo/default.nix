@@ -1,51 +1,14 @@
 {
-  inputs,
-  lib,
-  pkgs,
-  config,
-  ...
-}:
-let
-  assets = config.assets;
-in
-{
   system.stateVersion = 6;
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-  imports = [
-    ../../modules/ssh.nix
-  ];
-
-  users.users.stefan = {
-    shell = pkgs.fish;
-    home = "/Users/stefan";
-    openssh.authorizedKeys.keys = lib.attrValues assets.keys.user;
-  };
-
   networking.hostName = "aquilo";
 
+  users.users.stefan.home = "/Users/stefan";
+
+  home-manager.users.stefan = ./home.nix;
+
   security.pam.services.sudo_local.touchIdAuth = true;
-
-  environment.systemPackages = with pkgs; [
-    git
-    inputs.agenix.packages.${system}.default
-  ];
-
-  programs.fish.enable = true;
-  environment.shells = [ pkgs.fish ];
-
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    backupFileExtension = "backup";
-    extraSpecialArgs = { inherit inputs; };
-    users.stefan = ./home.nix;
-  };
-
-  nixpkgs.config.allowUnfreePredicate =
-    pkg:
-    builtins.elem (lib.getName pkg) [
-    ];
 
   system = {
     primaryUser = "stefan";
@@ -74,23 +37,5 @@ in
         FlashDateSeparators = false;
       };
     };
-  };
-
-  nix = {
-    settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-      trusted-users = [
-        "stefan"
-      ];
-    };
-    registry = {
-      nixpkgs.flake = inputs.nixpkgs;
-      # NOTE: This overwrites the default github:NixOS/templates input
-      templates.flake = inputs.templates;
-    };
-    nixPath = [ "nixpkgs=flake:nixpkgs" ];
   };
 }

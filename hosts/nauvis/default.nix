@@ -1,20 +1,11 @@
 {
-  inputs,
-  lib,
-  pkgs,
-  config,
-  ...
-}:
-let
-  assets = config.assets;
-in
-{
-  system.stateVersion = "24.11";
-
   imports = [
-    ../../modules/ssh.nix
     ../../modules/tailscale.nix
   ];
+
+  system.stateVersion = "24.11";
+
+  networking.hostName = "nauvis";
 
   wsl = {
     enable = true;
@@ -27,46 +18,12 @@ in
       "wheel"
       "docker"
     ];
-    shell = pkgs.fish;
     home = "/home/stefan";
-    openssh.authorizedKeys.keys = lib.attrValues assets.keys.user;
   };
 
-  networking.hostName = "nauvis";
+  home-manager.users.stefan = ./home.nix;
 
-  environment.systemPackages = with pkgs; [
-    git
-    inputs.agenix.packages.${system}.default
-  ];
-
-  programs.fish.enable = true;
   programs.nix-ld.enable = true; # For VSCode server on WSL
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    backupFileExtension = "backup";
-    extraSpecialArgs = { inherit inputs; };
-    users.stefan = ./home.nix;
-  };
-
   virtualisation.docker.enable = true;
-
-  nix = {
-    settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-      trusted-users = [
-        "stefan"
-      ];
-    };
-    registry = {
-      nixpkgs.flake = inputs.nixpkgs;
-      # NOTE: This overwrites the default github:NixOS/templates input
-      templates.flake = inputs.templates;
-    };
-    nixPath = [ "nixpkgs=flake:nixpkgs" ];
-  };
 }

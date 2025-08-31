@@ -47,6 +47,7 @@
             home-manager.nixosModules.home-manager
             agenix.nixosModules.default
             ./assets
+            ./hosts/common.nix
             ./hosts/nauvis
           ];
         };
@@ -57,6 +58,7 @@
             home-manager.nixosModules.home-manager
             agenix.nixosModules.default
             ./assets
+            ./hosts/common.nix
             ./hosts/thinkpad
           ];
         };
@@ -68,6 +70,7 @@
             home-manager.darwinModules.home-manager
             agenix.darwinModules.default
             ./assets
+            ./hosts/common.nix
             ./hosts/aquilo
           ];
         };
