@@ -141,21 +141,32 @@ in
         end
         echo "# No venv found"
       '';
-      dix_fzf = ''
-        set nix_profiles_path /nix/var/nix/profiles/
-
-        # TODO: This is a mess, clean it up at some point :^)
-        find $nix_profiles_path -maxdepth 1 -type l \
-          | cut -d '/' -f 6 \
-          | sort -t '-' -k 2 -n -r \
-          | fzf --multi 2 \
-                --prompt "Select 2 systems to compare " \
-                --preview-window=right,80% \
-                --preview "script -qe -c \"cat {+f} | sort -t '-' -k 2 -n | awk '{print \\\"$nix_profiles_path\\\" \\\$1}' | tr \\n ' ' | xargs dix\" /dev/null" \
-            | sort -t '-' -k 2 -n \
-            | awk "{print \"$nix_profiles_path\" \$1}" \
-            | tr \\n ' ' | xargs dix
-      '';
+      dix_fzf =
+        let
+          profilesPath = "/nix/var/nix/profiles/";
+          _previewCommand = "cat {+f} | sort -t '-' -k 2 -n | awk '{print \\\"${profilesPath}\\\" \\\$1}' | tr \\n ' ' | xargs dix";
+          previewCommand =
+            if pkgs.stdenv.hostPlatform.isLinux then
+              "script -eq -c \"${_previewCommand}\" /dev/null"
+            else
+              # TODO: Use `script` on MacOS for colored preview
+              _previewCommand;
+        in
+        ''
+          # TODO: This is a mess, clean it up at some point :^)
+          find ${profilesPath} -maxdepth 1 -type l \
+            | cut -d '/' -f 6 \
+            | sort -t '-' -k 2 -n -r \
+            | fzf --multi 2 \
+                  --prompt "Select 2 systems to compare " \
+                  --preview-window=right,80% \
+                  --preview "${previewCommand}" \
+              # Output of `fzf`
+              | sort -t '-' -k 2 -n \
+              | awk "{print \"${profilesPath}\" \$1}" \
+              | tr \\n ' ' \
+              | xargs dix
+        '';
     };
     interactiveShellInit = ''
       function __ssh_agent_after_start
