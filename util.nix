@@ -1,5 +1,7 @@
 inputs:
 let
+  username = "stefan";
+
   inherit (inputs)
     nixpkgs
     nix-darwin
@@ -22,7 +24,10 @@ in
     { extraModules }:
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
-      specialArgs = { inherit inputs; };
+      specialArgs = {
+        inherit inputs;
+        inherit username;
+      };
       modules = [
         home-manager.nixosModules.home-manager
         agenix.nixosModules.default
@@ -35,7 +40,10 @@ in
     hostname:
     { extraModules }:
     nix-darwin.lib.darwinSystem {
-      specialArgs = { inherit inputs; };
+      specialArgs = {
+        inherit inputs;
+        inherit username;
+      };
       modules = [
         home-manager.darwinModules.home-manager
         agenix.darwinModules.default

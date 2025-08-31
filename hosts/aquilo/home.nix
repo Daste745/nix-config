@@ -2,11 +2,12 @@
   inputs,
   pkgs,
   config,
+  username,
   ...
 }:
 {
   home = {
-    username = "stefan";
+    inherit username;
     stateVersion = "24.11";
   };
 

@@ -1,3 +1,4 @@
+{ username, ... }:
 {
   imports = [
     ../../modules/tailscale.nix
@@ -13,21 +14,21 @@
 
   # TODO)) Disk partitioning with disko + encryption (luks?)
 
-  users.users.stefan = {
+  users.users.${username} = {
     isNormalUser = true;
     extraGroups = [
       "wheel"
       "docker"
     ];
-    home = "/home/stefan";
+    home = "/home/${username}";
   };
 
-  home-manager.users.stefan = ./home.nix;
+  home-manager.users.${username} = ./home.nix;
 
   virtualisation.docker.enable = true;
 
   virtualisation.vmVariant = {
-    users.users.stefan.initialPassword = "test";
+    users.users.${username}.initialPassword = "test";
     # TODO)) Load bootstrap key into the vm
     virtualisation = {
       memorySize = 4096;

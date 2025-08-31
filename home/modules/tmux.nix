@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   programs.tmux = {
     enable = true;
@@ -13,7 +13,7 @@
       {
         plugin = resurrect;
         extraConfig = ''
-          set -g @resurrect-dir '/home/stefan/.cache/tmux/resurrect'
+          set -g @resurrect-dir '/home/${username}/.cache/tmux/resurrect'
           set -g @resurrect-capture-pane-contents 'on'
         '';
       }

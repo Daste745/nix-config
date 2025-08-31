@@ -1,15 +1,16 @@
+{ username, ... }:
 {
   system.stateVersion = 6;
   nixpkgs.hostPlatform = "aarch64-darwin";
 
-  users.users.stefan.home = "/Users/stefan";
+  users.users.${username}.home = "/Users/${username}";
 
-  home-manager.users.stefan = ./home.nix;
+  home-manager.users.${username} = ./home.nix;
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
   system = {
-    primaryUser = "stefan";
+    primaryUser = username;
     startup.chime = false;
     defaults = {
       dock = {

@@ -1,3 +1,4 @@
+{ username, ... }:
 {
   imports = [
     ../../modules/tailscale.nix
@@ -7,19 +8,19 @@
 
   wsl = {
     enable = true;
-    defaultUser = "stefan";
+    defaultUser = username;
   };
 
-  users.users.stefan = {
+  users.users.${username} = {
     isNormalUser = true;
     extraGroups = [
       "wheel"
       "docker"
     ];
-    home = "/home/stefan";
+    home = "/home/${username}";
   };
 
-  home-manager.users.stefan = ./home.nix;
+  home-manager.users.${username} = ./home.nix;
 
   programs.nix-ld.enable = true; # For VSCode server on WSL
 

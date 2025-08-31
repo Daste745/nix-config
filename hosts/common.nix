@@ -3,6 +3,7 @@
   pkgs,
   lib,
   config,
+  username,
   ...
 }:
 let
@@ -21,7 +22,7 @@ in
   programs.fish.enable = true;
   environment.shells = [ pkgs.fish ];
 
-  users.users.stefan = {
+  users.users.${username} = {
     shell = pkgs.fish;
     openssh.authorizedKeys.keys = lib.attrValues assets.keys.user;
   };
@@ -30,7 +31,10 @@ in
     useGlobalPkgs = true;
     useUserPackages = true;
     backupFileExtension = "backup";
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {
+      inherit inputs;
+      inherit username;
+    };
   };
 
   nix = {
@@ -40,7 +44,7 @@ in
         "flakes"
       ];
       trusted-users = [
-        "stefan"
+        username
       ];
     };
     registry = {

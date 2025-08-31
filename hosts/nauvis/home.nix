@@ -1,8 +1,13 @@
-{ inputs, config, ... }:
+{
+  inputs,
+  config,
+  username,
+  ...
+}:
 {
   home = {
-    username = "stefan";
-    homeDirectory = "/home/stefan";
+    inherit username;
+    homeDirectory = "/home/${username}";
     stateVersion = "24.11";
   };
 

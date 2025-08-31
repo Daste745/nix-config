@@ -1,3 +1,4 @@
+{ username, ... }:
 {
   services.openssh = {
     enable = true;
@@ -5,7 +6,7 @@
     extraConfig = ''
       PasswordAuthentication no
       PermitRootLogin no
-      AllowUsers stefan
+      AllowUsers ${username}
     '';
   };
 }
