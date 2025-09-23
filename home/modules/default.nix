@@ -24,7 +24,6 @@
     nixfmt-tree
     nix-output-monitor
     comma
-    dix
   ];
 
   programs.home-manager.enable = true;
@@ -34,6 +33,7 @@
   imports = [
     ./git
     ./zed
+    ./dix.nix
     ./fish.nix
     ./mise.nix
     ./ssh.nix
