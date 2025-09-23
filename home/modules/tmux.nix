@@ -3,6 +3,7 @@
   programs.tmux = {
     enable = true;
     prefix = "C-a";
+    baseIndex = 1;
     mouse = true;
     clock24 = true;
     escapeTime = 0;
