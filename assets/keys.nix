@@ -4,12 +4,12 @@
   user = {
     nauvis = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP2EFXpXri1rQwyhrZbdJ9lHu96NdYZApVjfbdFY4Jca stefan@nauvis";
     aquilo = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGvezkFdF7c5cSDYGiDPCVhq/Qhni+QOS9m/BMdPX82y stefan@aquilo";
-    thinkpad = ""; # TODO)) Add once installed
+    thinkpad = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIWfLuS4gFPKPZWrlgWmDLNDpYdO7MWkZ4ArxE1x2aAI stefan@thinkpad";
   };
 
   system = {
     nauvis = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIA08w+wqyBTZJtK0roQtOuc3Ly8PBIT10SRFGqiuElrP root@nauvis";
     aquilo = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII6H23EDMgHuReZCuvCvH7nI3rpETV/bw2ey5YpgP/FJ";
-    thinkpad = ""; # TODO)) Add once installed
+    thinkpad = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOhS3zJhGA0fTmLEs8//OxglqlswpdrzE1ElNmcTLWI4 root@thinkpad";
   };
 }

@@ -6,5 +6,6 @@ in
     keys.bootstrap
     keys.user.nauvis
     keys.user.aquilo
+    keys.user.thinkpad
   ];
 }
