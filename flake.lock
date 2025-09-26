@@ -172,7 +172,8 @@
         "nix-index-database": "nix-index-database",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",
-        "templates": "templates"
+        "templates": "templates",
+        "zen-browser": "zen-browser"
       }
     },
     "systems": {
@@ -200,6 +201,26 @@
         "type": "path"
       },
       "parent": []
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1758859571,
+        "narHash": "sha256-/DPe2RNgIzTBHm1tLUF31YswssT7Uz+HJI6VIkmHN6w=",
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
+        "rev": "58e5a7b019aa1584ca46e909b011c1f6a91081f0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
+        "type": "github"
+      }
     }
   },
   "root": "root",

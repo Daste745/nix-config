@@ -16,6 +16,7 @@
     maple-mono.truetype
     maple-mono.NF
     zed-editor
+    inputs.zen-browser.packages.${pkgs.system}.default
   ];
 
   imports = [
