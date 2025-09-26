@@ -48,6 +48,9 @@ in
           scroll_factor = 0.6;
         };
       };
+      gestures = {
+        workspace_swipe_min_speed_to_force = 10;
+      };
       misc = {
         middle_click_paste = false;
       };
@@ -118,6 +121,10 @@ in
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
+      ];
+      gesture = [
+        "3, horizontal, workspace"
+        "4, horizontal, workspace"
       ];
     };
   };
