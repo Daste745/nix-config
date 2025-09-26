@@ -8,7 +8,7 @@
     }
   },
   {
-    "context": "VimControl && !menu",
+    "context": "Editor && multibuffer",
     "bindings": {
       "ctrl-shift-j": "editor::ExpandExcerptsDown",
       "ctrl-shift-k": "editor::ExpandExcerptsUp"
@@ -82,9 +82,15 @@
   {
     "context": "Terminal",
     "bindings": {
-      // Close terminal when toggling out of it
-      "ctrl-`": "workspace::ToggleBottomDock",
-      "ctrl-j": null
+      "ctrl-j": null,
+      "ctrl-b": "workspace::ToggleLeftDock"
+    }
+  },
+  {
+    "context": "Dock",
+    "bindings": {
+      "ctrl-shift-j": ["workspace::DecreaseActiveDockSize", { "px": 0 }],
+      "ctrl-shift-k": ["workspace::IncreaseActiveDockSize", { "px": 0 }]
     }
   }
 ]

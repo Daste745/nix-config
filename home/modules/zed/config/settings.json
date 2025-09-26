@@ -9,10 +9,10 @@
 {
   "auto_update": false,
   "ui_font_family": "Maple Mono",
-  "ui_font_fallbacks": ["Zed Plex Mono"],
+  "ui_font_fallbacks": [".ZedMono"],
   "ui_font_size": 14,
   "buffer_font_family": "Maple Mono",
-  "buffer_font_fallbacks": ["Zed Plex Mono"],
+  "buffer_font_fallbacks": [".ZedMono"],
   "buffer_font_size": 14,
   "buffer_font_weight": 300,
   "buffer_line_height": {
@@ -26,7 +26,8 @@
   "icon_theme": "Colored Zed Icons Theme Dark",
   "use_system_path_prompts": false,
   "tab_bar": {
-    "show_nav_history_buttons": false
+    "show_nav_history_buttons": false,
+    "show_tab_bar_buttons": false
   },
   "tabs": {
     "file_icons": true,
@@ -77,6 +78,9 @@
   },
   "vertical_scroll_margin": 5,
   "use_smartcase_search": true,
+  "search": {
+    "button": false
+  },
   "file_scan_exclusions": [
     "**/.git",
     "**/.svn",
@@ -129,7 +133,6 @@
     "html": true,
     "log": true,
     "make": true,
-    "ruff": true,
     "scss": true,
     "sql": true,
     "toml": true,
@@ -139,30 +142,10 @@
   },
   "languages": {
     "Python": {
-      "show_wrap_guides": true,
-      "wrap_guides": [100],
-      "language_servers": ["!pylsp", "..."],
-      // "language_servers": ["!pyright", "..."],
-      "format_on_save": [
-        {
-          "code_actions": {
-            "source.fixAll.ruff": true
-          }
-        },
-        {
-          "external": {
-            "command": ".venv/bin/python",
-            "arguments": ["-m", "isort", "-"]
-          }
-        },
-        {
-          // https://github.com/zed-industries/zed/discussions/6597
-          "external": {
-            "command": ".venv/bin/python",
-            "arguments": ["-m", "black", "-", "--fast"]
-          }
-        }
-      ]
+      "language_servers": ["!pyright", "!pylsp", "basedpyright", "ruff", "..."],
+      "inlay_hints": {
+        "enabled": true
+      }
     },
     "JavaScript": {
       "formatter": {
@@ -206,41 +189,13 @@
     }
   },
   "lsp": {
-    "pyright": {
+    "basedpyright": {
       "settings": {
-        "python": {
-          "pythonPath": ".venv/bin/python"
-        },
-        "python.analysis": {
-          "typeCheckingMode": "standard"
-          // "typeCheckingMode": "standard" // Don't typecheck with pyright (when using pylsp)
-        }
-      }
-    },
-    "pylsp": {
-      "binary": {
-        "path": ".venv/bin/pylsp"
-      },
-      "settings": {
-        "plugins": {
-          "pylsp_mypy": {
-            "enabled": true,
-            "live_mode": true,
-            "dmypy": false,
-            "strict": true,
-            "report_progress": true
-          },
-          // TODO: Black
-          "isort": { "enabled": true },
-          "rope": { "enabled": true },
-          "rope_autoimport": { "enabled": true },
-          "rope_completion": { "enabled": true },
-          "pyflakes": { "enabled": false },
-          "mccabe": { "enabled": false },
-          "pycodestyle": { "enabled": false },
-          "autopep8": { "enabled": false },
-          "pylint": { "enabled": false },
-          "yapf": { "enabled": false }
+        "basedpyright.analysis": {
+          "inlayHints": {
+            "variableTypes": false,
+            "callArgumentNames": false
+          }
         }
       }
     },
