@@ -13,6 +13,8 @@
     efi.canTouchEfiVariables = true;
   };
 
+  networking.networkmanager.enable = true;
+
   users.users.${username} = {
     isNormalUser = true;
     extraGroups = [
