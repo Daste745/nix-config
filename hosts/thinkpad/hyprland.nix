@@ -65,7 +65,7 @@ in
         "$mod, R, exec, $menu"
         "$mod, F, togglefloating"
         ", F11, fullscreen"
-        # TODO)) Lock: "$mod, l, exec, swaylock"
+        "$mod, l, exec, ${getExe pkgs.hyprlock}"
         # TODO)) Suspend: ...
 
         # Window focus - mod + direction
@@ -127,5 +127,9 @@ in
         "4, horizontal, workspace"
       ];
     };
+  };
+
+  programs.hyprlock = {
+    enable = true;
   };
 }
