@@ -14,6 +14,7 @@
   };
 
   networking.networkmanager.enable = true;
+  networking.wireless.enable = true;
 
   users.users.${username} = {
     isNormalUser = true;
