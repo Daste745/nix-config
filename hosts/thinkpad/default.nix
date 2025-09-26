@@ -2,11 +2,13 @@
 {
   imports = [
     ../../modules/tailscale.nix
+    ./hardware.nix
     ./disks.nix
     ./greetd.nix
   ];
 
   system.stateVersion = "25.11";
+  nixpkgs.hostPlatform = "x86_64-linux";
 
   boot.loader = {
     systemd-boot.enable = true;
