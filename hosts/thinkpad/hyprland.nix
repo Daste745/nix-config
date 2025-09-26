@@ -46,6 +46,9 @@ in
           scroll_factor = 0.6;
         };
       };
+      misc = {
+        middle_click_paste = false;
+      };
       bind = [
         "$mod, Q, killactive"
         "$mod, return, exec, $terminal"
