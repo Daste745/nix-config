@@ -15,6 +15,19 @@ in
       "$terminal" = getExe pkgs.ghostty;
       "$fileManager" = getExe pkgs.xfce.thunar;
       "$menu" = "${getExe pkgs.wofi} --show drun";
+      input = {
+        kb_layout = "pl";
+        kb_options = "caps:escape";
+        repeat_delay = 200;
+        repeat_rate = 50;
+        accel_profile = "flat";
+        scroll_method = "2fg"; # 2 fingers
+        follow_mouse = 2;
+        touchpad = {
+          natural_scroll = true;
+          scroll_factor = 0.6;
+        };
+      };
       bind = [
         "$mod, Q, killactive"
         "$mod, return, exec, $terminal"
@@ -31,7 +44,6 @@ in
         "$mod, k, movefocus, u"
         "$mod, l, movefocus, r"
       ];
-      # TODO)) Rest of the config
     };
   };
 }
