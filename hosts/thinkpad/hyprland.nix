@@ -66,8 +66,10 @@ in
         "$mod, R, exec, $menu"
         "$mod, F, togglefloating"
         ", F11, fullscreen"
-        "$mod, l, exec, ${getExe pkgs.hyprlock}"
+        "$mod + SHIFT + CTRL, l, exec, ${getExe pkgs.hyprlock}"
         # TODO)) Suspend: ...
+        ", XF86MonBrightnessUp, exec, ${getExe pkgs.brightnessctl} set 10+"
+        ", XF86MonBrightnessDown, exec, ${getExe pkgs.brightnessctl} set 10-"
 
         # Window focus - mod + direction
         "$mod, left, movefocus, l"
