@@ -11,7 +11,7 @@ in
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      "$mod" = "CTRL_SHIFT";
+      "$mod" = "SUPER";
       "$terminal" = getExe pkgs.ghostty;
       "$fileManager" = getExe pkgs.xfce.thunar;
       "$menu" = "${getExe pkgs.wofi} --show drun";
