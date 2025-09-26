@@ -22,6 +22,8 @@ in
   programs.fish.enable = true;
   environment.shells = [ pkgs.fish ];
 
+  time.timeZone = "Europe/Warsaw";
+
   users.users.${username} = {
     shell = pkgs.fish;
     openssh.authorizedKeys.keys = lib.attrValues assets.keys.user;
