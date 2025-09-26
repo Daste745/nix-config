@@ -15,6 +15,12 @@ in
       "$terminal" = getExe pkgs.ghostty;
       "$fileManager" = getExe pkgs.xfce.thunar;
       "$menu" = "${getExe pkgs.wofi} --show drun";
+      general = {
+        border_size = 1;
+        gaps_in = 0;
+        gaps_out = 0;
+        resize_on_border = true;
+      };
       input = {
         kb_layout = "pl";
         kb_options = "caps:escape";
