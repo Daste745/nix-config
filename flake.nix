@@ -25,6 +25,10 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko = {
+      url = "github:nix-community/disko/latest";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     templates.url = "./templates";
   };
 
@@ -44,7 +48,9 @@
           ];
         };
         thinkpad = util.mkNixosConfiguration "thinkpad" {
-          extraModules = [ ];
+          extraModules = [
+            inputs.disko.nixosModules.disko
+          ];
         };
       };
       darwinConfigurations = {
