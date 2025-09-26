@@ -28,6 +28,8 @@
 
   home-manager.users.${username} = ./home.nix;
 
+  programs.nix-ld.enable = true;
+
   virtualisation.docker.enable = true;
 
   virtualisation.vmVariant = {
