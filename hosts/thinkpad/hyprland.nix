@@ -161,4 +161,8 @@ in
       ];
     };
   };
+
+  programs.waybar = {
+    enable = true;
+  };
 }
