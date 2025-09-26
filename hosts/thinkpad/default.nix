@@ -2,6 +2,7 @@
 {
   imports = [
     ../../modules/tailscale.nix
+    ./disks.nix
     ./greetd.nix
   ];
 
@@ -11,8 +12,6 @@
     systemd-boot.enable = true;
     efi.canTouchEfiVariables = true;
   };
-
-  # TODO)) Disk partitioning with disko + encryption (luks?)
 
   users.users.${username} = {
     isNormalUser = true;
