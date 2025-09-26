@@ -21,6 +21,18 @@ in
         gaps_out = 0;
         resize_on_border = true;
       };
+      animations = {
+        bezier = [
+          "easeOut, 0.1, 1, 0.1, 1"
+        ];
+        animation = [
+          "windows, 1, 2, easeOut, popin 60%"
+          "border, 1, 10, default"
+          "fade, 1, 2.5, easeOut"
+          "workspaces, 1, 3.5, easeOut, slide"
+          "specialWorkspace, 1, 3, easeOut, slidevert"
+        ];
+      };
       input = {
         kb_layout = "pl";
         kb_options = "caps:escape";
