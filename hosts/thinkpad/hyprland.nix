@@ -8,6 +8,7 @@ in
     xfce.thunar
     wofi
     wlogout
+    blueman
   ];
 
   wayland.windowManager.hyprland = {
@@ -25,6 +26,9 @@ in
         gaps_out = 0;
         resize_on_border = true;
       };
+      exec-once = [
+        "${pkgs.blueman}/bin/blueman-applet"
+      ];
       animations = {
         bezier = [
           "easeOut, 0.1, 1, 0.1, 1"
