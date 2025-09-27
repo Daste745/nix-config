@@ -7,6 +7,7 @@ in
     brightnessctl
     xfce.thunar
     wofi
+    wlogout
   ];
 
   wayland.windowManager.hyprland = {
@@ -164,5 +165,26 @@ in
 
   programs.waybar = {
     enable = true;
+    settings.mainBar = {
+      layer = "top";
+      modules-left = [ "hyprland/workspaces" ];
+      modules-center = [ "hyprland/window" ];
+      modules-right = [
+        "tray"
+        "pulseaudio"
+        "network"
+        "backlight"
+        "battery"
+        "cpu"
+        "memory"
+        "clock"
+        "custom/power"
+      ];
+      "custom/power" = {
+        format = " ⏻ ";
+        tooltip = false;
+        on-click = "wlogout --protocol layer-shell";
+      };
+    };
   };
 }
