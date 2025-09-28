@@ -21,7 +21,6 @@ in
       "$modShift" = "SUPER + SHIFT";
       "$terminal" = getExe pkgs.ghostty;
       "$fileManager" = getExe pkgs.xfce.thunar;
-      "$menu" = "${getExe pkgs.wofi} --show drun";
       exec-once = [
         "${pkgs.blueman}/bin/blueman-applet"
       ];
@@ -65,13 +64,22 @@ in
       dwindle = {
         pseudotile = true;
       };
+      windowrule = [
+        # TODO)) "float, class:^(blueman-manager)$"
+        # TODO)) Nextcloud
+        # TODO)) Bitwarden in firefox
+        # TODO)) Screen sharing picker portal
+        "keepaspectratio, class:^(firefox)$, title:^(Picture-in-Picture)$"
+        "noborder, class:^(firefox)$, title:^(Picture-in-Picture)$"
+        "float, title:^(Picture-in-Picture)$"
+      ];
       bind = [
         # Misc.
         "$mod, Q, killactive"
         "$mod, return, exec, $terminal"
         "$mod, E, exec, $fileManager"
-        "$mod, R, exec, $menu"
-        "ALT, space, exec, $menu"
+        "$mod, R, exec, pkill wofi || wofi --show drun"
+        "ALT, space, exec, pkill wofi || wofi --show drun"
         "$mod, F, togglefloating"
         ", F11, fullscreen"
         "$mod + SHIFT + CTRL, l, exec, ${getExe pkgs.hyprlock}"
