@@ -71,6 +71,7 @@ in
         "$mod, return, exec, $terminal"
         "$mod, E, exec, $fileManager"
         "$mod, R, exec, $menu"
+        "ALT, space, exec, $menu"
         "$mod, F, togglefloating"
         ", F11, fullscreen"
         "$mod + SHIFT + CTRL, l, exec, ${getExe pkgs.hyprlock}"

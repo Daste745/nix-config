@@ -28,7 +28,7 @@
     home = "/home/${username}";
   };
 
-  home-manager.users.${username} = ./home.nix;
+  home-manager.users.${username} = ./home;
 
   programs.nix-ld.enable = true;
 

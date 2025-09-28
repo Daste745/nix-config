@@ -23,8 +23,8 @@
   imports = [
     inputs.agenix.homeManagerModules.default
     inputs.nix-index-database.homeModules.nix-index
-    ../../assets
-    ../../home
+    ../../../assets
+    ../../../home
     ./hyprland.nix
   ];
 
