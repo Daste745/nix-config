@@ -17,6 +17,7 @@
     maple-mono.NF
     zed-editor
     inputs.zen-browser.packages.${pkgs.system}.default
+    trayscale
   ];
 
   imports = [
