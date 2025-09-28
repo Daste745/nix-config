@@ -17,6 +17,12 @@
     maple-mono.NF
     zed-editor
     inputs.zen-browser.packages.${pkgs.system}.default
+    slack
+    thunderbird
+    bruno
+    obsidian
+    feishin
+    nextcloud-client
     trayscale
   ];
 
