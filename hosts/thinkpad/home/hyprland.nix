@@ -4,6 +4,7 @@ let
 in
 {
   home.packages = with pkgs; [
+    rose-pine-hyprcursor
     brightnessctl
     xfce.thunar
     wofi
@@ -23,6 +24,10 @@ in
       "$fileManager" = getExe pkgs.xfce.thunar;
       exec-once = [
         "${pkgs.blueman}/bin/blueman-applet"
+      ];
+      env = [
+        "HYPRCURSOR_THEME, rose-pine-hyprcursor"
+        "HYPRCURSOR_SIZE, 24"
       ];
       general = {
         border_size = 1;
