@@ -9,6 +9,8 @@ in
     wofi
     wlogout
     blueman
+    grim
+    slurp
   ];
 
   wayland.windowManager.hyprland = {

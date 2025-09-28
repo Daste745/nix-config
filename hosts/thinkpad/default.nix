@@ -5,6 +5,7 @@
     ./hardware.nix
     ./disks.nix
     ./greetd.nix
+    ./xdg.nix
   ];
 
   system.stateVersion = "25.11";
