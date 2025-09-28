@@ -10,6 +10,7 @@ in
     wofi
     wlogout
     blueman
+    networkmanagerapplet
     grim
     slurp
   ];
@@ -24,6 +25,7 @@ in
       "$fileManager" = getExe pkgs.xfce.thunar;
       exec-once = [
         "${pkgs.blueman}/bin/blueman-applet"
+        "${pkgs.networkmanagerapplet}/bin/nm-applet"
       ];
       env = [
         "HYPRCURSOR_THEME, rose-pine-hyprcursor"
