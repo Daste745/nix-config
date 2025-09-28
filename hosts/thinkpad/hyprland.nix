@@ -20,15 +20,15 @@ in
       "$terminal" = getExe pkgs.ghostty;
       "$fileManager" = getExe pkgs.xfce.thunar;
       "$menu" = "${getExe pkgs.wofi} --show drun";
+      exec-once = [
+        "${pkgs.blueman}/bin/blueman-applet"
+      ];
       general = {
         border_size = 1;
         gaps_in = 0;
         gaps_out = 0;
         resize_on_border = true;
       };
-      exec-once = [
-        "${pkgs.blueman}/bin/blueman-applet"
-      ];
       animations = {
         bezier = [
           "easeOut, 0.1, 1, 0.1, 1"
@@ -73,6 +73,12 @@ in
         ", F11, fullscreen"
         "$mod + SHIFT + CTRL, l, exec, ${getExe pkgs.hyprlock}"
         # TODO)) Suspend: ...
+
+        # Media keys
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
         ", XF86MonBrightnessUp, exec, ${getExe pkgs.brightnessctl} set 10+"
         ", XF86MonBrightnessDown, exec, ${getExe pkgs.brightnessctl} set 10-"
 
