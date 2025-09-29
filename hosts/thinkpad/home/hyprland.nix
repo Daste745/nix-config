@@ -14,7 +14,10 @@ in
     grim
     slurp
     hyprshot
+    gcr
   ];
+
+  services.gnome-keyring.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;
