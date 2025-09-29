@@ -13,6 +13,7 @@ in
     networkmanagerapplet
     grim
     slurp
+    hyprshot
   ];
 
   wayland.windowManager.hyprland = {
@@ -95,6 +96,7 @@ in
         "$mod, F, togglefloating"
         ", F11, fullscreen"
         "$mod + SHIFT + CTRL, l, exec, ${getExe pkgs.hyprlock}"
+        "$modShift, s, exec, ${getExe pkgs.hyprshot} -m region --clipboard-only"
         # TODO)) Suspend: ...
 
         # Media keys
