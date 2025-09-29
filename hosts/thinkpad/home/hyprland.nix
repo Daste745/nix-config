@@ -33,6 +33,8 @@ in
       ];
       monitor = [
         "eDP-1, 1920x1080@60, 0x0, 1"
+        "desc:Ancor Communications Inc BE24A J9LMQS111509, 1920x1200@60, 1920x0, 1"
+        "desc:Ancor Communications Inc BE24A K3LMQS042715, 1920x1200@60, 3840x-400, 1, transform, 3"
       ];
       general = {
         border_size = 1;
