@@ -25,6 +25,7 @@
     spotify
     nextcloud-client
     trayscale
+    jetbrains.datagrip
   ];
 
   imports = [
