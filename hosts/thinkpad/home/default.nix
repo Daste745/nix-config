@@ -22,6 +22,7 @@
     bruno
     obsidian
     feishin
+    spotify
     nextcloud-client
     trayscale
   ];
