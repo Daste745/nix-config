@@ -72,6 +72,7 @@ in
         workspace_swipe_min_speed_to_force = 10;
       };
       misc = {
+        disable_hyprland_logo = true;
         middle_click_paste = false;
       };
       dwindle = {
