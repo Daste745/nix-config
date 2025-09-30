@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 let
   inherit (lib) getExe;
 in
@@ -21,6 +26,8 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
     settings = {
       "$mod" = "SUPER";
       "$modCtrl" = "SUPER + CTRL";

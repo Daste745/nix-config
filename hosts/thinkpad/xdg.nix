@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   xdg.terminal-exec = {
     enable = true;
@@ -26,7 +26,7 @@
     };
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
+      inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland
     ];
   };
 }
