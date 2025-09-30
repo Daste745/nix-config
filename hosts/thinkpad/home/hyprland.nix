@@ -255,8 +255,13 @@ in
           default = "";
           empty = "•";
         };
-        # TODO)) https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#window-rewrite-rules
-        all-outputs = false;
+        show-special = true;
+        special-visible-only = true;
+      };
+      "hyprland/window" = {
+        separate-outputs = true;
+        icon = true;
+        icon-size = 16;
       };
     };
   };
