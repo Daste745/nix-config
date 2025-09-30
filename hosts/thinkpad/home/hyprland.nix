@@ -28,6 +28,9 @@ in
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+    plugins = [
+      inputs.hyprland-split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
+    ];
     settings = {
       "$mod" = "SUPER";
       "$modCtrl" = "SUPER + CTRL";
@@ -139,36 +142,32 @@ in
         "$modCtrl, j, movewindow, d"
 
         # Workspace focus - mod + number/direction
-        "$mod, 1, workspace, 1"
-        "$mod, 2, workspace, 2"
-        "$mod, 3, workspace, 3"
-        "$mod, 4, workspace, 4"
-        "$mod, 5, workspace, 5"
-        "$mod, 6, workspace, 6"
-        "$mod, 7, workspace, 7"
-        "$mod, 8, workspace, 8"
-        "$mod, 9, workspace, 9"
-        "$mod, 0, workspace, 10"
-        "$mod, left, workspace, -1"
-        "$mod, right, workspace, +1"
+        "$mod, 1, split-workspace, 1"
+        "$mod, 2, split-workspace, 2"
+        "$mod, 3, split-workspace, 3"
+        "$mod, 4, split-workspace, 4"
+        "$mod, 5, split-workspace, 5"
+        "$mod, 6, split-workspace, 6"
+        "$mod, 7, split-workspace, 7"
+        "$mod, 8, split-workspace, 8"
+        "$mod, 9, split-workspace, 9"
+        "$mod, 0, split-workspace, 10"
         "$mod, c, togglespecialworkspace, special"
 
         # Window moving between workspaces - mod + shift + number/direction
-        "$modShift, 1, movetoworkspace, 1"
-        "$modShift, 2, movetoworkspace, 2"
-        "$modShift, 3, movetoworkspace, 3"
-        "$modShift, 4, movetoworkspace, 4"
-        "$modShift, 5, movetoworkspace, 5"
-        "$modShift, 6, movetoworkspace, 6"
-        "$modShift, 7, movetoworkspace, 7"
-        "$modShift, 8, movetoworkspace, 8"
-        "$modShift, 9, movetoworkspace, 9"
-        "$modShift, 0, movetoworkspace, 10"
-        "$modShift, left, movetoworkspace, -1"
-        "$modShift, right, movetoworkspace, +1"
-        "$modShift, h, movetoworkspace, -1"
-        "$modShift, l, movetoworkspace, +1"
-        "$modShift, c, movetoworkspace, special"
+        "$modShift, 1, split-movetoworkspace, 1"
+        "$modShift, 2, split-movetoworkspace, 2"
+        "$modShift, 3, split-movetoworkspace, 3"
+        "$modShift, 4, split-movetoworkspace, 4"
+        "$modShift, 5, split-movetoworkspace, 5"
+        "$modShift, 6, split-movetoworkspace, 6"
+        "$modShift, 7, split-movetoworkspace, 7"
+        "$modShift, 8, split-movetoworkspace, 8"
+        "$modShift, 9, split-movetoworkspace, 9"
+        "$modShift, 0, split-movetoworkspace, 10"
+        "$modShift, h, split-movetoworkspace, -1"
+        "$modShift, l, split-movetoworkspace, +1"
+        "$modShift, c, split-movetoworkspace, special"
       ];
       bindm = [
         "$mod, mouse:272, movewindow"
@@ -179,6 +178,12 @@ in
         "4, horizontal, workspace"
         "3, vertical, special, special"
       ];
+      plugin = {
+        split-monitor-workspaces = {
+          count = 10;
+          keep_focused = true;
+        };
+      };
     };
   };
 
@@ -234,6 +239,18 @@ in
         format = " ⏻ ";
         tooltip = false;
         on-click = "wlogout --protocol layer-shell";
+      };
+      "hyprland/workspaces" = {
+        format = "{icon}";
+        format-icons = {
+          urgent = "";
+          active = "";
+          visible = "";
+          default = "";
+          empty = "•";
+        };
+        # TODO)) https://github.com/Alexays/Waybar/wiki/Module:-Hyprland#window-rewrite-rules
+        all-outputs = false;
       };
     };
   };
