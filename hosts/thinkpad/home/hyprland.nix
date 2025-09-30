@@ -169,7 +169,7 @@ in
         "$modShift, 0, split-movetoworkspace, 10"
         "$modShift, h, split-movetoworkspace, -1"
         "$modShift, l, split-movetoworkspace, +1"
-        "$modShift, c, split-movetoworkspace, special"
+        "$modShift, c, movetoworkspace, special"
       ];
       bindm = [
         "$mod, mouse:272, movewindow"
