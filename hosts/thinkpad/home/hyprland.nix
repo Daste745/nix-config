@@ -144,6 +144,7 @@ in
         "$mod, 0, workspace, 10"
         "$mod, left, workspace, -1"
         "$mod, right, workspace, +1"
+        "$mod, c, togglespecialworkspace, special"
 
         # Window moving between workspaces - mod + shift + number/direction
         "$modShift, 1, movetoworkspace, 1"
@@ -160,6 +161,7 @@ in
         "$modShift, right, movetoworkspace, +1"
         "$modShift, h, movetoworkspace, -1"
         "$modShift, l, movetoworkspace, +1"
+        "$modShift, c, movetoworkspace, special"
       ];
       bindm = [
         "$mod, mouse:272, movewindow"
@@ -168,6 +170,7 @@ in
       gesture = [
         "3, horizontal, workspace"
         "4, horizontal, workspace"
+        "3, vertical, special, special"
       ];
     };
   };
