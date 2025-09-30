@@ -34,7 +34,7 @@
     ../../../assets
     ../../../home
     ./hyprland.nix
-    ./hyprshell.nix
+    # ./hyprshell.nix
   ];
 
   graphical.enable = true;
