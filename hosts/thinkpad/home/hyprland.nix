@@ -11,6 +11,7 @@ in
   home.packages = with pkgs; [
     rose-pine-hyprcursor
     brightnessctl
+    playerctl
     xfce.thunar
     wofi
     wlogout
@@ -120,6 +121,9 @@ in
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
         ", XF86MonBrightnessUp, exec, ${getExe pkgs.brightnessctl} set 10+"
         ", XF86MonBrightnessDown, exec, ${getExe pkgs.brightnessctl} set 10-"
+        ", XF86AudioPlay, exec, ${getExe pkgs.playerctl} play-pause"
+        ", XF86AudioNext, exec, ${getExe pkgs.playerctl} next"
+        ", XF86AudioPrev, exec, ${getExe pkgs.playerctl} previous"
 
         # Window focus - mod + direction
         "$mod, left, movefocus, l"
