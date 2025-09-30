@@ -152,6 +152,8 @@ in
         "$mod, 8, split-workspace, 8"
         "$mod, 9, split-workspace, 9"
         "$mod, 0, split-workspace, 10"
+        "$mod + ALT, h, split-workspace, -1"
+        "$mod + ALT, l, split-workspace, +1"
         "$mod, c, togglespecialworkspace, special"
 
         # Window moving between workspaces - mod + shift + number/direction
