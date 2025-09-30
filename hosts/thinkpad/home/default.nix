@@ -26,6 +26,7 @@
     nextcloud-client
     trayscale
     jetbrains.datagrip
+    libreoffice
   ];
 
   imports = [
