@@ -9,6 +9,7 @@
     curl
     httpie
     htop
+    mosh
     fastfetch
     dust
     fzf
