@@ -37,7 +37,7 @@ in
       # Nix
       nrs = nrsAbbr;
       ns = {
-        expansion = "nom shell nixpkgs#%";
+        expansion = "pix shell nixpkgs#%";
         setCursor = "%";
       };
 
