@@ -38,6 +38,10 @@
       url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland";
     };
+    pinix = {
+      url = "github:remi-dupre/pinix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     templates.url = "./templates";
   };
 

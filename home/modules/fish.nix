@@ -1,10 +1,11 @@
 { pkgs, ... }:
 let
+  configDir = "~/.nix-config";
   nrsAbbr =
     if pkgs.stdenv.hostPlatform.isLinux then
-      "sudo nixos-rebuild switch --flake ~/.nix-config &| nom"
+      "sudo pixos-rebuild switch --flake ${configDir}"
     else
-      "sudo darwin-rebuild switch --flake ~/.nix-config &| nom";
+      "sudo pix --pix-command darwin-rebuild switch --flake ${configDir}";
 in
 {
   home.shell.enableFishIntegration = true;
