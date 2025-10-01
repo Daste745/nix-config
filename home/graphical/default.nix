@@ -7,5 +7,6 @@
   imports = [
     ./alacritty.nix
     ./ghostty.nix
+    ./ideavim.nix
   ];
 }
