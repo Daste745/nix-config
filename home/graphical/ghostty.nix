@@ -20,6 +20,7 @@
       font-size = "12";
       quit-after-last-window-closed = true;
       macos-titlebar-proxy-icon = "hidden";
+      app-notifications = "no-clipboard-copy";
     };
   };
 }
