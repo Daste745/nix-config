@@ -5,7 +5,7 @@ let
     if pkgs.stdenv.hostPlatform.isLinux then
       "sudo pixos-rebuild switch --flake ${configDir}"
     else
-      "sudo pinix --pix-command darwin-rebuild switch --flake ${configDir}";
+      "sudo darwin-rebuild switch --flake ${configDir} &| nom";
 in
 {
   home.shell.enableFishIntegration = true;
