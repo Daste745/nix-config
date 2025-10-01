@@ -27,6 +27,8 @@
     trayscale
     jetbrains.datagrip
     libreoffice
+    vlc
+    obs-studio
   ];
 
   imports = [
