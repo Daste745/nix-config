@@ -130,11 +130,7 @@ in
 
         # Media keys
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && show-volume"
-        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && show-volume"
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && show-volume"
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-        ", XF86MonBrightnessUp, exec, ${getExe pkgs.brightnessctl} set 10+"
-        ", XF86MonBrightnessDown, exec, ${getExe pkgs.brightnessctl} set 10-"
         ", XF86AudioPlay, exec, ${getExe pkgs.playerctl} play-pause"
         ", XF86AudioNext, exec, ${getExe pkgs.playerctl} next"
         ", XF86AudioPrev, exec, ${getExe pkgs.playerctl} previous"
@@ -192,6 +188,12 @@ in
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
+      ];
+      binde = [
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && show-volume"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && show-volume"
+        ", XF86MonBrightnessUp, exec, ${getExe pkgs.brightnessctl} set 10+"
+        ", XF86MonBrightnessDown, exec, ${getExe pkgs.brightnessctl} set 10-"
       ];
       bindl = [
         # TODO)) Switch off internal display when it's the only one active,
