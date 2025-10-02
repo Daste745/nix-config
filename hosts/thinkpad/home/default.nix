@@ -37,6 +37,7 @@
     ../../../assets
     ../../../home
     ./hyprland.nix
+    ./hyprpaper.nix
     # ./hyprshell.nix
     ./waybar.nix
   ];

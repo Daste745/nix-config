@@ -41,6 +41,7 @@ in
       exec-once = [
         "${pkgs.blueman}/bin/blueman-applet"
         "${pkgs.networkmanagerapplet}/bin/nm-applet"
+        "restore-wallpaper"
       ];
       env = [
         "HYPRCURSOR_THEME, rose-pine-hyprcursor"
