@@ -2,17 +2,18 @@
 # - https://github.com/eterniter06/volnoti
 # - https://github.com/FrndlyFox/volnoti
 
-{ pkgs, lib, ... }: pkgs.stdenv.mkDerivation {
+{ pkgs, lib, ... }:
+pkgs.stdenv.mkDerivation {
   pname = "volnoti";
   version = "2013-09-23";
-  
+
   src = pkgs.fetchFromGitHub {
     owner = "davidbrazdil";
     repo = "volnoti";
     rev = "4af7c8e54ecc499097121909f02ecb42a8a60d24";
     sha256 = "155lb7w563dkdkdn4752hl0zjhgnq3j4cvs9z98nb25k1xpmpki7";
   };
-  
+
   patches = [
     # Fix dbus interface headers. See
     # https://github.com/davidbrazdil/volnoti/pull/10
@@ -21,13 +22,13 @@
       sha256 = "046zfdjmvhb7jrsgh04vfgi35sgy1zkrhd3bzdby3nvds1wslfam";
     })
   ];
-  
+
   nativeBuildInputs = with pkgs; [
     pkg-config
     autoreconfHook
     wrapGAppsHook3
   ];
-  
+
   buildInputs = with pkgs; [
     dbus
     gdk-pixbuf
@@ -37,7 +38,7 @@
     dbus-glib
     librsvg
   ];
-  
+
   meta = with lib; {
     description = "Lightweight volume notification for Linux";
     homepage = "https://github.com/davidbrazdil/volnoti";
