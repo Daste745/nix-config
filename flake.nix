@@ -51,7 +51,13 @@
       ...
     }:
     let
-      util = import ./util.nix inputs;
+      packages = import ./pkgs inputs;
+      util = import ./util.nix (
+        inputs
+        // {
+          inherit packages;
+        }
+      );
     in
     rec {
       nixosConfigurations = {
@@ -79,5 +85,7 @@
           program = "${nixosConfigurations.thinkpad.config.system.build.vm}/bin/run-thinkpad-vm";
         };
       };
+
+      inherit packages;
     };
 }
