@@ -21,6 +21,17 @@ in
     slurp
     hyprshot
     gcr
+    inputs.packages.${pkgs.system}.volnoti
+    (pkgs.writeShellScriptBin "show-volume" ''
+      VOLUME=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d ' ' -f 2)
+      PERCENT=$(echo "scale=2; $VOLUME * 100" | ${getExe pkgs.bc})
+      MUTED=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d ' ' -f 3)
+      if [ "$MUTED" = "[MUTED]" ]; then
+        volnoti-show -m "$PERCENT"
+      else
+        volnoti-show "$PERCENT"
+      fi
+    '')
   ];
 
   services.gnome-keyring.enable = true;
@@ -118,9 +129,9 @@ in
         # TODO)) Suspend: ...
 
         # Media keys
-        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && show-volume"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && show-volume"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && show-volume"
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
         ", XF86MonBrightnessUp, exec, ${getExe pkgs.brightnessctl} set 10+"
         ", XF86MonBrightnessDown, exec, ${getExe pkgs.brightnessctl} set 10-"
@@ -231,5 +242,12 @@ in
         }
       ];
     };
+  };
+
+  services.volnoti = {
+    enable = true;
+    package = pkgs.writeShellScriptBin "volnoti-wrapped" ''
+      exec ${inputs.packages.${pkgs.system}.volnoti}/bin/volnoti -t 1 -a 1.0 -r 0 "$@"
+    '';
   };
 }
