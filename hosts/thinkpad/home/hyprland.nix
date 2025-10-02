@@ -181,6 +181,13 @@ in
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
       ];
+      bindl = [
+        # TODO)) Switch off internal display when it's the only one active,
+        #        but disable it entirely when there are external displays.
+        #        This would mimic how DEs handle closing the lid when plugged into a display.
+        ", switch:on:Lid Switch, exec, hyprctl dispatch dpms off eDP-1"
+        ", switch:off:Lid Switch, exec, hyprctl dispatch dpms on eDP-1"
+      ];
       gesture = [
         "3, horizontal, workspace"
         "4, horizontal, workspace"
