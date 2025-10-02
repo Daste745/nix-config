@@ -38,6 +38,7 @@
     ../../../home
     ./hyprland.nix
     # ./hyprshell.nix
+    ./waybar.nix
   ];
 
   graphical.enable = true;
