@@ -11,6 +11,7 @@ let
 in
 {
   imports = [
+    ../modules/mosh.nix
     ../modules/ssh.nix
   ];
 
