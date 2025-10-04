@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 let
   inherit (config.xdg) stateHome;
 in
@@ -6,6 +6,7 @@ in
   programs.vim = {
     enable = true;
     defaultEditor = true;
+    packageConfigurable = if pkgs.stdenv.hostPlatform.isDarwin then pkgs.vim-darwin else pkgs.vim-full;
     extraConfig = ''
       " Disable compatibility with vi
       set nocompatible
@@ -20,6 +21,8 @@ in
       set ai
       " Smart indent
       set si
+      " Use system clipboard
+      set clipboard^=unnamed
 
       " Highlight matching brackets
       " set showmatch
