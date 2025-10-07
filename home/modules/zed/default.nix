@@ -15,6 +15,8 @@ in
 
   config =
     let
+      # `pkgs.zed-editor` only emits the `zeditor` binary, but we also want an `zed`
+      zeditorAlias = pkgs.writeShellScriptBin "zed" (lib.getExe pkgs.zed-editor);
       wslCompatScript = pkgs.writeShellScriptBin "zed" ''
         set -euo pipefail
 
@@ -33,9 +35,15 @@ in
       '';
     in
     {
-      home.packages = lib.optionals cfg.wslCompatScript.enable [
-        wslCompatScript
-      ];
+      home.packages =
+        (lib.optionals (pkgs.stdenv.hostPlatform.isLinux && !cfg.wslCompatScript.enable) [
+          pkgs.zed-editor
+          zeditorAlias
+        ])
+        ++ (lib.optionals cfg.wslCompatScript.enable [
+          wslCompatScript
+        ]);
+
       xdg.configFile = {
         # FIXME)) ~/.nix-config shouldn't be hardcoded
         # FIXME)) config.home.homeDirectory is not always there

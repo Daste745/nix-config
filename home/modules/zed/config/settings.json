@@ -111,7 +111,7 @@
   "terminal": {
     "line_height": "standard",
     "env": {
-      "GIT_EDITOR": "zeditor --wait"
+      "GIT_EDITOR": "zed --wait"
     },
     "detect_venv": {
       "on": {
