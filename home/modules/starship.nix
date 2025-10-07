@@ -27,7 +27,10 @@
         loaded_msg = "✅";
         unloaded_msg = "❌";
       };
-      nix_shell.symbol = "❄️ "; # Default has 2 spaces after the symbol
+      nix_shell = {
+        format = "via [$symbol $name]($style) ";
+        symbol = "❄️"; # Default has 2 spaces after the symbol
+      };
     };
   };
 }
