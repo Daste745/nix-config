@@ -1,8 +1,10 @@
-{ lib, pkgs, ... }:
+{
+  lib,
+  pkgs,
+  isLinux,
+  ...
+}:
 {
   environment.systemPackages = [ pkgs.mosh ];
-
-  programs = lib.optionalAttrs pkgs.stdenv.hostPlatform.isLinux {
-    mosh.enable = true;
-  };
+  programs = lib.optionalAttrs isLinux { mosh.enable = true; };
 }

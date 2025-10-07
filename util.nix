@@ -27,6 +27,7 @@ in
       specialArgs = {
         inherit inputs;
         inherit username;
+        isLinux = true;
       };
       modules = [
         home-manager.nixosModules.home-manager
@@ -43,6 +44,7 @@ in
       specialArgs = {
         inherit inputs;
         inherit username;
+        isLinux = false;
       };
       modules = [
         home-manager.darwinModules.home-manager
