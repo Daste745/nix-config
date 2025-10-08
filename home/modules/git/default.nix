@@ -27,11 +27,6 @@ in
       enable = true;
       userName = "Daste";
       userEmail = "stefankar1000@gmail.com";
-      difftastic = {
-        enable = true;
-        display = "inline";
-        background = "dark";
-      };
       includes = [
         { path = "~/.user.gitconfig"; }
         { path = "${configHome}/git/user-config"; }
