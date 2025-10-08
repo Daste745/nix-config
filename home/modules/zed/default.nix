@@ -16,7 +16,7 @@ in
   config =
     let
       # `pkgs.zed-editor` only emits the `zeditor` binary, but we also want an `zed`
-      zeditorAlias = pkgs.writeShellScriptBin "zed" (lib.getExe pkgs.zed-editor);
+      zeditorAlias = pkgs.writeShellScriptBin "zed" "${lib.getExe pkgs.zed-editor} $@";
       wslCompatScript = pkgs.writeShellScriptBin "zed" ''
         set -euo pipefail
 
