@@ -11,7 +11,13 @@ let
   setWallpaper = pkgs.writeShellApplication {
     name = "set-wallpaper";
     text = ''
-      yazi --chooser-file ${selectedWallpaper} ${config.home.homeDirectory}
+      if [ -f ${currentWallpaper} ]; then
+        # Start yazi pointing at the selected wallpaper
+        SELECTOR_START="$(cat ${currentWallpaper})"
+      else
+        SELECTOR_START="${config.home.homeDirectory}"
+      fi
+      yazi --chooser-file ${selectedWallpaper} "$SELECTOR_START"
       # TODO)) Check if selected file is an image
       head -n 1 ${selectedWallpaper} > ${currentWallpaper}
       hyprctl hyprpaper reload ,"$(cat ${currentWallpaper})"
