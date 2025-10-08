@@ -15,8 +15,6 @@ in
     xfce.thunar
     wofi
     wlogout
-    blueman
-    networkmanagerapplet
     grim
     slurp
     hyprshot
@@ -35,6 +33,8 @@ in
   ];
 
   services.gnome-keyring.enable = true;
+  services.network-manager-applet.enable = true;
+  services.blueman-applet.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -50,8 +50,6 @@ in
       "$terminal" = getExe pkgs.ghostty;
       "$fileManager" = getExe pkgs.xfce.thunar;
       exec-once = [
-        "${pkgs.blueman}/bin/blueman-applet"
-        "${pkgs.networkmanagerapplet}/bin/nm-applet"
         "restore-wallpaper"
       ];
       env = [
