@@ -49,9 +49,7 @@ in
       "$modShift" = "SUPER + SHIFT";
       "$terminal" = getExe pkgs.ghostty;
       "$fileManager" = getExe pkgs.xfce.thunar;
-      exec-once = [
-        "restore-wallpaper"
-      ];
+      exec-once = [ ];
       env = [
         "HYPRCURSOR_THEME, rose-pine-hyprcursor"
         "HYPRCURSOR_SIZE, 24"
