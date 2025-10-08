@@ -13,7 +13,6 @@ in
     brightnessctl
     playerctl
     xfce.thunar
-    wofi
     wlogout
     grim
     slurp
@@ -111,13 +110,16 @@ in
         "noborder, class:^(firefox)$, title:^(Picture-in-Picture)$"
         "float, title:^(Picture-in-Picture)$"
       ];
+      layerrule = [
+        "noanim, namespace:^(wofi)$"
+      ];
       bind = [
         # Misc.
         "$mod, Q, killactive"
         "$mod, return, exec, $terminal"
         "$mod, E, exec, $fileManager"
-        "$mod, R, exec, pkill wofi || wofi --show drun"
-        "ALT, space, exec, pkill wofi || wofi --show drun"
+        "$mod, R, exec, pkill wofi || wofi --show drun --prompt ''"
+        "ALT, space, exec, pkill wofi || wofi --show drun --prompt ''"
         "$mod, F, togglefloating"
         ", F11, fullscreen"
         "$mod + SHIFT + CTRL, l, exec, ${getExe pkgs.hyprlock}"
@@ -214,6 +216,28 @@ in
 
   programs.hyprlock = {
     enable = true;
+  };
+
+  programs.wofi = {
+    enable = true;
+    settings = {
+      allow_images = true;
+      allow_markup = true;
+      width = 500;
+      lines = 10;
+      no_actions = true;
+      gtk_dark = true;
+      key_up = "Up,Ctrl-k";
+      key_down = "Down,Ctrl-j";
+    };
+    style = ''
+      * {
+        font-family: "Maple Mono", "Monospace";
+      }
+      #img {
+        margin-right: 10px;
+      }
+    '';
   };
 
   services.hypridle = {
