@@ -84,7 +84,7 @@ in
         kb_layout = "pl";
         kb_options = "caps:escape";
         repeat_delay = 150;
-        repeat_rate = 70;
+        repeat_rate = 60;
         accel_profile = "flat";
         scroll_method = "2fg"; # 2 fingers
         follow_mouse = 2;
