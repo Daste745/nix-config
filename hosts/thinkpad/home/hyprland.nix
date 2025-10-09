@@ -18,6 +18,8 @@ in
     slurp
     hyprshot
     gcr
+    networkmanagerapplet
+    blueman
     inputs.packages.${pkgs.system}.volnoti
     (pkgs.writeShellScriptBin "show-volume" ''
       VOLUME=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d ' ' -f 2)
