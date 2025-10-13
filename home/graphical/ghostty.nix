@@ -21,6 +21,7 @@
       quit-after-last-window-closed = true;
       macos-titlebar-proxy-icon = "hidden";
       app-notifications = "no-clipboard-copy";
+      shell-integration-features = "cursor,no-sudo,title,ssh-env,ssh-terminfo";
     };
   };
 }
