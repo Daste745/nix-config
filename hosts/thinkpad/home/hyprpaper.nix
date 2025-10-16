@@ -48,17 +48,20 @@ in
 
   systemd.user.services.restore-wallpaper = {
     Install = {
-      WantedBy = [ "graphical-session.target" ];
+      WantedBy = [ "hyprpaper.service" ];
     };
 
     Unit = {
-      Description = "restore wallpaper";
       After = [ "hyprpaper.service" ];
-      Requires = [ "hyprpaper.service" ];
+      Description = "Restore previously selected wallpaper";
     };
 
     Service = {
-      ExecStart = lib.getExe restoreWallpaper;
+      ExecStart = lib.getExe (
+        pkgs.writeShellScriptBin "restore-wallpaper-delayed" ''
+          sleep 5s && ${lib.getExe restoreWallpaper}
+        ''
+      );
       Type = "oneshot";
     };
   };
