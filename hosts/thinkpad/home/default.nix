@@ -35,10 +35,13 @@
     inputs.nix-index-database.homeModules.nix-index
     ../../../assets
     ../../../home
+    ./hypridle.nix
     ./hyprland.nix
+    ./hyprlock.nix
     ./hyprpaper.nix
     # ./hyprshell.nix
     ./waybar.nix
+    ./wofi.nix
   ];
 
   graphical.enable = true;
