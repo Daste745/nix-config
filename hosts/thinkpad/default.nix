@@ -37,6 +37,15 @@
     nerd-fonts.symbols-only
   ];
 
+  i18n.extraLocales = [ "pl_PL.UTF-8/UTF-8" ];
+  i18n.extraLocaleSettings = {
+    LC_ALL = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_MEASUREMENT = "pl_PL.UTF-8";
+    LC_MONETARY = "pl_PL.UTF-8";
+    LC_TIME = "pl_PL.UTF-8";
+  };
+
   home-manager.users.${username} = ./home;
 
   programs.nix-ld.enable = true;

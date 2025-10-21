@@ -18,6 +18,7 @@ in
     gcr
     networkmanagerapplet
     blueman
+    pavucontrol
     inputs.packages.${pkgs.system}.volnoti
     (pkgs.writeShellScriptBin "show-volume" ''
       VOLUME=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d ' ' -f 2)
@@ -33,7 +34,6 @@ in
 
   services.gnome-keyring.enable = true;
   services.network-manager-applet.enable = true;
-  services.blueman-applet.enable = true;
 
   wayland.windowManager.hyprland = {
     enable = true;
