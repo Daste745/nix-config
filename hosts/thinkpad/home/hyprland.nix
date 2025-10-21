@@ -12,7 +12,13 @@ in
     rose-pine-hyprcursor
     brightnessctl
     playerctl
-    xfce.thunar
+    kdePackages.dolphin
+    kdePackages.qtsvg
+    kdePackages.kio-fuse
+    kdePackages.kio-extras
+    kdePackages.kwallet
+    kdePackages.kwallet-pam
+    loupe
     wlogout
     hyprshot
     gcr
@@ -47,7 +53,7 @@ in
       "$modCtrl" = "SUPER + CTRL";
       "$modShift" = "SUPER + SHIFT";
       "$terminal" = getExe pkgs.ghostty;
-      "$fileManager" = getExe pkgs.xfce.thunar;
+      "$fileManager" = getExe pkgs.kdePackages.dolphin;
       exec-once = [ ];
       env = [
         "HYPRCURSOR_THEME, rose-pine-hyprcursor"
