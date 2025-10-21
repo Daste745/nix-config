@@ -28,7 +28,7 @@ in
       };
 
       # Add verbose and interactive by default
-      cp = "cp -vi";
+      cp = "cp -via";
       mv = "mv -vi";
       rm = "rm -vi";
       rmdir = "rmdir -v";
