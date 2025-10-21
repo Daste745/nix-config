@@ -40,6 +40,7 @@
     ./hyprlock.nix
     ./hyprpaper.nix
     # ./hyprshell.nix
+    ./swaync.nix
     ./waybar.nix
     ./wofi.nix
   ];

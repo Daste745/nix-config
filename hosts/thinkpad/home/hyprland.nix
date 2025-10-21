@@ -121,9 +121,11 @@ in
         "$mod, R, exec, pkill wofi || wofi --show drun --prompt ''"
         "ALT, space, exec, pkill wofi || wofi --show drun --prompt ''"
         "$mod, F, togglefloating"
+        "$modShift, F, fullscreen"
         ", F11, fullscreen"
         "$mod + SHIFT + CTRL, l, exec, loginctl lock-session"
         "$modShift, s, exec, ${getExe pkgs.hyprshot} --freeze -m region --clipboard-only"
+        "$modShift, n, exec, swaync-client -t -sw"
         # TODO)) Suspend: ...
 
         # Media keys
