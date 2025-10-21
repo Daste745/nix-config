@@ -1,4 +1,4 @@
-{ username, ... }:
+{ username, pkgs, ... }:
 {
   imports = [
     ../../modules/tailscale.nix
@@ -28,6 +28,14 @@
     ];
     home = "/home/${username}";
   };
+
+  fonts.packages = with pkgs; [
+    maple-mono.truetype
+    maple-mono.NF
+    font-awesome
+    material-design-icons
+    nerd-fonts.symbols-only
+  ];
 
   home-manager.users.${username} = ./home;
 

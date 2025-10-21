@@ -13,8 +13,6 @@
   };
 
   home.packages = with pkgs; [
-    maple-mono.truetype
-    maple-mono.NF
     inputs.zen-browser.packages.${pkgs.system}.default
     slack
     thunderbird
