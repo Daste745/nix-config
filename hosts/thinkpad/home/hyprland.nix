@@ -273,16 +273,16 @@ in
       };
       listener = [
         {
-          timeout = 300;
+          timeout = 15 * 60;
           on_timeout = "loginctl lock-session";
         }
         {
-          timeout = 600;
+          timeout = 20 * 60;
           on-timeout = "hyprctl dispatch dpms off";
           on-resume = "hyprctl dispatch dpms on && brightnessctl -r";
         }
         {
-          timeout = 900;
+          timeout = 30 * 60;
           on-timeout = "systemctl suspend";
         }
       ];
