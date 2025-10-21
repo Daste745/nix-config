@@ -14,8 +14,6 @@ in
     playerctl
     xfce.thunar
     wlogout
-    grim
-    slurp
     hyprshot
     gcr
     networkmanagerapplet
@@ -125,7 +123,7 @@ in
         "$mod, F, togglefloating"
         ", F11, fullscreen"
         "$mod + SHIFT + CTRL, l, exec, loginctl lock-session"
-        "$modShift, s, exec, ${getExe pkgs.hyprshot} -m region --clipboard-only"
+        "$modShift, s, exec, ${getExe pkgs.hyprshot} --freeze -m region --clipboard-only"
         # TODO)) Suspend: ...
 
         # Media keys
