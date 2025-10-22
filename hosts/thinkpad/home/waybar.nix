@@ -45,12 +45,13 @@ in
         "custom/power"
       ];
       "hyprland/workspaces" = {
-        format = "{icon} {windows}";
+        format = "{icon}{windows}";
         format-icons = {
-          urgent = "";
-          active = "";
+          urgent = " ";
+          active = " ";
+          visible = " ";
+          empty = "  ";
           default = "";
-          empty = "";
         };
         workspace-taskbar = {
           enable = true;
