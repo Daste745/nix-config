@@ -5,7 +5,7 @@
   ...
 }:
 let
-  inherit (lib) getExe;
+  inherit (lib) getExe getExe';
 in
 {
   home.packages = with pkgs; [
@@ -53,7 +53,7 @@ in
       "$modCtrl" = "SUPER + CTRL";
       "$modShift" = "SUPER + SHIFT";
       "$terminal" = getExe pkgs.ghostty;
-      "$fileManager" = getExe pkgs.kdePackages.dolphin;
+      "$fileManager" = getExe' pkgs.kdePackages.dolphin "dolphin";
       exec-once = [ ];
       env = [
         "HYPRCURSOR_THEME, rose-pine-hyprcursor"
