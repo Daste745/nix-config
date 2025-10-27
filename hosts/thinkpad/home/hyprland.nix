@@ -109,14 +109,17 @@ in
         pseudotile = true;
       };
       windowrule = [
-        # TODO)) "float, class:^(blueman-manager)$"
-        # TODO)) Nextcloud
-        # TODO)) Bitwarden in firefox
-        # TODO)) Screen sharing picker portal
-        "keepaspectratio, class:^(firefox)$, title:^(Picture-in-Picture)$"
-        "noborder, class:^(firefox)$, title:^(Picture-in-Picture)$"
-        "float, title:^(Picture-in-Picture)$"
+        "float, class:^(.blueman-manager-wrapped)$"
         "float, class:^(it.mijorus.smile)$"
+        # Zen Browser Picture-in-Picture
+        "keepaspectratio, class:^(zen)$, title:^(Picture-in-Picture)$"
+        "noborder, class:^(zen)$, title:^(Picture-in-Picture)$"
+        "float, class:^(zen)$, title:^(Picture-in-Picture)$"
+        # Nextcloud Desktop Client
+        "float, class:^(com.nextcloud.desktopclient.nextcloud)$"
+        "noborder, class:^(com.nextcloud.desktopclient.nextcloud)$"
+        "move cursor -10% 2%, class:^(com.nextcloud.desktopclient.nextcloud)$"
+        # TODO)) Screen sharing picker portal
       ];
       layerrule = [
         "noanim, namespace:^(wofi)$"
