@@ -18,6 +18,7 @@ in
     kdePackages.kio-extras
     kdePackages.kwallet
     kdePackages.kwallet-pam
+    smile
     loupe
     wlogout
     hyprshot
@@ -115,6 +116,7 @@ in
         "keepaspectratio, class:^(firefox)$, title:^(Picture-in-Picture)$"
         "noborder, class:^(firefox)$, title:^(Picture-in-Picture)$"
         "float, title:^(Picture-in-Picture)$"
+        "float, class:^(it.mijorus.smile)$"
       ];
       layerrule = [
         "noanim, namespace:^(wofi)$"
@@ -133,6 +135,7 @@ in
         "$modShift, s, exec, ${getExe pkgs.hyprshot} --freeze -m region --clipboard-only"
         "$modShift, n, exec, swaync-client -t -sw"
         # TODO)) Suspend: ...
+        "$mod, period, exec, smile"
 
         # Media keys
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && show-volume"
