@@ -12,5 +12,6 @@ in
     in
     {
       volnoti = import ./volnoti.nix args;
+      hypremoji = import ./hypremoji args;
     };
 }
