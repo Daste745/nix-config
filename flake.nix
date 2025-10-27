@@ -46,10 +46,7 @@
   };
 
   outputs =
-    inputs@{
-      nixos-wsl,
-      ...
-    }:
+    inputs:
     let
       packages = import ./pkgs inputs;
       util = import ./util.nix (
@@ -63,7 +60,7 @@
       nixosConfigurations = {
         nauvis = util.mkNixosConfiguration "nauvis" {
           extraModules = [
-            nixos-wsl.nixosModules.default
+            inputs.nixos-wsl.nixosModules.default
           ];
         };
         thinkpad = util.mkNixosConfiguration "thinkpad" {
