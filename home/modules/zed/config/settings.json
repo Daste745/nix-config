@@ -140,6 +140,7 @@
     "zig": true,
     "xml": true
   },
+  "format_on_save": "on",
   "languages": {
     "Python": {
       "language_servers": ["!pyright", "!pylsp", "basedpyright", "ruff", "..."],
@@ -148,40 +149,34 @@
       }
     },
     "JavaScript": {
-      "formatter": {
-        "code_actions": {
-          "source.fixAll.eslint": true
-        }
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
       }
     },
     "TypeScript": {
-      "formatter": {
-        "code_actions": {
-          "source.fixAll.eslint": true
-        }
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
       }
     },
     "TSX": {
-      "formatter": {
-        "code_actions": {
-          "source.fixAll.eslint": true
-        }
+      "code_actions_on_format": {
+        "source.fixAll.eslint": true
       }
     },
     "Rust": {
-      "format_on_save": "language_server"
+      "formatter": "language_server"
     },
     "Zig": {
-      "format_on_save": "language_server",
+      "formatter": "language_server",
       "code_actions_on_format": {
         "source.organizeImports": true
       }
     },
     "C": {
-      "format_on_save": "language_server"
+      "formatter": "language_server"
     },
     "C++": {
-      "format_on_save": "language_server"
+      "formatter": "language_server"
     },
     "Git Commit": {
       "show_wrap_guides": true,
