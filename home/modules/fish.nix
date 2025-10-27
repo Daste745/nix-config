@@ -47,6 +47,7 @@ in
       gco = "git checkout";
       gl = "git lg";
       gst = "git stash";
+      gsh = "git show";
       ## add
       ga = "git add";
       gap = "git add --patch";
