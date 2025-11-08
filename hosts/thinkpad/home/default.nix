@@ -5,6 +5,9 @@
   username,
   ...
 }:
+let
+  system = pkgs.stdenv.hostPlatform.system;
+in
 {
   home = {
     inherit username;
@@ -13,7 +16,7 @@
   };
 
   home.packages = with pkgs; [
-    inputs.zen-browser.packages.${pkgs.system}.default
+    inputs.zen-browser.packages.${system}.default
     slack
     thunderbird
     bruno

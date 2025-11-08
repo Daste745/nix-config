@@ -8,6 +8,7 @@
 }:
 let
   assets = config.assets;
+  system = pkgs.stdenv.hostPlatform.system;
 in
 {
   imports = [

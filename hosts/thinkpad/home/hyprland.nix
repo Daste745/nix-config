@@ -6,6 +6,7 @@
 }:
 let
   inherit (lib) getExe getExe';
+  system = pkgs.stdenv.hostPlatform.system;
 in
 {
   home.packages = with pkgs; [
@@ -26,7 +27,7 @@ in
     networkmanagerapplet
     blueman
     pavucontrol
-    inputs.packages.${pkgs.system}.volnoti
+    inputs.packages.${system}.volnoti
     (pkgs.writeShellScriptBin "show-volume" ''
       VOLUME=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | cut -d ' ' -f 2)
       PERCENT=$(echo "scale=2; $VOLUME * 100" | ${getExe pkgs.bc}| awk '{print ($1 > 100) ? 100 : $1}')
@@ -44,10 +45,10 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+    package = inputs.hyprland.packages.${system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland;
     plugins = [
-      inputs.hyprland-split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
+      inputs.hyprland-split-monitor-workspaces.packages.${system}.split-monitor-workspaces
     ];
     settings = {
       "$mod" = "SUPER";
@@ -231,7 +232,7 @@ in
   services.volnoti = {
     enable = true;
     package = pkgs.writeShellScriptBin "volnoti-wrapped" ''
-      exec ${inputs.packages.${pkgs.system}.volnoti}/bin/volnoti -t 1 -a 1.0 -r 0 "$@"
+      exec ${inputs.packages.${system}.volnoti}/bin/volnoti -t 1 -a 1.0 -r 0 "$@"
     '';
   };
 }

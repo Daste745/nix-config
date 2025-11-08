@@ -1,4 +1,7 @@
 { inputs, pkgs, ... }:
+let
+  system = pkgs.stdenv.hostPlatform.system;
+in
 {
   xdg.terminal-exec = {
     enable = true;
@@ -26,7 +29,7 @@
     };
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
-      inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland
+      inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland
     ];
   };
 }
