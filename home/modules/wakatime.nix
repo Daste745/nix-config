@@ -4,7 +4,7 @@ let
 in
 {
   home.packages = with pkgs; [
-    wakatime
+    wakatime-cli
   ];
 
   age.secrets.wakatime-cfg = {
