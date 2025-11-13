@@ -26,6 +26,7 @@ in
     programs.git = {
       enable = true;
       includes = [
+        # TODO)) Remove this include once migrated to ~/.config/git/user-config on all machines
         { path = "~/.user.gitconfig"; }
         { path = "${configHome}/git/user-config"; }
       ];
@@ -49,6 +50,9 @@ in
         push = {
           autoSetupRemote = true;
           followTags = true;
+        };
+        rebase = {
+          missingCommitsCheck = "error";
         };
         worktree = {
           useRelativePaths = true;
