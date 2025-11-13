@@ -11,6 +11,10 @@
   system.stateVersion = "25.11";
   nixpkgs.hostPlatform = "x86_64-linux";
   nixpkgs.config.allowUnfree = true;
+  # TODO)) Remove this once feishin uses electron >= 37.0.0
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-36.9.5"
+  ];
 
   boot.loader = {
     systemd-boot.enable = true;
