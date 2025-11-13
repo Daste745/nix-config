@@ -42,7 +42,7 @@ in
           email = "stefankar1000@gmail.com";
         };
         init = {
-          defualtBranch = "main";
+          defaultBranch = "main";
         };
         pull = {
           ff = "only";
