@@ -2,15 +2,8 @@
   description = "NixOS configuration";
 
   inputs = {
+    # Common
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nix-darwin = {
-      url = "github:nix-darwin/nix-darwin/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL/main";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,12 +18,15 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    disko = {
-      url = "github:nix-community/disko/latest";
+    pinix = {
+      url = "github:remi-dupre/pinix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
+    templates.url = "./templates";
+
+    # NixOS
+    disko = {
+      url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
@@ -38,16 +34,28 @@
       url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland";
     };
-    pinix = {
-      url = "github:remi-dupre/pinix";
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    templates.url = "./templates";
+
+    # WSL
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Darwin
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     inputs:
     let
+      lib = inputs.nixpkgs.lib;
       packages = import ./pkgs inputs;
       util = import ./util.nix (
         inputs
@@ -69,6 +77,7 @@
           ];
         };
       };
+
       darwinConfigurations = {
         aquilo = util.mkDarwinConfiguration "aquilo" {
           extraModules = [ ];
@@ -79,7 +88,7 @@
       apps = {
         thinkpad-vm = {
           type = "app";
-          program = "${nixosConfigurations.thinkpad.config.system.build.vm}/bin/run-thinkpad-vm";
+          program = lib.getExe nixosConfigurations.thinkpad.config.system.build.vm;
         };
       };
 
