@@ -119,11 +119,13 @@ in
       "cpu" = {
         format = "  {usage}%";
         interval = 1;
+        on-click = terminalExec "btop";
       };
       "memory" = {
         format = "  {percentage}%";
         tooltip-format = "{used:0.1f}/{total:0.1f}GiB used";
         interval = 1;
+        on-click = terminalExec "btop";
       };
       "custom/notification" = {
         tooltip = true;
