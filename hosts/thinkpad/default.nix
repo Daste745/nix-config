@@ -22,6 +22,13 @@
     efi.canTouchEfiVariables = true;
   };
 
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 32 * 1024;
+    }
+  ];
+
   networking.networkmanager.enable = true;
 
   users.users.${username} = {
