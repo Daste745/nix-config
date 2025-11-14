@@ -34,6 +34,7 @@
   imports = [
     ./git
     ./zed
+    ./btop.nix
     ./dix.nix
     ./fish.nix
     ./mise.nix
