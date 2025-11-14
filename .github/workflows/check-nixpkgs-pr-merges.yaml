@@ -1,0 +1,32 @@
+name: Check Nixpkgs PR Merge Statuses
+
+on:
+  schedule:
+    # Every day at 8:00 UTC
+    - cron: "0 8 * * *"
+  workflow_dispatch:
+
+jobs:
+  check-pr-merge-statuses:
+    runs-on: ubuntu-latest
+    name: Check Nixpkgs PR Merge Statuses
+    permissions:
+      contents: write # For creating commit comments
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "20"
+
+      - name: Install ripgrep
+        run: sudo apt update && sudo apt install -y ripgrep
+
+      - name: Run PR merge check
+        uses: n3oney/nixus/actions/check-pr-merge@74c2958f3783136baca5fb9f437e956df557628b
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          branch-to-check: nixos-unstable

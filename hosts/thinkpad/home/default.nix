@@ -21,6 +21,8 @@ in
     thunderbird
     bruno
     obsidian
+    # TODO)) Remove - added to test the the check-nixpkgs-pr-merges workflow
+    # nixpkgs-notify #455302
     feishin
     spotify
     nextcloud-client
