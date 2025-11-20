@@ -29,6 +29,7 @@ in
     libreoffice
     vlc
     obs-studio
+    wl-clipboard
   ];
 
   imports = [
