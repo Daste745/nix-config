@@ -63,8 +63,8 @@ in
       ];
       monitor = [
         "eDP-1, 1920x1080@60, 0x0, 1"
-        "desc:Ancor Communications Inc BE24A J9LMQS111509, 1920x1200@60, 1920x0, 1"
-        "desc:Ancor Communications Inc BE24A K3LMQS042715, 1920x1200@60, 3840x-400, 1, transform, 3"
+        "desc:Ancor Communications Inc BE24A GALMQS052627, 1920x1200@60, 1920x0, 1"
+        "desc:Ancor Communications Inc BE24A H4LMQS149841, 1920x1200@60, 3840x-400, 1, transform, 3"
         "desc:Samsung Electric Company LC34G55T H4ZT103264, 3440x1440@50, 0x-1440, 1"
         ", preferred, auto, 1" # Fallback for unknown monitors
       ];
