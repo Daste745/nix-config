@@ -62,6 +62,9 @@
       "max_severity": null
     }
   },
+  "sticky_scroll": {
+    "enabled": true
+  },
   "features": {
     "edit_prediction_provider": "zed"
   },
