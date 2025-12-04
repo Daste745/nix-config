@@ -167,7 +167,10 @@
       }
     },
     "Rust": {
-      "formatter": "language_server"
+      "formatter": "language_server",
+      "inlay_hints": {
+        "enabled": true
+      }
     },
     "Zig": {
       "formatter": "language_server",
