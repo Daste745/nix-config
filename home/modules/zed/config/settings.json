@@ -220,6 +220,11 @@
     },
     "nil": {
       "initialization_options": {
+        "nix": {
+          "flake": {
+            "autoArchive": true
+          }
+        },
         "formatting": {
           "command": ["nixfmt"]
         }
