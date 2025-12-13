@@ -32,11 +32,11 @@
   programs.nix-index.enable = true;
 
   imports = [
+    ./fish
     ./git
     ./zed
     ./btop.nix
     ./dix.nix
-    ./fish.nix
     ./mise.nix
     ./ssh.nix
     ./starship.nix
