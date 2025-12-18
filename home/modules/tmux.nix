@@ -7,6 +7,8 @@
     mouse = true;
     clock24 = true;
     escapeTime = 0;
+    keyMode = "vi";
+    customPaneNavigationAndResize = true;
     plugins = with pkgs.tmuxPlugins; [
       # TODO: ofirgall/tmux-window-name - will require setting up python
       yank
@@ -35,6 +37,11 @@
       # Open splits in the current pane's directory
       bind \\ split-window -h -c "#{pane_current_path}"
       bind | split-window -v -c "#{pane_current_path}"
+
+      # 'v' in copy-mode-vi starts selection, `y` copies it, Escape cancels
+      bind-key -T copy-mode-vi 'v' send -X begin-selection
+      bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
+      bind-key -T copy-mode-vi Escape send -X cancel
 
       # Status bar
       set -g status-left-length 20
