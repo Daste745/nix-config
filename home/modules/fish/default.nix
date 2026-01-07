@@ -137,4 +137,9 @@ in
     };
     nix-direnv.enable = true;
   };
+
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 }
