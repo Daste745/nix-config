@@ -18,24 +18,6 @@
     efi.canTouchEfiVariables = true;
   };
 
-  boot.kernelPackages = pkgs.linuxPackagesFor (
-    # The latest upgrade to nixos 26.05 also upgraded the kernel to 6.12.59, which is panicking on boot
-    # The panic on 6.12.59 doesn't happen in a VM, only on baremetal
-    # Overriding the version to 6.12.58 makes it work on baremetal again
-    # This makes me think it's some hardware issue, but I'm not sure
-    # TODO)) Find out why this is even an issue and remove this override once it's fixed
-    pkgs.linux_6_12.override {
-      argsOverride = rec {
-        src = pkgs.fetchurl {
-          url = "mirror://kernel/linux/kernel/v6.x/linux-${version}.tar.xz";
-          sha256 = "sha256-XxxMVGZgpqgQRv36YZUwa60sjRfA1ph23BAKha1GE6w=";
-        };
-        version = "6.12.58";
-        modDirVersion = "6.12.58";
-      };
-    }
-  );
-
   swapDevices = [
     {
       device = "/var/lib/swapfile";
