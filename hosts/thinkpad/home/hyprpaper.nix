@@ -20,14 +20,14 @@ let
       yazi --chooser-file ${selectedWallpaper} "$SELECTOR_START"
       # TODO)) Check if selected file is an image
       head -n 1 ${selectedWallpaper} > ${currentWallpaper}
-      hyprctl hyprpaper reload ,"$(cat ${currentWallpaper})"
+      hyprctl hyprpaper wallpaper ,"$(cat ${currentWallpaper})"
     '';
   };
   restoreWallpaper = pkgs.writeShellApplication {
     name = "restore-wallpaper";
     text = ''
       if [ -f ${currentWallpaper} ]; then
-        hyprctl hyprpaper reload ,"$(cat ${currentWallpaper})"
+        hyprctl hyprpaper wallpaper ,"$(cat ${currentWallpaper})"
       fi
     '';
   };
