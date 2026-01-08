@@ -115,21 +115,21 @@ in
       dwindle = {
         pseudotile = true;
       };
+      # TODO)) Convert to named window rules
+      # https://wiki.hypr.land/Configuring/Window-Rules/#window-rules
       windowrule = [
-        "float, class:^(.blueman-manager-wrapped)$"
-        "float, class:^(it.mijorus.smile)$"
+        "float on, match:class ^(.blueman-manager-wrapped)$"
+        "float on, match:class ^(it.mijorus.smile)$"
         # Zen Browser Picture-in-Picture
-        "keepaspectratio, class:^(zen)$, title:^(Picture-in-Picture)$"
-        "noborder, class:^(zen)$, title:^(Picture-in-Picture)$"
-        "float, class:^(zen)$, title:^(Picture-in-Picture)$"
+        "keep_aspect_ratio on, border_size 0, float on, match:class ^(zen)$, match:title ^(Picture-in-Picture)$"
         # Nextcloud Desktop Client
-        "float, class:^(com.nextcloud.desktopclient.nextcloud)$"
-        "noborder, class:^(com.nextcloud.desktopclient.nextcloud)$"
-        "move cursor -10% 2%, class:^(com.nextcloud.desktopclient.nextcloud)$"
+        "float on, border_size 0, decorate off, move (cursor_x-(monitor_w*0.1)) (cursor_y+(monitor_h*0.02)), match:class ^(com.nextcloud.desktopclient.nextcloud)$"
         # TODO)) Screen sharing picker portal
       ];
+      # TODO)) Convert to named layer rules
+      # https://wiki.hypr.land/Configuring/Window-Rules/#layer-rules
       layerrule = [
-        "noanim, namespace:^(wofi)$"
+        "no_anim on, match:namespace ^(wofi)$"
       ];
       bind = [
         # Misc.
