@@ -15,7 +15,7 @@ in
     shellAbbrs = {
       # Misc. aliases
       md = "mkdir";
-      takeown = "sudo chown -v $(whoami):$(whoami)";
+      takeown = "sudo chown -v $(whoami):$(id -gn)";
       e = "open .";
       ## Last command, like !! in bash and zsh
       "!!" = {
