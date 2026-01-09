@@ -64,8 +64,8 @@ in
       monitor = [
         "eDP-1, 1920x1080@60, 0x0, 1"
 
-        "desc:Ancor Communications Inc BE24A GALMQS052627, 1920x1200@60, 1920x0, 1"
-        "desc:Ancor Communications Inc BE24A H4LMQS149841, 1920x1200@60, 3840x-400, 1, transform, 3"
+        "desc:Ancor Communications Inc BE24A H4LMQS149841, 1920x1200@60, 1920x0, 1"
+        "desc:Ancor Communications Inc BE24A GALMQS052627, 1920x1200@60, 3840x-400, 1, transform, 3"
 
         "desc:Fujitsu Siemens Computers GmbH B23T-7 LED YV8Q012483, 1920x1080@60, 1920x0, 1"
         "desc:Fujitsu Siemens Computers GmbH B23T-7 LED YV8Q609595, 1920x1080@60, 3840x0, 1"
