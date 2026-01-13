@@ -16,41 +16,41 @@
   "buffer_font_size": 14,
   "buffer_font_weight": 300,
   "buffer_line_height": {
-    "custom": 1.5
+    "custom": 1.5,
   },
   "theme": {
     "mode": "system",
     "light": "Ayu Mirage",
-    "dark": "Ayu Mirage"
+    "dark": "Ayu Mirage",
   },
   "icon_theme": "Colored Zed Icons Theme Dark",
   "use_system_path_prompts": false,
   "tab_bar": {
     "show_nav_history_buttons": false,
-    "show_tab_bar_buttons": false
+    "show_tab_bar_buttons": false,
   },
   "tabs": {
     "file_icons": true,
-    "git_status": true
+    "git_status": true,
   },
   "preview_tabs": {
-    "enable_preview_from_code_navigation": true
+    "enable_keep_preview_on_code_navigation": true,
   },
   "gutter": {
-    "line_numbers": false
+    "line_numbers": false,
   },
   "cursor_blink": false,
   "scrollbar": {
-    "show": "never"
+    "show": "never",
   },
   "project_panel": {
-    "indent_size": 10
+    "indent_size": 10,
   },
   "collaboration_panel": {
-    "button": false
+    "button": false,
   },
   "notification_panel": {
-    "button": false
+    "button": false,
   },
   "diagnostics": {
     "include_warnings": false,
@@ -59,30 +59,30 @@
       "update_debounce_ms": 150,
       "padding": 4,
       "min_column": 0,
-      "max_severity": null
-    }
+      "max_severity": null,
+    },
   },
   "sticky_scroll": {
-    "enabled": true
+    "enabled": true,
   },
   "features": {
-    "edit_prediction_provider": "zed"
+    "edit_prediction_provider": "zed",
   },
   "edit_predictions": {
-    "mode": "eager"
+    "mode": "eager",
   },
   "agent": {
     "default_profile": "write",
     "model_parameters": [],
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5"
-    }
+      "model": "claude-opus-4.5",
+    },
   },
   "vertical_scroll_margin": 5,
   "use_smartcase_search": true,
   "search": {
-    "button": false
+    "button": false,
   },
   "file_scan_exclusions": [
     "**/.git",
@@ -98,32 +98,32 @@
     "**/.mypy_cache",
     "**/.pytest_cache",
     ".yarn.lock",
-    "**/.yarn"
+    "**/.yarn",
   ],
   "vim_mode": true,
   "vim": {
     "use_system_clipboard": "always",
-    "use_smartcase_find": true
+    "use_smartcase_find": true,
   },
   "git": {
     "inline_blame": {
       "enabled": true,
-      "delay_ms": 200
-    }
+      "delay_ms": 200,
+    },
   },
   "terminal": {
     "line_height": "standard",
     "env": {
-      "GIT_EDITOR": "zed --wait"
+      "GIT_EDITOR": "zed --wait",
     },
     "detect_venv": {
       "on": {
-        "activate_script": "fish"
-      }
+        "activate_script": "fish",
+      },
     },
     "toolbar": {
-      "breadcrumbs": false
-    }
+      "breadcrumbs": false,
+    },
   },
   "load_direnv": "direct",
   "auto_install_extensions": {
@@ -141,53 +141,53 @@
     "toml": true,
     "wakatime": true,
     "zig": true,
-    "xml": true
+    "xml": true,
   },
   "format_on_save": "on",
   "languages": {
     "Python": {
       "language_servers": ["!pyright", "!pylsp", "basedpyright", "ruff", "..."],
       "inlay_hints": {
-        "enabled": true
-      }
+        "enabled": true,
+      },
     },
     "JavaScript": {
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      }
+        "source.fixAll.eslint": true,
+      },
     },
     "TypeScript": {
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      }
+        "source.fixAll.eslint": true,
+      },
     },
     "TSX": {
       "code_actions_on_format": {
-        "source.fixAll.eslint": true
-      }
+        "source.fixAll.eslint": true,
+      },
     },
     "Rust": {
       "formatter": "language_server",
       "inlay_hints": {
-        "enabled": true
-      }
+        "enabled": true,
+      },
     },
     "Zig": {
       "formatter": "language_server",
       "code_actions_on_format": {
-        "source.organizeImports": true
-      }
+        "source.organizeImports": true,
+      },
     },
     "C": {
-      "formatter": "language_server"
+      "formatter": "language_server",
     },
     "C++": {
-      "formatter": "language_server"
+      "formatter": "language_server",
     },
     "Git Commit": {
       "show_wrap_guides": true,
-      "wrap_guides": [72]
-    }
+      "wrap_guides": [72],
+    },
   },
   "lsp": {
     "basedpyright": {
@@ -195,40 +195,40 @@
         "basedpyright.analysis": {
           "inlayHints": {
             "variableTypes": false,
-            "callArgumentNames": false
-          }
-        }
-      }
+            "callArgumentNames": false,
+          },
+        },
+      },
     },
     "rust-analyzer": {
       "initialization_options": {
         "rust": {
-          "analyzerTargetDir": true
+          "analyzerTargetDir": true,
         },
         "cargo": {
-          "allTargets": false
+          "allTargets": false,
         },
         "check": {
-          "workspace": false
-        }
-      }
+          "workspace": false,
+        },
+      },
     },
     "zls": {
       "initialization_options": {
-        "enable_build_on_save": true
-      }
+        "enable_build_on_save": true,
+      },
     },
     "nil": {
       "initialization_options": {
         "nix": {
           "flake": {
-            "autoArchive": true
-          }
+            "autoArchive": true,
+          },
         },
         "formatting": {
-          "command": ["nixfmt"]
-        }
-      }
-    }
-  }
+          "command": ["nixfmt"],
+        },
+      },
+    },
+  },
 }
