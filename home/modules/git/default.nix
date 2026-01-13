@@ -54,6 +54,7 @@ in
         rebase = {
           missingCommitsCheck = "error";
         };
+        rerere.enabled = true;
         worktree = {
           useRelativePaths = true;
         };
