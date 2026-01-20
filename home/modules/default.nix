@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
+let
+  system = pkgs.stdenv.hostPlatform.system;
+  customPkgs = inputs.packages.${system};
+in
 {
   home.packages = with pkgs; [
     killall
@@ -25,6 +29,7 @@
     nixfmt-tree
     nix-output-monitor
     comma
+    customPkgs.check-flake-updates
   ];
 
   programs.home-manager.enable = true;
