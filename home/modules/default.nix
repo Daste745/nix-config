@@ -25,7 +25,7 @@ in
     xdg-utils
     nixd
     nil
-    nixfmt-rfc-style
+    nixfmt
     nixfmt-tree
     nix-output-monitor
     comma
