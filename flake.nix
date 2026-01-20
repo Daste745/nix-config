@@ -84,8 +84,8 @@
         };
       };
 
-      # nix run .#apps.<name>
-      apps = {
+      # nix run .#<name>
+      apps."x86_64-linux" = {
         thinkpad-vm = {
           type = "app";
           program = lib.getExe nixosConfigurations.thinkpad.config.system.build.vm;
