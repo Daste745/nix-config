@@ -43,6 +43,7 @@ in
     ./hyprpaper.nix
     # ./hyprshell.nix
     ./swaync.nix
+    ./ulauncher.nix
     ./waybar.nix
     ./wofi.nix
   ];

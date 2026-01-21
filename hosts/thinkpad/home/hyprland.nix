@@ -125,6 +125,7 @@ in
         # Nextcloud Desktop Client
         "float on, border_size 0, decorate off, move (cursor_x-(monitor_w*0.1)) (cursor_y+(monitor_h*0.02)), match:class ^(com.nextcloud.desktopclient.nextcloud)$"
         # TODO)) Screen sharing picker portal
+        "no_blur on, decorate off, match:class ^(ulauncher)$"
       ];
       # TODO)) Convert to named layer rules
       # https://wiki.hypr.land/Configuring/Window-Rules/#layer-rules
@@ -137,7 +138,7 @@ in
         "$mod, return, exec, $terminal"
         "$mod, E, exec, $fileManager"
         "$mod, R, exec, pkill wofi || wofi --show drun --prompt ''"
-        "ALT, space, exec, pkill wofi || wofi --show drun --prompt ''"
+        "ALT, space, exec, ulauncher-toggle"
         "$mod, F, togglefloating"
         "$modShift, F, fullscreen"
         ", F11, fullscreen"
