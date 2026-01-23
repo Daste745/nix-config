@@ -1,7 +1,6 @@
 {
   inputs,
   pkgs,
-  config,
   username,
   ...
 }:
@@ -49,5 +48,4 @@ in
   ];
 
   graphical.enable = true;
-  modules.git.signingKey = config.assets.keys.user.thinkpad;
 }

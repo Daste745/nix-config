@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  hostname,
   ...
 }:
 let
@@ -19,6 +20,7 @@ in
       description = ''
         SSH key for signing commits with git.
       '';
+      default = config.assets.keys.user.${hostname};
     };
   };
 

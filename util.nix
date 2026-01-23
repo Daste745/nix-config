@@ -13,9 +13,6 @@ let
     ./assets
     ./hosts/common.nix
     ./hosts/${hostname}
-    {
-      networking.hostName = hostname;
-    }
   ];
 in
 {
@@ -25,7 +22,7 @@ in
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
-        inherit inputs username;
+        inherit inputs username hostname;
         isLinux = true;
       };
       modules = [
@@ -41,7 +38,7 @@ in
     { extraModules }:
     nix-darwin.lib.darwinSystem {
       specialArgs = {
-        inherit inputs username;
+        inherit inputs username hostname;
         isLinux = false;
       };
       modules = [

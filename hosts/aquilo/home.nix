@@ -1,7 +1,6 @@
 {
   inputs,
   pkgs,
-  config,
   username,
   ...
 }:
@@ -26,5 +25,4 @@
   ];
 
   graphical.enable = true;
-  modules.git.signingKey = config.assets.keys.user.aquilo;
 }

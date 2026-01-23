@@ -4,6 +4,7 @@
   lib,
   config,
   username,
+  hostname,
   isLinux,
   ...
 }:
@@ -28,6 +29,8 @@ in
 
   time.timeZone = "Europe/Warsaw";
 
+  networking.hostName = hostname;
+
   users.users.${username} = {
     shell = pkgs.fish;
     openssh.authorizedKeys.keys = lib.attrValues assets.keys.user;
@@ -38,7 +41,12 @@ in
     useUserPackages = true;
     backupFileExtension = "backup";
     extraSpecialArgs = {
-      inherit inputs username isLinux;
+      inherit
+        inputs
+        username
+        hostname
+        isLinux
+        ;
     };
   };
 
