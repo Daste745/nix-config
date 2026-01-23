@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ isLinux, ... }:
 let
   configDir = "~/.nix-config";
   nrsAbbr =
-    if pkgs.stdenv.hostPlatform.isLinux then
+    if isLinux then
       "sudo pixos-rebuild switch --flake ${configDir}"
     else
       "sudo darwin-rebuild switch --flake ${configDir} &| nom";

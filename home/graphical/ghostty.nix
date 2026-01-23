@@ -2,13 +2,14 @@
   pkgs,
   lib,
   config,
+  isLinux,
   ...
 }:
 {
   programs.ghostty = lib.mkIf config.graphical.enable {
     enable = true;
     # NOTE: Using `ghostty-bin` on MacOS
-    package = if pkgs.stdenv.hostPlatform.isLinux then pkgs.ghostty else pkgs.ghostty-bin;
+    package = if isLinux then pkgs.ghostty else pkgs.ghostty-bin;
     enableFishIntegration = true;
     settings = {
       maximize = true;

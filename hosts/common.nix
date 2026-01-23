@@ -4,6 +4,7 @@
   lib,
   config,
   username,
+  isLinux,
   ...
 }:
 let
@@ -37,8 +38,7 @@ in
     useUserPackages = true;
     backupFileExtension = "backup";
     extraSpecialArgs = {
-      inherit inputs;
-      inherit username;
+      inherit inputs username isLinux;
     };
   };
 

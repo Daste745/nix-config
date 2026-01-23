@@ -25,8 +25,7 @@ in
     nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = {
-        inherit inputs;
-        inherit username;
+        inherit inputs username;
         isLinux = true;
       };
       modules = [
@@ -42,8 +41,7 @@ in
     { extraModules }:
     nix-darwin.lib.darwinSystem {
       specialArgs = {
-        inherit inputs;
-        inherit username;
+        inherit inputs username;
         isLinux = false;
       };
       modules = [

@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  isLinux,
   ...
 }:
 let
@@ -21,7 +22,7 @@ in
     {
       # TODO)) Change this condition to be a generic "is WSL" check.
       #        We don't need the `zed` alias and `zed-editor` package in WSL
-      home.packages = lib.optionals (pkgs.stdenv.hostPlatform.isLinux && !cfg.wslCompatScript.enable) [
+      home.packages = lib.optionals (isLinux && !cfg.wslCompatScript.enable) [
         pkgs.zed-editor
         zeditorAlias
       ];
