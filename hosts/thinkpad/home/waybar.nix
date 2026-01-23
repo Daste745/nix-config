@@ -146,7 +146,7 @@ in
         on-click-right = "swaync-client -d -sw";
       };
       "clock" = {
-        format = " {:%H:%M:%S}";
+        format = " {:%H:%M:%S %e %b %Y}";
         interval = 1;
         tooltip-format = "<tt><small>{calendar}</small></tt>";
         timezone = "Europe/Warsaw";
