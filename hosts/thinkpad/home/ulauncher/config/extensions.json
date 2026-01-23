@@ -1,0 +1,16 @@
+{
+    "com.github.tobineben.ulauncher-bluetooth-connection-toggle": {
+        "id": "com.github.tobineben.ulauncher-bluetooth-connection-toggle",
+        "url": "https://github.com/TobiNeben/ulauncher-bluetooth-connection-toggle",
+        "updated_at": "2026-01-23T14:53:32.604240",
+        "last_commit": "9c30c8e42f0054aba9adb6015a8f5a8846fc457e",
+        "last_commit_time": "2025-11-02T19:05:34"
+    },
+    "com.github.orcunulutas.ulauncher-token-generator": {
+        "id": "com.github.orcunulutas.ulauncher-token-generator",
+        "url": "https://github.com/orcunulutas/ulauncher-token-generator",
+        "updated_at": "2026-01-23T14:53:54.055235",
+        "last_commit": "e3a6e5082a4efb8f5e13f48d750e0564ed1373fb",
+        "last_commit_time": "2026-01-10T23:11:38"
+    }
+}

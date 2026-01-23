@@ -36,13 +36,13 @@ in
     inputs.nix-index-database.homeModules.nix-index
     ../../../assets
     ../../../home
+    ./ulauncher
     ./hypridle.nix
     ./hyprland.nix
     ./hyprlock.nix
     ./hyprpaper.nix
     # ./hyprshell.nix
     ./swaync.nix
-    ./ulauncher.nix
     ./waybar.nix
     ./wofi.nix
   ];
