@@ -1,6 +1,11 @@
 set -eo pipefail
 
-git log -n 50 --pretty=format:'%h %s' --no-merges | \
+if [ -n "$1" ]; then
+    git commit --fixup "$1"
+    exit 0
+fi
+
+git log -n 50 --pretty=format:'%h | %s' --no-merges | \
     fzf | \
     cut -c -7 | \
     xargs -o git commit --fixup
