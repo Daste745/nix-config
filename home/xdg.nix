@@ -30,6 +30,7 @@ in
     MYSQL_HISTFILE = "${dataHome}/mysql_history";
     REDISCLI_HISTFILE = "${dataHome}/redis/rediscli_history";
     REDISCLI_RCFILE = "${configHome}/redis/rediscli";
+    _JAVA_OPTIONS = "-Djava.util.prefs.userRoot=${configHome}/java";
   };
 
   home.file."${wgetrc}".text = ''
