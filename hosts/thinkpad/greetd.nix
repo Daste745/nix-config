@@ -13,7 +13,7 @@ in
     settings = {
       # This will be started automatically when greetd starts
       initial_session = {
-        command = "Hyprland";
+        command = "start-hyprland";
         user = username;
       };
       # Fallback when Hyprland exits or crashes
