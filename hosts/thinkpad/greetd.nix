@@ -18,7 +18,7 @@ in
       };
       # Fallback when Hyprland exits or crashes
       default_session = {
-        command = "${getExe pkgs.tuigreet} --cmd Hyprland";
+        command = "${getExe pkgs.tuigreet} --cmd start-hyprland";
         user = "greeter";
       };
     };
