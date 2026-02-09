@@ -72,11 +72,21 @@
     "mode": "eager",
   },
   "agent": {
+    "favorite_models": [
+      {
+        "provider": "copilot_chat",
+        "model": "claude-sonnet-4.5",
+      },
+      {
+        "provider": "copilot_chat",
+        "model": "gpt-5-mini",
+      },
+    ],
     "default_profile": "write",
     "model_parameters": [],
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-opus-4.5",
+      "model": "claude-sonnet-4.5",
     },
   },
   "vertical_scroll_margin": 5,
