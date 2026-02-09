@@ -200,6 +200,14 @@
         },
       },
     },
+    "ty": {
+      "settings": {
+        "inlayHints": {
+          "variableTypes": false,
+          "callArgumentNames": false,
+        },
+      },
+    },
     "rust-analyzer": {
       "initialization_options": {
         "rust": {
