@@ -36,6 +36,9 @@
   "preview_tabs": {
     "enable_keep_preview_on_code_navigation": true,
   },
+  "toolbar": {
+    "quick_actions": false,
+  },
   "gutter": {
     "line_numbers": false,
   },
