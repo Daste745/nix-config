@@ -81,12 +81,16 @@
         "provider": "copilot_chat",
         "model": "gpt-5-mini",
       },
+      {
+        "provider": "copilot_chat",
+        "model": "claude-opus-4.6",
+      },
     ],
     "default_profile": "write",
     "model_parameters": [],
     "default_model": {
       "provider": "copilot_chat",
-      "model": "claude-sonnet-4.5",
+      "model": "claude-opus-4.6",
     },
   },
   "vertical_scroll_margin": 5,
