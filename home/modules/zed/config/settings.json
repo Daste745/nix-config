@@ -45,6 +45,7 @@
   },
   "project_panel": {
     "indent_size": 10,
+    "hide_root": true,
   },
   "collaboration_panel": {
     "button": false,
