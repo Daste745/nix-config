@@ -87,6 +87,8 @@
       },
     ],
     "default_profile": "write",
+    "use_modifier_to_send": true,
+    "enable_feedback": false,
     "model_parameters": [],
     "default_model": {
       "provider": "copilot_chat",
