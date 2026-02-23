@@ -79,16 +79,16 @@
     "favorite_models": [
       {
         "provider": "copilot_chat",
-        "model": "claude-sonnet-4.5",
+        "model": "gpt-5-mini"
       },
       {
         "provider": "copilot_chat",
-        "model": "gpt-5-mini",
+        "model": "claude-opus-4.6"
       },
       {
         "provider": "copilot_chat",
-        "model": "claude-opus-4.6",
-      },
+        "model": "claude-sonnet-4.6"
+      }
     ],
     "default_profile": "write",
     "use_modifier_to_send": true,
