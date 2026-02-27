@@ -69,10 +69,8 @@
   "sticky_scroll": {
     "enabled": true,
   },
-  "features": {
-    "edit_prediction_provider": "zed",
-  },
   "edit_predictions": {
+    "provider": "zed",
     "mode": "eager",
   },
   "agent": {
