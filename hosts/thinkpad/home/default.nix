@@ -25,7 +25,7 @@ in
     nextcloud-client
     trayscale
     jetbrains.datagrip
-    libreoffice
+    libreoffice-fresh
     vlc
     obs-studio
     wl-clipboard
