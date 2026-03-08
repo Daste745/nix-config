@@ -29,6 +29,8 @@ in
     nixfmt-tree
     nix-output-monitor
     comma
+    dix
+    customPkgs.dix-fzf
     customPkgs.check-flake-updates
   ];
 
@@ -41,7 +43,6 @@ in
     ./git
     ./zed
     ./btop.nix
-    ./dix.nix
     ./ssh.nix
     ./starship.nix
     ./tmux.nix

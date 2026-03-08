@@ -12,8 +12,10 @@ in
   x86_64-linux = mkSystemPackages "x86_64-linux" (args: {
     volnoti = import ./volnoti.nix args;
     check-flake-updates = import ./check-flake-updates.nix args;
+    dix-fzf = import ./dix-fzf.nix args;
   });
   aarch64-darwin = mkSystemPackages "aarch64-darwin" (args: {
     check-flake-updates = import ./check-flake-updates.nix args;
+    dix-fzf = import ./dix-fzf.nix args;
   });
 }
