@@ -42,6 +42,7 @@ in
     ./fish
     ./git
     ./zed
+    ./atuin.nix
     ./btop.nix
     ./ssh.nix
     ./starship.nix

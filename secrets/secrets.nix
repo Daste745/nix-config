@@ -8,4 +8,10 @@ in
     keys.user.aquilo
     keys.user.thinkpad
   ];
+  "atuin-key.age".publicKeys = [
+    keys.bootstrap
+    keys.user.nauvis
+    keys.user.aquilo
+    keys.user.thinkpad
+  ];
 }
