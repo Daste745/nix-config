@@ -660,7 +660,6 @@
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_2",
         "pinix": "pinix",
-        "templates": "templates",
         "zen-browser": "zen-browser"
       }
     },
@@ -693,17 +692,6 @@
         "repo": "default-linux",
         "type": "github"
       }
-    },
-    "templates": {
-      "locked": {
-        "path": "./templates",
-        "type": "path"
-      },
-      "original": {
-        "path": "./templates",
-        "type": "path"
-      },
-      "parent": []
     },
     "xdph": {
       "inputs": {

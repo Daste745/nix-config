@@ -22,7 +22,6 @@
       url = "github:remi-dupre/pinix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    templates.url = "./templates";
 
     # NixOS
     disko = {
@@ -91,6 +90,8 @@
           program = lib.getExe nixosConfigurations.thinkpad.config.system.build.vm;
         };
       };
+
+      templates = import ./templates;
 
       inherit packages;
     };

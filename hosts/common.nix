@@ -63,7 +63,7 @@ in
     registry = {
       nixpkgs.flake = inputs.nixpkgs;
       # NOTE: This overwrites the default github:NixOS/templates input
-      templates.flake = inputs.templates;
+      templates.flake = inputs.self;
     };
     nixPath = [ "nixpkgs=flake:nixpkgs" ];
   };
