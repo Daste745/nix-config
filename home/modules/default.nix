@@ -42,7 +42,6 @@ in
     ./zed
     ./btop.nix
     ./dix.nix
-    ./mise.nix
     ./ssh.nix
     ./starship.nix
     ./tmux.nix
