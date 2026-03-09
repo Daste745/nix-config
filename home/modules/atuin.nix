@@ -9,12 +9,14 @@ in
       "--disable-up-arrow"
       "--disable-ctrl-r"
     ];
+    # https://docs.atuin.sh/cli/configuration/config/
     settings = {
       keymap_mode = "vim-insert";
       update_check = false;
       sync_address = "https://atuin.daste.cloud";
       sync_frequency = "5m";
       sync.records = true;
+      show_tabs = false;
     };
   };
 
