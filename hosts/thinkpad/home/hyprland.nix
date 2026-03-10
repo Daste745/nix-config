@@ -88,7 +88,7 @@ in
           "windows, 1, 2, easeOut, popin 60%"
           "border, 1, 10, default"
           "fade, 1, 2.5, easeOut"
-          "workspaces, 1, 3.5, easeOut, slide"
+          "workspaces, 1, 3, easeOut, slide"
           "specialWorkspace, 1, 3, easeOut, slidevert"
         ];
       };
