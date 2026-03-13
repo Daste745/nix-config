@@ -55,6 +55,8 @@ in
         };
         rebase = {
           missingCommitsCheck = "error";
+          autoStash = true;
+          autoSquash = true;
         };
         rerere.enabled = true;
         worktree = {
