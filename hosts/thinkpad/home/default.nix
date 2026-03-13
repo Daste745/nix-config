@@ -27,6 +27,7 @@ in
     jetbrains.datagrip
     libreoffice-fresh
     vlc
+    gimp
     obs-studio
     wl-clipboard
   ];
