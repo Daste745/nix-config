@@ -17,6 +17,7 @@ in
     fastfetch
     dust
     fzf
+    jq
     gnupg
     tokei
     ripgrep
