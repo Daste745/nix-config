@@ -30,6 +30,7 @@ in
     gimp
     obs-studio
     wl-clipboard
+    claude-code
   ];
 
   imports = [
