@@ -18,26 +18,6 @@
     efi.canTouchEfiVariables = true;
   };
 
-  # Hyprland hangs after boot on linux 6.18.16 (maybe some gpu driver issue?),
-  # but works correctly on a previous generation with linux 6.18.15 and the latest 6.18.18
-  #
-  # Can't upgrade to the latest nixpkgs-unstable today,
-  # because electron_39 has a broken build.
-  #
-  # nixpkgs-notify #500223
-  boot.kernelPackages = pkgs.linuxPackagesFor (
-    pkgs.linux_6_18.override {
-      argsOverride = rec {
-        src = pkgs.fetchurl {
-          url = "mirror://kernel/linux/kernel/v6.x/linux-${version}.tar.xz";
-          sha256 = "sha256-9IVfOCwbc1yEByve8221vNXceww35C9RBDFxSaCkhu8=";
-        };
-        version = "6.18.18";
-        modDirVersion = "6.18.18";
-      };
-    }
-  );
-
   swapDevices = [
     {
       device = "/var/lib/swapfile";
