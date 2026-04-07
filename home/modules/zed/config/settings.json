@@ -74,27 +74,20 @@
     "mode": "eager",
   },
   "agent": {
-    "favorite_models": [
-      {
-        "provider": "copilot_chat",
-        "model": "gpt-5-mini"
-      },
-      {
-        "provider": "copilot_chat",
-        "model": "claude-opus-4.6"
-      },
-      {
-        "provider": "copilot_chat",
-        "model": "claude-sonnet-4.6"
-      }
-    ],
-    "default_profile": "write",
-    "use_modifier_to_send": true,
-    "enable_feedback": false,
-    "model_parameters": [],
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "claude-opus-4.6",
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4-6",
+      "enable_thinking": true,
+      "effort": "high",
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+  "agent_servers": {
+    "claude": {
+      "default_config_options": {
+        "mode": "acceptEdits",
+      },
     },
   },
   "vertical_scroll_margin": 5,
