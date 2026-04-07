@@ -4,22 +4,22 @@
       "ctrl-j": "menu::SelectNext",
       "ctrl-k": "menu::SelectPrevious",
       "ctrl-shift-r": "projects::OpenRecent",
-      "ctrl-f5": "debugger::Detach"
-    }
+      "ctrl-f5": "debugger::Detach",
+    },
   },
   {
     "context": "Editor && multibuffer",
     "bindings": {
       "ctrl-shift-j": "editor::ExpandExcerptsDown",
-      "ctrl-shift-k": "editor::ExpandExcerptsUp"
-    }
+      "ctrl-shift-k": "editor::ExpandExcerptsUp",
+    },
   },
   {
     "context": "Pane && !menu",
     "bindings": {
       "ctrl-\\": "pane::SplitRight",
-      "ctrl-|": "pane::SplitDown"
-    }
+      "ctrl-|": "pane::SplitDown",
+    },
   },
   {
     "context": "Editor && !menu",
@@ -30,13 +30,13 @@
       "ctrl-|": "pane::SplitDown",
       "ctrl-alt-left": [
         "workspace::MoveItemToPaneInDirection",
-        { "direction": "left" }
+        { "direction": "left" },
       ],
       "ctrl-alt-right": [
         "workspace::MoveItemToPaneInDirection",
-        { "direction": "right" }
-      ]
-    }
+        { "direction": "right" },
+      ],
+    },
   },
   {
     "context": "Workspace",
@@ -49,8 +49,8 @@
       "ctrl-6": ["workspace::ActivatePane", 5],
       "ctrl-7": ["workspace::ActivatePane", 6],
       "ctrl-8": ["workspace::ActivatePane", 7],
-      "ctrl-9": ["workspace::ActivatePane", 8]
-    }
+      "ctrl-9": ["workspace::ActivatePane", 8],
+    },
   },
   {
     "context": "Editor && vim_mode == normal",
@@ -62,35 +62,35 @@
       "g r": "editor::FindAllReferences", // from helix keymap
       "g t": "editor::GoToTypeDefinition",
       "g b": "editor::BlameHover",
-      "shift-alt-c": "workspace::CopyRelativePath"
-    }
+      "shift-alt-c": "workspace::CopyRelativePath",
+    },
   },
   {
     "context": "Editor && (vim_mode == insert || vim_mode == normal)",
     "bindings": {
       "ctrl-j": "editor::ContextMenuNext",
-      "ctrl-k": "editor::ContextMenuPrevious"
-    }
+      "ctrl-k": "editor::ContextMenuPrevious",
+    },
   },
   {
     "context": "Editor && vim_mode == visual && !VimWaiting && !menu",
     "bindings": {
       "v": "editor::SelectLargerSyntaxNode",
-      "V": "editor::SelectSmallerSyntaxNode"
-    }
+      "V": "editor::SelectSmallerSyntaxNode",
+    },
   },
   {
     "context": "Terminal",
     "bindings": {
       "ctrl-j": null,
-      "ctrl-b": "workspace::ToggleLeftDock"
-    }
+      "ctrl-b": "workspace::ToggleLeftDock",
+    },
   },
   {
     "context": "Dock",
     "bindings": {
       "ctrl-shift-j": ["workspace::DecreaseActiveDockSize", { "px": 0 }],
-      "ctrl-shift-k": ["workspace::IncreaseActiveDockSize", { "px": 0 }]
-    }
-  }
+      "ctrl-shift-k": ["workspace::IncreaseActiveDockSize", { "px": 0 }],
+    },
+  },
 ]
