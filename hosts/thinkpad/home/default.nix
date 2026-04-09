@@ -23,7 +23,6 @@ in
     feishin
     spotify
     nextcloud-client
-    trayscale
     jetbrains.datagrip
     libreoffice-fresh
     vlc
@@ -45,6 +44,7 @@ in
     ./hyprpaper.nix
     # ./hyprshell.nix
     ./swaync.nix
+    ./trayscale.nix
     ./waybar.nix
     ./wofi.nix
   ];
