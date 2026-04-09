@@ -22,7 +22,6 @@ in
     obsidian
     feishin
     spotify
-    nextcloud-client
     jetbrains.datagrip
     libreoffice-fresh
     vlc
@@ -43,6 +42,7 @@ in
     ./hyprlock.nix
     ./hyprpaper.nix
     # ./hyprshell.nix
+    ./nextcloud-client.nix
     ./swaync.nix
     ./trayscale.nix
     ./waybar.nix
