@@ -59,9 +59,6 @@ in
           autoSquash = true;
         };
         rerere.enabled = true;
-        worktree = {
-          useRelativePaths = true;
-        };
         gpg = {
           ssh.allowedSignersFile = "~/.ssh/allowed_signers";
         };
