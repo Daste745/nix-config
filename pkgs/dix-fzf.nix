@@ -25,7 +25,7 @@ pkgs.writeShellApplication {
     previewWrapper
   ];
   text = ''
-    find ${profilesPath} -maxdepth 1 -type l \
+    find ${profilesPath} -maxdepth 1 -type l -not -name default -not -name system \
       | cut -d '/' -f 6 \
       | sort -t '-' -k 2 -n -r \
       | fzf --multi 2 \
