@@ -59,6 +59,7 @@ in
       trusted-users = [
         username
       ];
+      auto-optimise-store = true;
     };
     registry = {
       nixpkgs.flake = inputs.nixpkgs;
