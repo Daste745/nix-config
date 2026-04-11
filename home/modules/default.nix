@@ -29,6 +29,7 @@ in
     nixfmt
     nixfmt-tree
     nix-output-monitor
+    nix-sweep
     comma
     dix
     customPkgs.dix-fzf
