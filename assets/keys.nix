@@ -1,5 +1,6 @@
 {
   bootstrap = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFhjuYoE127RJRi8/+EXzlRc+aEZO+DoMxx4G9kD3Y8U nix-config-bootstrap";
+  phone = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKyT0qpmuHU3A5o5uqUhz2p+90do/SR4Je7cXd188bvq";
 
   user = {
     nauvis = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP2EFXpXri1rQwyhrZbdJ9lHu96NdYZApVjfbdFY4Jca stefan@nauvis";

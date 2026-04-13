@@ -33,7 +33,7 @@ in
 
   users.users.${username} = {
     shell = pkgs.fish;
-    openssh.authorizedKeys.keys = lib.attrValues assets.keys.user;
+    openssh.authorizedKeys.keys = (lib.attrValues assets.keys.user) ++ [ assets.keys.phone ];
   };
 
   home-manager = {
