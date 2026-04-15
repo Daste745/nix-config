@@ -155,6 +155,9 @@
     "xml": true,
   },
   "file_types": {
+    // NOTE: `~/.zed/config` is symlinked to the nix-config directory,
+    //       making zed not recognize it as a JSONC file.
+    "JSONC": ["**/zed/config/*.json"],
     // NOTE: `/tmp/{COMMIT_EDITMSG,git-rebase-todo}.*` are used by zed-git-editor
     //       to store temporary commit/rebase files as a workaround to a bug.
     // TODO: Remove once https://github.com/zed-industries/zed/issues/29669 is fixed
