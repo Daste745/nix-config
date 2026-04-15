@@ -22,6 +22,7 @@ in
     bruno
     obsidian
     feishin
+    jellyfin-tui
     spotify
     jetbrains.datagrip
     libreoffice-fresh
