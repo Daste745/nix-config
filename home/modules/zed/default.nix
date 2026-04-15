@@ -16,8 +16,8 @@ in
 
   config =
     let
-      # `pkgs.zed-editor` only emits the `zeditor` binary, but we also want an `zed`
-      zeditorAlias = pkgs.writeShellScriptBin "zed" "${lib.getExe pkgs.zed-editor} $@";
+      # `pkgs.zed-editor` only emits the `zeditor` binary, but we also add a `zed` alias
+      zeditorAlias = pkgs.writeShellScriptBin "zed" ''exec ${lib.getExe pkgs.zed-editor} "$@"'';
     in
     {
       # TODO)) Change this condition to be a generic "is WSL" check.
