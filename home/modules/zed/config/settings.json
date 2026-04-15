@@ -125,7 +125,7 @@
   "terminal": {
     "line_height": "standard",
     "env": {
-      "GIT_EDITOR": "zed --wait",
+      "GIT_EDITOR": "zed-git-editor",
     },
     "detect_venv": {
       "on": {
@@ -153,6 +153,13 @@
     "wakatime": true,
     "zig": true,
     "xml": true,
+  },
+  "file_types": {
+    // NOTE: `/tmp/{COMMIT_EDITMSG,git-rebase-todo}.*` are used by zed-git-editor
+    //       to store temporary commit/rebase files as a workaround to a bug.
+    // TODO: Remove once https://github.com/zed-industries/zed/issues/29669 is fixed
+    "Git Commit": ["/tmp/COMMIT_EDITMSG.*"],
+    "Git Rebase": ["/tmp/git-rebase-todo.*"],
   },
   "format_on_save": "on",
   "languages": {
