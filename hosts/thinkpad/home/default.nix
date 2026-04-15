@@ -16,6 +16,7 @@ in
 
   home.packages = with pkgs; [
     inputs.zen-browser.packages.${system}.default
+    dconf
     slack
     thunderbird
     bruno
@@ -37,6 +38,7 @@ in
     ../../../assets
     ../../../home
     ./ulauncher
+    ./gtk.nix
     ./hypridle.nix
     ./hyprland.nix
     ./hyprlock.nix
