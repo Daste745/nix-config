@@ -111,6 +111,7 @@
     ".yarn.lock",
     "**/.yarn",
   ],
+  "diff_view_style": "split",
   "vim_mode": true,
   "vim": {
     "use_system_clipboard": "always",
