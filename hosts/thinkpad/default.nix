@@ -18,6 +18,23 @@
     efi.canTouchEfiVariables = true;
   };
 
+  # Linux 6.18.23 panics before /boot can be mounted, logs from boot:
+  #
+  # No filesystem could mount root, tried:
+  # Kernel panic - not syncing: VFS: Unable to mount root fs on "fstab" or unknown-block(0,0)
+  boot.kernelPackages = pkgs.linuxPackagesFor (
+    pkgs.linux_6_18.override {
+      argsOverride = rec {
+        version = "6.18.22";
+        modDirVersion = version;
+        src = pkgs.fetchurl {
+          url = "mirror://kernel/linux/kernel/v6.x/linux-${version}.tar.xz";
+          sha256 = "sha256-ojyS+vNlc4XCxrX07dj4G4CJB+vmA/owaZ6uIk2lX1k=";
+        };
+      };
+    }
+  );
+
   swapDevices = [
     {
       device = "/var/lib/swapfile";
