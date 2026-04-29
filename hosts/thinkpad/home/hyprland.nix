@@ -131,6 +131,7 @@ in
       # https://wiki.hypr.land/Configuring/Window-Rules/#layer-rules
       layerrule = [
         "no_anim on, match:namespace ^(wofi)$"
+        "no_anim on, match:namespace ^(ulauncher)$"
       ];
       bind = [
         # Misc.
