@@ -734,11 +734,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777444362,
-        "narHash": "sha256-awEnWgYyV23rZ8xpQhclRUFI5CLQzl1d2+C1Patfz3M=",
+        "lastModified": 1777469774,
+        "narHash": "sha256-2rSFzoYzo/A0Rsc/Y4xwq8eQnmduEPXTchMqBOWKEiA=",
         "owner": "Ulauncher",
         "repo": "Ulauncher",
-        "rev": "1d7633d5b3cbe8748c280ac54264bae97faac4b7",
+        "rev": "a51da2d9a69fcd8980658c95e1b94b9880cfc164",
         "type": "github"
       },
       "original": {

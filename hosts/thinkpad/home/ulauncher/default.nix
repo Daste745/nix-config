@@ -33,7 +33,7 @@ in
     Service = {
       Type = "dbus";
       BusName = "io.ulauncher.Ulauncher";
-      ExecStart = "${lib.getExe' ulauncher "ulauncher"} --daemon";
+      ExecStart = "${lib.getExe ulauncher} --daemon";
       Restart = "on-failure";
       RestartSec = 1;
     };
