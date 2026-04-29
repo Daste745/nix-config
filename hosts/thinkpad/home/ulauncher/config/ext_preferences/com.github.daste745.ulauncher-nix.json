@@ -1,0 +1,15 @@
+{
+    "preferences": {
+        "channel": "unstable",
+        "max_results": "8",
+        "run_feedback": "yes"
+    },
+    "triggers": {
+        "lookup": {
+            "keyword": "nix"
+        },
+        "run": {
+            "keyword": ","
+        }
+    }
+}
