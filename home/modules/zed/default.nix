@@ -11,7 +11,7 @@ let
 in
 {
   options.modules.zed = {
-    wslCompatScript.enable = lib.mkEnableOption "zed WSL compatibility";
+    wslCompat.enable = lib.mkEnableOption "zed WSL compatibility";
   };
 
   config =
@@ -39,7 +39,7 @@ in
       commonPackages = [ zedGitEditor ];
       # TODO)) Change this condition to be a generic "is WSL" check.
       #        We don't need the `zed` alias and `zed-editor` package in WSL
-      isLinuxDesktop = isLinux && !cfg.wslCompatScript.enable;
+      isLinuxDesktop = isLinux && !cfg.wslCompat.enable;
       linuxDesktopPackages = [
         pkgs.zed-editor
         zeditorAlias

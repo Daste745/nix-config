@@ -17,6 +17,6 @@
     ../../home
   ];
 
-  modules.zed.wslCompatScript.enable = true;
+  modules.zed.wslCompat.enable = true;
   services.gpg-agent.pinentryProgramPath = "/mnt/c/Program Files (x86)/Gpg4win/bin/pinentry.exe";
 }
