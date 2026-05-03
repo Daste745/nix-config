@@ -1,4 +1,12 @@
-{ username, ... }:
+{
+  username,
+  pkgs,
+  lib,
+  ...
+}:
+let
+  inherit (lib) getExe';
+in
 {
   imports = [
     ../../modules/tailscale.nix
@@ -9,6 +17,12 @@
   wsl = {
     enable = true;
     defaultUser = username;
+    extraBin = [
+      # Zed uses `wsl.exe ... --exec cp ...` to copy language server files into WSL,
+      # which breaks when `cp` isn't in /bin, /usr/bin, etc.
+      # https://github.com/zed-industries/zed/issues/52150#issuecomment-4137482439
+      { src = getExe' pkgs.coreutils "cp"; }
+    ];
   };
 
   users.users.${username} = {
@@ -22,7 +36,7 @@
 
   home-manager.users.${username} = ./home.nix;
 
-  programs.nix-ld.enable = true; # For VSCode server on WSL
+  programs.nix-ld.enable = true;
 
   virtualisation.docker.enable = true;
 }
