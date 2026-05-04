@@ -7,11 +7,12 @@
 }:
 let
   cfg = config.modules.git;
-  mkGitCommand = name: pkgs.writeShellScriptBin name (builtins.readFile ./commands/${name});
-  allUserSshKeys = lib.attrValues config.assets.keys.user;
-  # TODO)) Maybe scope these to only the email they are used for (?)
-  allowedSignersEntries = lib.map (key: "* " + key) allUserSshKeys;
   inherit (config.xdg) configHome;
+  mkGitCommand = name: pkgs.writeShellScriptBin name (builtins.readFile ./commands/${name});
+  email = "stefankar1000@gmail.com";
+  allUserSshKeys = lib.attrValues config.assets.keys.user;
+  mkAllowedSigner = key: "${email} namespaces=\"git\" ${key}";
+  allowedSignersEntries = lib.map mkAllowedSigner allUserSshKeys;
 in
 {
   options.modules.git = {
@@ -41,7 +42,7 @@ in
       settings = {
         user = {
           name = "Daste";
-          email = "stefankar1000@gmail.com";
+          inherit email;
         };
         init = {
           defaultBranch = "main";
