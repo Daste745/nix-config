@@ -40,5 +40,27 @@ in
     prefix=${dataHome}/npm
     cache=${cacheHome}/npm
     logs-dir=${stateHome}/npm/logs
+    min-release-age=7
+    ignore-scripts=true
+  '';
+
+  home.file."${configHome}/pnpm/rc".text = ''
+    minimum-release-age=10080  # minutes (7 days)
+    # Package build scripts are disabled by default
+  '';
+
+  home.file."${configHome}/.bunfig.toml".text = ''
+    [install]
+    minimumReleaseAge = 604800  # seconds (7 days)
+    ignoreScripts = true
+  '';
+
+  home.file.".yarnrc".text = ''
+    npmMinimalAgeGate: 7d
+    enableScripts: false
+  '';
+
+  home.file."${configHome}/uv/uv.toml".text = ''
+    exclude-newer = "7 days"
   '';
 }
