@@ -65,6 +65,7 @@ in
         };
         alias = {
           lg = "log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'";
+          sync = "!f() { git fetch \${1:-origin} \${2:-main}:\${2:-main}; }; f";
           unpushed = "log --branches --not --remotes --no-walk --decorate --oneline";
           # Find the base of the current branch, defaulting to the `GIT_DEFAULT_BRANCH` env if not provided
           branch-base = "!f() { git merge-base \${1:-\$GIT_DEFAULT_BRANCH} @; }; f";
