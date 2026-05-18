@@ -95,7 +95,8 @@
     "model_parameters": [],
   },
   "agent_servers": {
-    "claude": {
+    "claude-acp": {
+      "type": "registry",
       "default_config_options": {
         "mode": "acceptEdits",
       },
