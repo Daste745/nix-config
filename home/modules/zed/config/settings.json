@@ -48,10 +48,18 @@
     "show": "never",
   },
   "project_panel": {
+    "dock": "left",
     "indent_size": 10,
     "hide_root": true,
   },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "git_panel": {
+    "dock": "left",
+  },
   "collaboration_panel": {
+    "dock": "left",
     "button": false,
   },
   "notification_panel": {
@@ -75,6 +83,8 @@
     "mode": "eager",
   },
   "agent": {
+    "dock": "right",
+    "sidebar_side": "right",
     "default_model": {
       "provider": "zed.dev",
       "model": "claude-sonnet-4-6",
