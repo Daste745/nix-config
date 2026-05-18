@@ -50,6 +50,8 @@ in
     plugins = [
       inputs.hyprland-split-monitor-workspaces.packages.${system}.split-monitor-workspaces
     ];
+    # TODO)) Migrate config to lua
+    configType = "hyprlang";
     settings = {
       "$mod" = "SUPER";
       "$modCtrl" = "SUPER + CTRL";
