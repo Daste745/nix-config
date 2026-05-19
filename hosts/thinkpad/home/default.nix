@@ -37,6 +37,7 @@ in
     inputs.nix-index-database.homeModules.nix-index
     ../../../assets
     ../../../home
+    ./niri
     ./ulauncher
     ./gtk.nix
     ./hypridle.nix

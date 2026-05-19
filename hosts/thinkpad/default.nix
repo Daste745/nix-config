@@ -56,6 +56,9 @@
 
   home-manager.users.${username} = ./home;
 
+  programs.niri.enable = true;
+  systemd.user.services.niri.enableDefaultPath = false;
+
   programs.nix-ld.enable = true;
 
   virtualisation.docker.enable = true;
