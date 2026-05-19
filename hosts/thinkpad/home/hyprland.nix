@@ -29,9 +29,6 @@ in
     pavucontrol
   ];
 
-  services.gnome-keyring.enable = true;
-  services.network-manager-applet.enable = true;
-
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${system}.hyprland;

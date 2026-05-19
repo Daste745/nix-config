@@ -53,4 +53,7 @@ in
   ];
 
   graphical.enable = true;
+
+  services.gnome-keyring.enable = true;
+  services.network-manager-applet.enable = true;
 }
