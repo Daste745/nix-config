@@ -10,6 +10,7 @@ let
 in
 {
   home.packages = with pkgs; [
+    xwayland-satellite
     brightnessctl
     playerctl
     kdePackages.dolphin
