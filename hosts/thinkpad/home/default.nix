@@ -44,7 +44,6 @@ in
     ./hyprland.nix
     ./hyprlock.nix
     ./hyprpaper.nix
-    # ./hyprshell.nix
     ./nextcloud-client.nix
     ./swaync.nix
     ./trayscale.nix
