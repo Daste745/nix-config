@@ -56,8 +56,9 @@ in
   '';
 
   home.file.".yarnrc".text = ''
-    npmMinimalAgeGate: 7d
-    enableScripts: false
+    cache-min: 604800  # seconds (7 days)
+    ignore-scripts: true
+    disable-self-update-check: true
   '';
 
   home.file."${configHome}/uv/uv.toml".text = ''
