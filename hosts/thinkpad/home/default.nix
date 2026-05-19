@@ -47,6 +47,7 @@ in
     ./nextcloud-client.nix
     ./swaync.nix
     ./trayscale.nix
+    ./volnoti.nix
     ./waybar.nix
     ./wofi.nix
   ];
