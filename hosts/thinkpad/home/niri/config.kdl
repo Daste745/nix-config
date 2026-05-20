@@ -109,7 +109,7 @@ screenshot-path null
 
 // Apply to all windows
 window-rule {
-    geometry-corner-radius 12
+    geometry-corner-radius 10
     clip-to-geometry true
 }
 
@@ -133,8 +133,8 @@ recent-windows {
     highlight {
         active-color "#999999ff"
         urgent-color "#ff9999ff"
-        padding 20
-        corner-radius 12
+        padding 10
+        corner-radius 10
     }
 }
 
