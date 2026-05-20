@@ -72,6 +72,7 @@
 
   programs.niri.enable = true;
   systemd.user.services.niri.enableDefaultPath = false;
+  security.pam.services.swaylock = { };
 
   programs.nix-ld.enable = true;
 

@@ -148,8 +148,7 @@ binds {
     Ctrl+Alt+Delete { quit; }
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+P { power-off-monitors; }
-    // TODO)) Use swaylock or something else
-    Super+Ctrl+Shift+BackSpace repeat=false hotkey-overlay-title="Lock the Screen" { spawn "loginctl" "lock-session"; }
+    Super+Ctrl+Shift+BackSpace repeat=false hotkey-overlay-title="Lock the Screen" { spawn-sh "swaylock &"; }
 
     // Application hotkeys
     Mod+Return repeat=false hotkey-overlay-title="Ghostty" { spawn-sh "ghostty +new-window"; }

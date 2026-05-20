@@ -43,9 +43,10 @@ in
     ./gtk.nix
     # ./hypridle.nix
     # ./hyprland.nix
-    ./hyprlock.nix
+    # ./hyprlock.nix
     # ./hyprpaper.nix
     ./nextcloud-client.nix
+    ./swaylock.nix
     ./swaync.nix
     ./trayscale.nix
     ./volnoti.nix
