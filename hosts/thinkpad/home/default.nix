@@ -39,6 +39,7 @@ in
     ../../../home
     ./niri
     ./ulauncher
+    ./ashell.nix
     ./gtk.nix
     # ./hypridle.nix
     # ./hyprland.nix
@@ -48,7 +49,7 @@ in
     ./swaync.nix
     ./trayscale.nix
     ./volnoti.nix
-    ./waybar.nix
+    # ./waybar.nix
     ./wofi.nix
   ];
 
