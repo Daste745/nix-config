@@ -25,4 +25,5 @@
   ];
 
   graphical.enable = true;
+  programs.ghostty.maximize = true;
 }
