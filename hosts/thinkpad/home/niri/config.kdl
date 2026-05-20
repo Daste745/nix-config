@@ -84,6 +84,7 @@ output "Samsung Electric Company LC34G55T H4ZT103264" {
 layout {
     gaps 4
     center-focused-column "on-overflow"
+    empty-workspace-above-first
 
     default-column-width { proportion 1.0; }
 
