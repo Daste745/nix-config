@@ -11,6 +11,7 @@ in
 {
   x86_64-linux = mkSystemPackages "x86_64-linux" (args: {
     volnoti = import ./volnoti.nix args;
+    nirimap = args.pkgs.callPackage ./nirimap.nix { };
     check-flake-updates = import ./check-flake-updates.nix args;
     dix-fzf = import ./dix-fzf.nix args;
   });
