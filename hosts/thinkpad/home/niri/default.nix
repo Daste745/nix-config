@@ -1,5 +1,9 @@
 { pkgs, ... }:
 {
+  imports = [
+    ./nirimap.nix
+  ];
+
   home.packages = with pkgs; [
     xwayland-satellite
     brightnessctl
