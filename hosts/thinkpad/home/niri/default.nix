@@ -12,6 +12,7 @@
     kdePackages.kwallet-pam
     smile
     loupe
+    wlogout
     gcr
     networkmanagerapplet
     blueman

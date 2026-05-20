@@ -40,10 +40,10 @@ in
     ./niri
     ./ulauncher
     ./gtk.nix
-    ./hypridle.nix
-    ./hyprland.nix
+    # ./hypridle.nix
+    # ./hyprland.nix
     ./hyprlock.nix
-    ./hyprpaper.nix
+    # ./hyprpaper.nix
     ./nextcloud-client.nix
     ./swaync.nix
     ./trayscale.nix
