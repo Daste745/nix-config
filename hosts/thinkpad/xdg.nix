@@ -29,6 +29,7 @@ in
     };
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
+      pkgs.xdg-desktop-portal-gnome
       inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland
     ];
   };
