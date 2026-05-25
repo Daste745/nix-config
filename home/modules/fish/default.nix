@@ -77,6 +77,10 @@ in
       gbs = "git branch-summary";
       gbd = "git branch-diff";
       gbm = "git branch-migrations";
+      ## worktree
+      gw = "git worktree";
+      gwl = "git worktree list";
+      gwa = "git worktree add";
 
       # Docker
       dc = "docker compose";
