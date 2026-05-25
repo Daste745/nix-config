@@ -56,6 +56,7 @@ in
       gca = "git commit --amend";
       gcan = "git commit --amend --no-edit";
       gcna = "git commit --amend --no-edit";
+      gf = "git fixup";
       ## restore
       gres = "git restore";
       grp = "git restore --patch";
