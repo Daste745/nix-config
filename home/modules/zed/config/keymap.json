@@ -15,6 +15,12 @@
     },
   },
   {
+    "context": "Pane",
+    "unbind": {
+      "ctrl-alt-shift-w": "workspace::CloseInactiveTabsAndPanes",
+    },
+  },
+  {
     "context": "Pane && !menu",
     "bindings": {
       "ctrl-\\": "pane::SplitRight",
@@ -51,6 +57,9 @@
       "ctrl-8": ["workspace::ActivatePane", 7],
       "ctrl-9": ["workspace::ActivatePane", 8],
     },
+    "unbind": {
+      "ctrl-j": "workspace::ToggleBottomDock",
+    },
   },
   {
     "context": "Editor && vim_mode == normal",
@@ -83,7 +92,6 @@
   {
     "context": "Terminal",
     "bindings": {
-      "ctrl-j": null,
       "ctrl-b": "workspace::ToggleLeftDock",
     },
   },
