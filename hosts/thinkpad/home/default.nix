@@ -30,6 +30,15 @@ in
     obs-studio
     wl-clipboard
     claude-code
+    # TODO)) Replace with a real package once `wt` is packaged properly
+    (writeShellApplication {
+      name = "wt";
+      runtimeInputs = [ python314Packages.uv ];
+      text = ''
+        unset VIRTUAL_ENV
+        exec uv --project ~/Projects/wt run ~/Projects/wt/main.py "$@"
+      '';
+    })
   ];
 
   imports = [
