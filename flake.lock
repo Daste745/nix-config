@@ -734,11 +734,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780271117,
-        "narHash": "sha256-BsLn6i5SkP1P9yK9E3jO/20mgXlXnAu3JCabjLNRCwQ=",
+        "lastModified": 1780877654,
+        "narHash": "sha256-STCt0XMHzbZK2fqhBQIB0obk5o62whei0tbKl5FDVdQ=",
         "owner": "Ulauncher",
         "repo": "Ulauncher",
-        "rev": "9b44e5104f6bdba43848e3ddf5c2ae9f74e4d0fa",
+        "rev": "0775dde7c23242f7b8a2a79c622adc2c0a4921c4",
         "type": "github"
       },
       "original": {
@@ -795,11 +795,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779946062,
-        "narHash": "sha256-M/2bCPYjiBTkDNV29J/00z10RM3yYnL9X74RqAHDme0=",
+        "lastModified": 1780637620,
+        "narHash": "sha256-ngPdHinPyF0AMxRr32qt+TZCv0sagmooBW14u6DfjSU=",
         "owner": "youwen5",
         "repo": "zen-browser-flake",
-        "rev": "2e2c38ba20a3d614d0196e0aa44851547306e861",
+        "rev": "8c62bc6a72ac5a5b8d1b41b2b88dfed9d9932c48",
         "type": "github"
       },
       "original": {
