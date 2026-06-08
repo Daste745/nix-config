@@ -19,20 +19,6 @@
     efi.canTouchEfiVariables = true;
   };
 
-  # Bluetooth doesn't work on Linux 6.18.30 and 6.18.31
-  boot.kernelPackages = pkgs.linuxPackagesFor (
-    pkgs.linux_6_18.override {
-      argsOverride = rec {
-        version = "6.18.29";
-        modDirVersion = version;
-        src = pkgs.fetchurl {
-          url = "mirror://kernel/linux/kernel/v6.x/linux-${version}.tar.xz";
-          sha256 = "sha256-wz6nWx87xfzKuDZ5DNNoTqtwV/84NGS179imi6YiqDw=";
-        };
-      };
-    }
-  );
-
   swapDevices = [
     {
       device = "/var/lib/swapfile";

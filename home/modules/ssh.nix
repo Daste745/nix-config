@@ -2,8 +2,10 @@
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
-    matchBlocks."*" = {
-      addKeysToAgent = "yes";
+    settings = {
+      "*" = {
+        AddKeysToAgent = "yes";
+      };
     };
     includes = [
       "config.local"
