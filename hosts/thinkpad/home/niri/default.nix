@@ -2,6 +2,7 @@
 {
   imports = [
     ./nirimap.nix
+    ./wallpaper.nix
   ];
 
   home.packages = with pkgs; [
