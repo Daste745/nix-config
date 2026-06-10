@@ -9,6 +9,7 @@
 {
   "auto_update": false,
   "cli_default_open_behavior": "new_window",
+  "restore_on_startup": "last_workspace",
   "ui_font_family": "Maple Mono",
   "ui_font_fallbacks": [".ZedMono"],
   "ui_font_size": 14,
