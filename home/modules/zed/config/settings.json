@@ -37,6 +37,9 @@
   "preview_tabs": {
     "enable_keep_preview_on_code_navigation": true,
   },
+  "file_finder": {
+    "modal_max_width": "medium",
+  },
   "toolbar": {
     "quick_actions": false,
   },
