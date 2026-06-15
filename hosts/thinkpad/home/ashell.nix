@@ -5,6 +5,8 @@
     # https://malpenzibo.github.io/ashell/docs/configuration
     settings = {
       enable_esc_key = true;
+      language = "en-US";
+      region = "pl-PL";
       appearance = {
         style = "Solid";
         font_name = "Maple Mono";
