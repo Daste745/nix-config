@@ -36,7 +36,7 @@ in
       runtimeInputs = [ python314Packages.uv ];
       text = ''
         unset VIRTUAL_ENV
-        exec uv --project ~/Projects/wt run ~/Projects/wt/main.py "$@"
+        exec uv --project ~/Projects/wt run ~/Projects/wt/src/wt/main.py "$@"
       '';
     })
   ];
