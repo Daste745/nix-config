@@ -46,14 +46,11 @@ in
     inputs.nix-index-database.homeModules.nix-index
     ../../../assets
     ../../../home
+    # ./hyprland
     ./niri
     ./ulauncher
     ./ashell.nix
     ./gtk.nix
-    # ./hypridle.nix
-    # ./hyprland.nix
-    # ./hyprlock.nix
-    # ./hyprpaper.nix
     ./nextcloud-client.nix
     ./swayidle.nix
     ./swaylock.nix
