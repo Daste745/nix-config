@@ -138,8 +138,6 @@ recent-windows {
     }
 }
 
-// TODO)) Wallpaper
-
 binds {
     // Misc hotkeys
     Mod+Shift+Slash { show-hotkey-overlay; }
@@ -148,7 +146,7 @@ binds {
     Ctrl+Alt+Delete { quit; }
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+P { power-off-monitors; }
-    Super+Ctrl+Shift+BackSpace repeat=false hotkey-overlay-title="Lock the Screen" { spawn-sh "swaylock &"; }
+    Super+Ctrl+Shift+BackSpace repeat=false hotkey-overlay-title="Lock the Screen" { spawn-sh "run-swaylock &"; }
 
     // Application hotkeys
     Mod+Return repeat=false hotkey-overlay-title="Ghostty" { spawn-sh "ghostty +new-window"; }

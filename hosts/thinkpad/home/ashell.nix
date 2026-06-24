@@ -55,7 +55,7 @@
 
         remove_airplane_btn = true;
 
-        lock_cmd = "swaylock &";
+        lock_cmd = "run-swaylock &";
         audio_sinks_more_cmd = "pavucontrol -t 3";
         audio_sources_more_cmd = "pavucontrol -t 4";
         wifi_more_cmd = "nm-connection-editor";
