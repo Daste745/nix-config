@@ -68,6 +68,7 @@
       "space B": "git::Blame",
       "space c": "workspace::ToggleCenteredLayout",
       "space b": "editor::ToggleBreakpoint",
+      "space s": "git::ToggleStaged",
       "g w": "vim::HelixJumpToWord", // from helix keymap
       "g r": "editor::FindAllReferences", // from helix keymap
       "g t": "editor::GoToTypeDefinition",
