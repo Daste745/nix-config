@@ -55,6 +55,7 @@ in
     # ./hyprlock.nix
     # ./hyprpaper.nix
     ./nextcloud-client.nix
+    ./swayidle.nix
     ./swaylock.nix
     ./swaync.nix
     ./trayscale.nix

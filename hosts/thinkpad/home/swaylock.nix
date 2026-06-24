@@ -34,17 +34,4 @@
       text-wrong-color = "ee99a0";
     };
   };
-
-  home.packages = [
-    # Wrapped swaylock with custom options
-    (pkgs.writeShellScriptBin "run-swaylock" ''
-      swaylock \
-        --ignore-empty-password \
-        --grace 5 \
-        --grace-no-mouse \
-        --indicator \
-        --clock \
-        --fade-in 0.2
-    '')
-  ];
 }
