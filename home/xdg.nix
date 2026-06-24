@@ -8,6 +8,7 @@ let
     ;
   wgetrc = "${configHome}/wgetrc";
   npmrc = "${configHome}/npm/npmrc";
+  pythonStartup = "${configHome}/python/startup.py";
 in
 {
   xdg.enable = true;
@@ -20,6 +21,7 @@ in
     NODE_REPL_HISTORY = "${dataHome}/node_repl_history";
     NPM_CONFIG_USERCONFIG = npmrc;
     BUN_INSTALL = "${dataHome}/bun";
+    PYTHONSTARTUP = pythonStartup; # Python <= 3.12
     PYTHON_HISTORY = "${stateHome}/python_history"; # Python >= 3.13
     CARGO_HOME = "${dataHome}/cargo";
     DOCKER_CONFIG = "${configHome}/docker";
@@ -34,6 +36,40 @@ in
 
   home.file."${wgetrc}".text = ''
     hsts-file = ${cacheHome}/wget-hsts
+  '';
+
+  home.file."${pythonStartup}".text = ''
+    import atexit
+    import os
+    import readline
+
+    MAX_HISTORY_LEN = 10_000
+
+    # Use PYTHON_HISTORY env from Python>=3.13
+    if "PYTHON_HISTORY" in os.environ:
+        histfile = os.path.expanduser(os.environ["PYTHON_HISTORY"])
+    # Or just use ~/.local/state/python_history
+    elif "XDG_STATE_HOME" in os.environ:
+        histfile = os.path.join(os.path.expanduser(os.environ["XDG_STATE_HOME"]), "python_history")
+    # Fall back to ~/.python_history
+    else:
+        histfile = os.path.join(os.path.expanduser("~"), ".python_history")
+
+    # From https://docs.python.org/3/library/readline.html#example
+    # Supports concurrent interactive sessions merging their history at exit
+    try:
+        readline.read_history_file(histfile)
+        history_len = readline.get_current_history_length()
+    except FileNotFoundError:
+        open(histfile, "wb").close()
+        history_len = 0
+
+    def save_history(prev_history_len, histfile):
+        new_history_len = readline.get_current_history_length()
+        readline.set_history_length(MAX_HISTORY_LEN)
+        readline.append_history_file(new_history_len - prev_history_len, histfile)
+
+    atexit.register(save_history, history_len, histfile)
   '';
 
   home.file."${npmrc}".text = ''
