@@ -69,6 +69,7 @@
       "space c": "workspace::ToggleCenteredLayout",
       "space b": "editor::ToggleBreakpoint",
       "space s": "git::ToggleStaged",
+      "space S": "git::StageAndNext",
       "g w": "vim::HelixJumpToWord", // from helix keymap
       "g r": "editor::FindAllReferences", // from helix keymap
       "g t": "editor::GoToTypeDefinition",
