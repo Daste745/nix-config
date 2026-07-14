@@ -88,6 +88,7 @@
     "mode": "eager",
   },
   "agent": {
+    "terminal_init_command": "claude",
     "dock": "right",
     "sidebar_side": "right",
     "default_model": {
