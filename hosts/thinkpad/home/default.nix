@@ -6,6 +6,7 @@
 }:
 let
   system = pkgs.stdenv.hostPlatform.system;
+  customPkgs = inputs.packages.${system};
 in
 {
   home = {
@@ -30,6 +31,7 @@ in
     obs-studio
     wl-clipboard
     claude-code
+    customPkgs.gnhf
     # TODO)) Replace with a real package once `wt` is packaged properly
     (writeShellApplication {
       name = "wt";
