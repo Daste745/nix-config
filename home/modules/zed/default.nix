@@ -29,7 +29,8 @@ in
           tmp=$(mktemp "/tmp/$(basename "$1").XXXXXX")
           cp "$1" "$tmp"
 
-          zed --wait "$tmp"
+          # Block until the file is closed + open in current window
+          zed --wait --existing "$tmp"
 
           cp "$tmp" "$1"
           rm "$tmp"
