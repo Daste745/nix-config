@@ -7,7 +7,13 @@
 }:
 let
   system = pkgs.stdenv.hostPlatform.system;
-  ulauncher = inputs.ulauncher.packages.${system}.ulauncher6;
+  # FIXME)) Fix version mismatch upstream
+  ulauncher = inputs.ulauncher.packages.${system}.ulauncher6.overrideAttrs (
+    final: prev: {
+      version = "6.0.0b33";
+      __intentionallyOverridingVersion = true;
+    }
+  );
   mkOutOfStoreSymlink = config.lib.file.mkOutOfStoreSymlink;
 in
 {
