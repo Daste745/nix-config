@@ -60,6 +60,7 @@
     "dock": "left",
   },
   "git_panel": {
+    "group_by": "status",
     "tree_view": true,
     "dock": "left",
   },
