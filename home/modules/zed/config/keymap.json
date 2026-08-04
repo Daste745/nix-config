@@ -104,4 +104,11 @@
       "ctrl-shift-k": ["workspace::IncreaseActiveDockSize", { "px": 0 }],
     },
   },
+  {
+    "context": "GitDiff > Editor",
+    "unbind": {
+      "ctrl-space": "git::StageAll",
+      "ctrl-shift-space": "git::UnstageAll",
+    },
+  },
 ]
