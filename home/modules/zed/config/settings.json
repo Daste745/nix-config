@@ -190,6 +190,9 @@
       "inlay_hints": {
         "enabled": true,
       },
+      // Use folding ranges from LSP to avoid unfoldable regions (e.g. function bodies)
+      // TODO: Remove once https://github.com/zed-industries/zed/issues/58858 is fixed
+      "document_folding_ranges": "on",
     },
     "JavaScript": {
       "code_actions_on_format": {
