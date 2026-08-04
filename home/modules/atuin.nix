@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  inherit (config.xdg) dataHome;
+  inherit (config.xdg) dataHome stateHome;
 in
 {
   programs.atuin = {
@@ -17,6 +17,7 @@ in
       sync_frequency = "5m";
       sync.records = true;
       show_tabs = false;
+      logs.dir = "${stateHome}/atuin/logs";
     };
   };
 
