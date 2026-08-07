@@ -13,16 +13,16 @@
 }:
 rustPlatform.buildRustPackage (finalAttrs: {
   pname = "nirimap";
-  version = "0.2.0";
+  version = "0.3.0";
 
   src = fetchFromGitHub {
     owner = "alexandergknoll";
     repo = "nirimap";
     tag = "v${finalAttrs.version}";
-    hash = "sha256-4HnmIc9FDXgPfbJdhjuVenc2R/wZ9ULTi6QaTskO1/s=";
+    hash = "sha256-U1F0IM4LmKBfMYx+qajyUgrN399xnvfa3y4Qdfet2SU=";
   };
 
-  cargoHash = "sha256-EI79WewUTAOFivRsR2ZjywEAYZ9Lq6YnfwPml071CqU=";
+  cargoHash = "sha256-53eSkxFF2nnEwavZutPeDQsABVyvKtArMUqsCHh7X7U=";
 
   nativeBuildInputs = [
     pkg-config
