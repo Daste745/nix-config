@@ -25,7 +25,7 @@ in
     feishin
     jellyfin-tui
     jetbrains.datagrip
-    libreoffice-fresh
+    libreoffice-stable
     vlc
     gimp
     obs-studio

@@ -11,24 +11,6 @@
   system.stateVersion = "25.11";
   nixpkgs.hostPlatform = "x86_64-linux";
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.overlays = [
-    # Workaround for https://github.com/NixOS/nixpkgs/issues/545976
-    # nixpkgs-notify #500223
-    (final: prev: {
-      niri = prev.niri.override {
-        libdisplay-info = final.libdisplay-info.overrideAttrs (finalAttrs: {
-          version = "0.3.0";
-          src = final.fetchFromGitLab {
-            domain = "gitlab.freedesktop.org";
-            owner = "emersion";
-            repo = "libdisplay-info";
-            rev = finalAttrs.version;
-            sha256 = "sha256-nXf2KGovNKvcchlHlzKBkAOeySMJXgxMpbi5z9gLrdc=";
-          };
-        });
-      };
-    })
-  ];
 
   boot.loader = {
     systemd-boot.enable = true;
