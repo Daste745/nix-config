@@ -92,6 +92,7 @@
         thinkpad-vm = {
           type = "app";
           program = lib.getExe nixosConfigurations.thinkpad.config.system.build.vm;
+          meta.description = "VM with the thinkpad host's configuration";
         };
       };
 
