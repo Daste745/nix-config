@@ -1,10 +1,16 @@
-{ pkgs, ... }:
-pkgs.writeShellApplication {
+{
+  writeShellApplication,
+  jq,
+  coreutils,
+}:
+writeShellApplication {
   name = "check-flake-updates";
-  runtimeInputs = with pkgs; [
+
+  runtimeInputs = [
     jq
     coreutils
   ];
+
   text = ''
     FLAKE_LOCK="''${1:-flake.lock}"
 

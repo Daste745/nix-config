@@ -2,12 +2,27 @@
 # - https://github.com/eterniter06/volnoti
 # - https://github.com/FrndlyFox/volnoti
 
-{ pkgs, lib, ... }:
-pkgs.stdenv.mkDerivation {
+{
+  lib,
+  stdenv,
+  fetchFromGitHub,
+  fetchpatch,
+  pkg-config,
+  autoreconfHook,
+  wrapGAppsHook3,
+  dbus,
+  gdk-pixbuf,
+  glib,
+  libx11,
+  gtk2,
+  dbus-glib,
+  librsvg,
+}:
+stdenv.mkDerivation {
   pname = "volnoti";
   version = "2013-09-23";
 
-  src = pkgs.fetchFromGitHub {
+  src = fetchFromGitHub {
     owner = "davidbrazdil";
     repo = "volnoti";
     rev = "4af7c8e54ecc499097121909f02ecb42a8a60d24";
@@ -17,19 +32,19 @@ pkgs.stdenv.mkDerivation {
   patches = [
     # Fix dbus interface headers. See
     # https://github.com/davidbrazdil/volnoti/pull/10
-    (pkgs.fetchpatch {
+    (fetchpatch {
       url = "https://github.com/davidbrazdil/volnoti/commit/623ad8ea5c3ac8720d00a2ced4b6163aae38c119.patch";
       sha256 = "046zfdjmvhb7jrsgh04vfgi35sgy1zkrhd3bzdby3nvds1wslfam";
     })
   ];
 
-  nativeBuildInputs = with pkgs; [
+  nativeBuildInputs = [
     pkg-config
     autoreconfHook
     wrapGAppsHook3
   ];
 
-  buildInputs = with pkgs; [
+  buildInputs = [
     dbus
     gdk-pixbuf
     glib

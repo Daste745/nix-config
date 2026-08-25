@@ -1,13 +1,19 @@
-{ pkgs, ... }:
+{
+  stdenv,
+  writeShellApplication,
+  writeShellScriptBin,
+  fzf,
+  dix,
+}:
 let
   profilesPath = "/nix/var/nix/profiles/";
-  previewWrapper = pkgs.writeShellScriptBin "preview-wrapper" (
-    if pkgs.stdenv.hostPlatform.isLinux then
+  previewWrapper = writeShellScriptBin "preview-wrapper" (
+    if stdenv.hostPlatform.isLinux then
       "script -eq -c \"dix $@\" /dev/null"
     else
       "script -q /dev/null dix $@"
   );
-  preview = pkgs.writeShellScriptBin "preview" ''
+  preview = writeShellScriptBin "preview" ''
     # {+f} from fzf is passed as an argument to this script
     cat $1 \
       | sort -t '-' -k 2 -n \
@@ -16,14 +22,16 @@ let
       | xargs preview-wrapper
   '';
 in
-pkgs.writeShellApplication {
+writeShellApplication {
   name = "dix-fzf";
+
   runtimeInputs = [
-    pkgs.fzf
-    pkgs.dix
+    fzf
+    dix
     preview
     previewWrapper
   ];
+
   text = ''
     find ${profilesPath} -maxdepth 1 -type l -not -name default -not -name system \
       | cut -d '/' -f 6 \

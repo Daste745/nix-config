@@ -4,21 +4,21 @@ let
   mkSystemPackages =
     system: f:
     let
-      pkgs = import inputs.nixpkgs { inherit system; };
+      pkgs = inputs.nixpkgs.legacyPackages.${system};
     in
     f (inputs // { inherit lib pkgs; });
 in
 {
   x86_64-linux = mkSystemPackages "x86_64-linux" (args: {
-    volnoti = import ./volnoti.nix args;
+    volnoti = args.pkgs.callPackage ./volnoti.nix { };
     nirimap = args.pkgs.callPackage ./nirimap.nix { };
     gnhf = args.pkgs.callPackage ./gnhf.nix { };
-    check-flake-updates = import ./check-flake-updates.nix args;
-    dix-fzf = import ./dix-fzf.nix args;
+    check-flake-updates = args.pkgs.callPackage ./check-flake-updates.nix { };
+    dix-fzf = args.pkgs.callPackage ./dix-fzf.nix { };
   });
   aarch64-darwin = mkSystemPackages "aarch64-darwin" (args: {
-    check-flake-updates = import ./check-flake-updates.nix args;
-    dix-fzf = import ./dix-fzf.nix args;
+    check-flake-updates = args.pkgs.callPackage ./check-flake-updates.nix { };
+    dix-fzf = args.pkgs.callPackage ./dix-fzf.nix { };
     gnhf = args.pkgs.callPackage ./gnhf.nix { };
   });
 }
