@@ -1,5 +1,6 @@
 { username, ... }: {
   imports = [
+    ./hardware.nix
     ./disks.nix
   ];
 
