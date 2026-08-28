@@ -74,6 +74,11 @@
             inputs.nixos-wsl.nixosModules.default
           ];
         };
+        gleba = util.mkNixosConfiguration "gleba" {
+          extraModules = [
+            inputs.disko.nixosModules.disko
+          ];
+        };
         thinkpad = util.mkNixosConfiguration "thinkpad" {
           extraModules = [
             inputs.disko.nixosModules.disko
