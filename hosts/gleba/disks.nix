@@ -2,15 +2,17 @@
   # TODO)) disk partitioning. btrfs root?
   disko.devices.disk.main = {
     type = "disk";
-    device = "/dev/nvme0n1";
+    device = "/dev/mmcblk0";
     content = {
       type = "gpt";
       partitions = {
         # /boot
         ESP = {
+          priority = 1;
           type = "EF00";
           label = "boot";
-          size = "512M";
+          start = "1M";
+          end = "128M";
           content = {
             type = "filesystem";
             format = "vfat";
@@ -19,17 +21,23 @@
           };
         };
         # /
-        luks = {
-          label = "luks";
+        root = {
+          label = "root";
           size = "100%";
           content = {
-            type = "luks";
-            name = "crypted";
-            settings.allowDiscards = true;
-            content = {
-              type = "filesystem";
-              format = "ext4";
-              mountpoint = "/";
+            type = "btrfs";
+            extraArgs = [ "-f" ]; # Override existing partition
+            subvolumes = {
+              "/root" = {
+                mountpoint = "/";
+              };
+              "/nix" = {
+                mountOptions = [
+                  "compress=zstd"
+                  "noatime"
+                ];
+                mountpoint = "/nix";
+              };
             };
           };
         };
