@@ -1,5 +1,6 @@
 { username, ... }: {
   imports = [
+    ../../modules/tailscale.nix
     ./hardware.nix
     ./disks.nix
   ];
@@ -24,14 +25,7 @@
     home = "/home/${username}";
   };
 
-  # TODO)) Check how much space home-manager will eat
-  # home-manager.users.${username} = ./home;
-
-  # TODO)) nix-ld needed?
-  # programs.nix-ld.enable = true;
-
-  # TODO)) Maybe podman? Or something else?
-  # virtualisation.docker.enable = true;
+  home-manager.users.${username} = ./home.nix;
 
   nix.settings = {
     # TODO)) Move to hosts/common.nix once enabled on all hosts
