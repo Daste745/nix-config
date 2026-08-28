@@ -21,7 +21,6 @@ in
     gnupg
     tokei
     ripgrep
-    ripgrep-all
     hyperfine
     xdg-utils
     nixd
