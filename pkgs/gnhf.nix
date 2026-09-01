@@ -3,7 +3,7 @@
   stdenv,
   fetchFromGitHub,
   nodejs,
-  pnpm,
+  pnpm_11,
   fetchPnpmDeps,
   pnpmConfigHook,
   makeBinaryWrapper,
@@ -11,7 +11,7 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "gnhf";
-  version = "0.1.42";
+  version = "0.1.47";
   __structuredAttrs = true;
   strictDeps = true;
 
@@ -19,12 +19,12 @@ stdenv.mkDerivation (finalAttrs: {
     owner = "kunchenguid";
     repo = "gnhf";
     tag = "gnhf-v${finalAttrs.version}";
-    hash = "sha256-8dTfXCULAoXMJwb38bEMCazT7jzT130rzpLivVkx3Wc=";
+    hash = "sha256-6XTluVmG7JVU8wOv3N+nc8/G1uwfPD5A3BmgjKLjGXg=";
   };
 
   nativeBuildInputs = [
     nodejs
-    pnpm
+    pnpm_11
     pnpmConfigHook
     makeBinaryWrapper
   ];
@@ -32,7 +32,7 @@ stdenv.mkDerivation (finalAttrs: {
   pnpmDeps = fetchPnpmDeps {
     inherit (finalAttrs) pname version src;
     fetcherVersion = 4;
-    hash = "sha256-sqLCB3xSsd+eIbwFh2JrXUDYVt9Y5TCPKV5eBaBrZxs=";
+    hash = "sha256-kQHYvZ8LNHGw1pPuTnOTUn26yUY8TmgA0+BO2+cSvLY=";
   };
 
   buildPhase = ''
