@@ -37,4 +37,9 @@
       };
     };
   };
+
+  nix.settings = {
+    # TODO)) Move to hosts/common.nix once enabled on all hosts
+    use-xdg-base-directories = true;
+  };
 }
