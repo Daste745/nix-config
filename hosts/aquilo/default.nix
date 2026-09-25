@@ -37,13 +37,4 @@
       };
     };
   };
-
-  nix.settings = {
-    extra-substituters = [
-      "https://cache.rab.lol"
-    ];
-    extra-trusted-public-keys = [
-      "cache.rab.lol-1:/b0gE755WZeAHXxdtehRWroV4Vu6KOjjuoRLV24Sh4A="
-    ];
-  };
 }
