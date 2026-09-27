@@ -30,7 +30,7 @@
   homelab.services = {
     whoami.enable = true;
     # TODO)) immich.enable = true;
-    # TODO)) glance.enable = true;
+    glance.enable = true;
   };
 
   home-manager.users.${username} = ./home.nix;
