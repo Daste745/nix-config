@@ -26,6 +26,7 @@
     home = "/home/${username}";
   };
 
+  homelab.proxy.enable = true;
   homelab.services = {
     whoami.enable = true;
     # TODO)) immich.enable = true;

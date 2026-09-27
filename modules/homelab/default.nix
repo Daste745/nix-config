@@ -49,6 +49,7 @@
 
   imports = [
     ./services
+    ./proxy.nix
   ];
 }
 
