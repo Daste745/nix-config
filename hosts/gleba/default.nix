@@ -28,6 +28,12 @@
   home-manager.users.${username} = ./home.nix;
 
   nix.settings = {
+    extra-substituters = [
+      "https://daste745.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "daste745.cachix.org-1:/khK2BQJP1D6W/f64PXX9wbX7YcGelbQwopBpATigUM="
+    ];
     # TODO)) Move to hosts/common.nix once enabled on all hosts
     use-xdg-base-directories = true;
   };
