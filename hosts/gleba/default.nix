@@ -1,5 +1,6 @@
 { username, ... }: {
   imports = [
+    ../../modules/homelab
     ../../modules/tailscale.nix
     ./hardware.nix
     ./disks.nix
@@ -23,6 +24,12 @@
       "wheel"
     ];
     home = "/home/${username}";
+  };
+
+  homelab.services = {
+    whoami.enable = true;
+    # TODO)) immich.enable = true;
+    # TODO)) glance.enable = true;
   };
 
   home-manager.users.${username} = ./home.nix;
