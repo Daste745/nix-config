@@ -1,0 +1,40 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    name: Check
+    steps:
+      - uses: actions/checkout@v7
+      - uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          nix_path: nixpkgs=channel:nixos-unstable
+      - uses: cachix/cachix-action@v17
+        with:
+          name: daste745
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+          skipPush: true
+      - run: nix flake check
+  build:
+    runs-on: ubuntu-latest
+    name: Build
+    needs: check
+    steps:
+      - uses: actions/checkout@v7
+      - uses: cachix/install-nix-action@v31
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+          nix_path: nixpkgs=channel:nixos-unstable
+      - uses: cachix/cachix-action@v17
+        with:
+          name: daste745
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+          pathsToPush: gleba-system
+      - run: nix build .#nixosConfigurations.gleba.config.system.build.toplevel -o gleba-system
