@@ -35,13 +35,6 @@
               example = "immich.domain.com";
             };
           };
-          example = {
-            title = "Immich";
-            description = "Dashboard description";
-            category = "Media";
-            icon = "di:immich";
-            url = "immich.domain.com";
-          };
         }
       );
     };
