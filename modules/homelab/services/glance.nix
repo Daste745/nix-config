@@ -33,7 +33,9 @@ in
   config = lib.mkIf cfg.enable {
     services.glance = {
       enable = true;
-      settings.branding = "kdng";
+      settings.branding = {
+        logo-text = "kdng";
+      };
       settings.theme = {
         background-color = "240 21 15";
         contrast-multiplier = "1.2";
