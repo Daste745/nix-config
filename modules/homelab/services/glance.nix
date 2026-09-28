@@ -73,8 +73,6 @@ in
                   servers = [
                     {
                       type = "local";
-                      name = "Services";
-                      hide-mountpoints-by-default = true;
                     }
                   ];
                 }
