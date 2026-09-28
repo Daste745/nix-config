@@ -33,9 +33,11 @@ in
   config = lib.mkIf cfg.enable {
     services.glance = {
       enable = true;
+      # https://github.com/glanceapp/glance/blob/main/docs/configuration.md#branding
       settings.branding = {
         logo-text = "kdng";
       };
+      # https://github.com/glanceapp/glance/blob/main/docs/configuration.md#theme
       settings.theme = {
         background-color = "240 21 15";
         contrast-multiplier = "1.2";
@@ -43,6 +45,7 @@ in
         positive-color = "115 54 76";
         negative-color = "347 70 65";
       };
+      # https://github.com/glanceapp/glance/blob/main/docs/configuration.md#pages--columns
       settings.pages = [
         {
           name = "Home";
