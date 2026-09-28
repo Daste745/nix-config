@@ -5,7 +5,112 @@ let
   domain = "kdng.net";
 
   services = lib.attrValues config.homelab.dashboard.services;
-  servicesByCategory = lib.groupBy (service: service.category) services;
+  extraServices = [
+    {
+      title = "Nextcloud";
+      icon = "di:nextcloud";
+      url = "cloud.kdng.net";
+      # TODO)) alt-status-codes: [ 400 ]
+      category = "Services";
+    }
+    {
+      title = "Syncthing";
+      icon = "di:syncthing";
+      url = "syncthing.kdng.net";
+      category = "Services";
+    }
+    {
+      title = "Home Assistant";
+      icon = "di:home-assistant";
+      url = "homeassistant.kdng.net";
+      # check-url: https://homeassistant.kdng.net  # port 80 doesn't respond
+      category = "Services";
+    }
+    {
+      title = "Transmission";
+      icon = "di:transmission";
+      url = "transmission.kdng.net";
+      category = "Services";
+    }
+    {
+      title = "Paperless";
+      icon = "di:paperless-ngx";
+      url = "paperless.kdng.net";
+      category = "Services";
+    }
+    {
+      title = "TrueNAS";
+      icon = "di:truenas";
+      url = "192.168.1.100:81";
+      category = "Management";
+    }
+    {
+      title = "Nginx Proxy Manager";
+      icon = "di:nginx-proxy-manager";
+      url = "npm.kdng.net";
+      category = "Management";
+    }
+    {
+      title = "Authelia";
+      icon = "di:authelia";
+      url = "auth.kdng.net";
+      category = "Management";
+    }
+    {
+      title = "JetKVM";
+      icon = "di:jetkvm";
+      # TODO)) http, not https
+      url = "jetkvm.kdng.net";
+      # allow-insecure = true;
+      category = "Management";
+    }
+    {
+      title = "Router";
+      icon = "di:unifi";
+      # TODO)) http, not https
+      url = "192.168.1.1";
+      # allow-insecure = true;
+      category = "Management";
+    }
+    {
+      title = "Immich";
+      icon = "di:immich";
+      url = "photos.kdng.net";
+      category = "Media";
+    }
+    {
+      title = "Jellyfin";
+      icon = "di:jellyfin";
+      url = "jellyfin.kdng.net";
+      category = "Media";
+    }
+    {
+      title = "Kavita";
+      icon = "di:kavita";
+      url = "kavita.kdng.net";
+      category = "Media";
+    }
+    {
+      title = "slskd";
+      icon = "di:slskd";
+      url = "slskd.kdng.net";
+      category = "Media";
+    }
+    {
+      title = "Prowlarr";
+      icon = "di:prowlarr";
+      url = "prowlarr.kdng.net";
+      category = "Media";
+    }
+    {
+      title = "MeTube";
+      icon = "di:metube";
+      url = "metube.kdng.net";
+      category = "Media";
+    }
+  ];
+  # TODO)) Declare order of categories
+  servicesByCategory = lib.groupBy (service: service.category) (services ++ extraServices);
   # Create a monitor site entry
   monitorSite =
     cfg:
