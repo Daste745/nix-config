@@ -60,12 +60,12 @@ in
         username
       ];
       auto-optimise-store = true;
+      nix-path = [ "nixpkgs=flake:nixpkgs" ];
     };
     registry = {
       nixpkgs.flake = inputs.nixpkgs;
       # NOTE: This overwrites the default github:NixOS/templates input
       templates.flake = inputs.self;
     };
-    nixPath = [ "nixpkgs=flake:nixpkgs" ];
   };
 }
