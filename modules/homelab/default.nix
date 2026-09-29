@@ -34,6 +34,12 @@
               description = "Service URL";
               example = "immich.domain.com";
             };
+            protocol = lib.mkOption {
+              type = lib.types.str;
+              default = "https";
+              description = "Service protocol";
+              example = "https";
+            };
           };
         }
       );

@@ -36,8 +36,8 @@
     truenas = {
       title = "TrueNAS";
       icon = "di:truenas";
-      # TODO)) http, not https
       url = "192.168.1.100:81";
+      protocol = "http";
       # allow-insecure = true;
       category = "Management";
     };
@@ -56,16 +56,16 @@
     jetkvm = {
       title = "JetKVM";
       icon = "di:jetkvm";
-      # TODO)) http, not https
       url = "jetkvm.kdng.net";
+      protocol = "http";
       # allow-insecure = true;
       category = "Management";
     };
     unifi-router = {
       title = "Router";
       icon = "di:unifi";
-      # TODO)) http, not https
       url = "192.168.1.1";
+      protocol = "http";
       # allow-insecure = true;
       category = "Management";
     };

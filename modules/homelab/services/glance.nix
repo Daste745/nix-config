@@ -11,7 +11,7 @@ let
   monitorSite =
     cfg:
     let
-      url = "https://${cfg.url}";
+      url = "${cfg.protocol}://${cfg.url}";
     in
     {
       inherit (cfg) title icon;
