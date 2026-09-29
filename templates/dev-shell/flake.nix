@@ -1,14 +1,17 @@
 {
   inputs = {
     nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.zst";
-    systems.url = "github:nix-systems/default";
   };
 
   outputs =
-    { systems, nixpkgs, ... }:
+    { nixpkgs, ... }:
     let
-      eachSystem =
-        f: nixpkgs.lib.genAttrs (import systems) (system: f (import nixpkgs { inherit system; }));
+      systems = [
+        "aarch64-darwin"
+        "x86_64-darwin"
+        "x86_64-linux"
+      ];
+      eachSystem = f: nixpkgs.lib.genAttrs systems (system: f (import nixpkgs { inherit system; }));
     in
     {
       devShells = eachSystem (pkgs: {
