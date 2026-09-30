@@ -25,7 +25,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build
-    needs: check
     steps:
       - uses: actions/checkout@v7
       - uses: cachix/install-nix-action@v31
