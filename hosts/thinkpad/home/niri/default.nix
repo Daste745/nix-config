@@ -18,7 +18,7 @@
     smile
     loupe
     wlogout
-    gcr
+    gcr_3
     networkmanagerapplet
     blueman
     pavucontrol
