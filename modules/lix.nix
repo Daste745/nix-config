@@ -1,3 +1,4 @@
+# https://lix.systems/add-to-config/#advanced-change
 { pkgs, ... }:
 {
   nixpkgs.overlays = [
