@@ -61,6 +61,7 @@ in
       ];
       auto-optimise-store = true;
       nix-path = [ "nixpkgs=flake:nixpkgs" ];
+      use-xdg-base-directories = true;
     };
     registry = {
       nixpkgs.flake = inputs.nixpkgs;
