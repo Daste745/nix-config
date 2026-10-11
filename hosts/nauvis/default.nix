@@ -9,6 +9,7 @@ let
 in
 {
   imports = [
+    ../../modules/lix.nix
     ../../modules/tailscale.nix
   ];
 
