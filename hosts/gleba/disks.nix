@@ -1,5 +1,4 @@
 {
-  # TODO)) disk partitioning. btrfs root?
   disko.devices.disk.main = {
     type = "disk";
     device = "/dev/mmcblk0";
