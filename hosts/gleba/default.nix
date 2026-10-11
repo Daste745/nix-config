@@ -29,7 +29,6 @@
   homelab.proxy.enable = true;
   homelab.services = {
     whoami.enable = true;
-    # TODO)) immich.enable = true;
     glance.enable = true;
   };
 
