@@ -40,6 +40,13 @@
               description = "Service protocol";
               example = "https";
             };
+            check = {
+              allow-insecure = lib.mkOption {
+                type = lib.types.bool;
+                default = false;
+                description = "Whether to ignore invalid/self-signed certificates";
+              };
+            };
           };
         }
       );

@@ -17,6 +17,7 @@ let
       inherit (cfg) title icon;
       inherit url;
       check-url = url;
+      allow-insecure = cfg.check.allow-insecure;
     };
   # Map all service dashboard configs to `monitor` widgets, grouped by category
   serviceMonitors = lib.mapAttrsToList (category: services: {

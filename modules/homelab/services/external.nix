@@ -4,7 +4,6 @@
       title = "Nextcloud";
       icon = "di:nextcloud";
       url = "cloud.kdng.net";
-      # TODO)) alt-status-codes: [ 400 ]
       category = "Services";
     };
     syncthing = {
@@ -17,7 +16,6 @@
       title = "Home Assistant";
       icon = "di:home-assistant";
       url = "homeassistant.kdng.net";
-      # check-url: https://homeassistant.kdng.net  # port 80 doesn't respond
       category = "Services";
     };
     transmission = {
@@ -38,7 +36,6 @@
       icon = "di:truenas";
       url = "192.168.1.100:81";
       protocol = "http";
-      # allow-insecure = true;
       category = "Management";
     };
     nginx-proxy-manager = {
@@ -58,15 +55,13 @@
       icon = "di:jetkvm";
       url = "jetkvm.kdng.net";
       protocol = "http";
-      # allow-insecure = true;
       category = "Management";
     };
     unifi-router = {
       title = "Router";
       icon = "di:unifi";
       url = "192.168.1.1";
-      protocol = "http";
-      # allow-insecure = true;
+      check.allow-insecure = true;
       category = "Management";
     };
 
