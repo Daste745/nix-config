@@ -13,6 +13,7 @@ let
 in
 {
   imports = [
+    ../modules/nh.nix
     ../modules/mosh.nix
     ../modules/ssh.nix
   ];
