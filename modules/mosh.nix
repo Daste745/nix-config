@@ -1,10 +1,18 @@
 {
   lib,
   pkgs,
-  isLinux,
   ...
 }:
+let
+  inherit (pkgs.stdenv.hostPlatform) isLinux isDarwin;
+in
 {
-  environment.systemPackages = [ pkgs.mosh ];
-  programs = lib.optionalAttrs isLinux { mosh.enable = true; };
+  # NOTE: Darwin doesn't have `programs.mosh`
+  programs.mosh = lib.mkIf isLinux {
+    enable = true;
+  };
+
+  environment.systemPackages = lib.mkIf isDarwin [
+    pkgs.mosh
+  ];
 }

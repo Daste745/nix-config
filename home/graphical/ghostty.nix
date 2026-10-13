@@ -2,10 +2,10 @@
   pkgs,
   lib,
   config,
-  isLinux,
   ...
 }:
 let
+  inherit (pkgs.stdenv.hostPlatform) isLinux;
   cfg = config.programs.ghostty;
 in
 {

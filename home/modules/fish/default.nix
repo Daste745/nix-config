@@ -1,5 +1,6 @@
-{ isLinux, ... }:
+{ pkgs, ... }:
 let
+  inherit (pkgs.stdenv.hostPlatform) isLinux;
   configDir = "~/.nix-config";
   nrsAbbr =
     if isLinux then

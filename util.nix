@@ -23,7 +23,6 @@ in
       system = "x86_64-linux";
       specialArgs = {
         inherit inputs username hostname;
-        isLinux = true;
       };
       modules = [
         home-manager.nixosModules.home-manager
@@ -39,7 +38,6 @@ in
     nix-darwin.lib.darwinSystem {
       specialArgs = {
         inherit inputs username hostname;
-        isLinux = false;
       };
       modules = [
         home-manager.darwinModules.home-manager

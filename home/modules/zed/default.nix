@@ -2,10 +2,10 @@
   config,
   lib,
   pkgs,
-  isLinux,
   ...
 }:
 let
+  inherit (pkgs.stdenv.hostPlatform) isLinux;
   mkOutOfStoreSymlink = config.lib.file.mkOutOfStoreSymlink;
 in
 {

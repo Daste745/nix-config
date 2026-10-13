@@ -5,7 +5,6 @@
   config,
   username,
   hostname,
-  isLinux,
   ...
 }:
 let
@@ -45,7 +44,6 @@ in
         inputs
         username
         hostname
-        isLinux
         ;
     };
   };
