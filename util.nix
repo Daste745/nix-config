@@ -43,6 +43,7 @@ in
         home-manager.darwinModules.home-manager
         agenix.darwinModules.default
       ]
+      ++ (import ./darwin/modules/module-list.nix)
       ++ (mkCommonModules hostname)
       ++ extraModules;
     };
