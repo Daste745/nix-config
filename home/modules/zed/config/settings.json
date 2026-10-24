@@ -105,7 +105,7 @@
     "claude-acp": {
       "type": "registry",
       "default_config_options": {
-        "model": "opus[1m]",
+        "model": "opus",
         "mode": "auto",
       },
     },
