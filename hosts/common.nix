@@ -18,6 +18,8 @@ in
     ../modules/ssh.nix
   ];
 
+  nixpkgs.overlays = import ../overlays;
+
   environment.systemPackages = with pkgs; [
     git
     inputs.agenix.packages.${system}.default
