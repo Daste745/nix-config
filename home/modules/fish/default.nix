@@ -23,10 +23,6 @@ in
         function = "last_history_item";
         position = "anywhere";
       };
-      # Activate a python virtual environment
-      acv = {
-        function = "activate_venv";
-      };
 
       # Add verbose and interactive by default
       cp = "cp -via";
