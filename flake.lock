@@ -74,6 +74,26 @@
         "type": "github"
       }
     },
+    "dix-tui": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792876537,
+        "narHash": "sha256-m9GxBl8BT0VwlxLN35dNidi/iTuZbB7lwLCVKHoLSG4=",
+        "owner": "daste745",
+        "repo": "dix-tui",
+        "rev": "89261e5d7297f96e4acff01a715b4d6151039c1a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "daste745",
+        "repo": "dix-tui",
+        "type": "github"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -674,6 +694,7 @@
       "inputs": {
         "agenix": "agenix",
         "disko": "disko",
+        "dix-tui": "dix-tui",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "hyprland-split-monitor-workspaces": "hyprland-split-monitor-workspaces",

@@ -24,6 +24,7 @@ in
     git
     inputs.agenix.packages.${system}.default
     inputs.pinix.packages.${system}.default
+    inputs.dix-tui.packages.${system}.default
   ];
 
   programs.fish.enable = true;
