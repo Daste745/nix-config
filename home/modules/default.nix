@@ -11,9 +11,8 @@ in
     unzip
     wget
     curl
-    httpie
+    xh
     htop
-    mosh
     fastfetch
     dust
     fzf
