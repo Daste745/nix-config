@@ -8,7 +8,6 @@ let
   mkPackages = callPackage: {
     check-flake-updates = callPackage ./check-flake-updates.nix { };
     gnhf = callPackage ./gnhf.nix { };
-    hypremoji = callPackage ./hypremoji.nix { };
     nirimap = callPackage ./nirimap.nix { };
     volnoti = callPackage ./volnoti.nix { };
   };
