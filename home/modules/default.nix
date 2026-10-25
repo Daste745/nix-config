@@ -30,7 +30,6 @@ in
     nix-sweep
     comma
     dix
-    customPkgs.dix-fzf
     customPkgs.check-flake-updates
   ];
 

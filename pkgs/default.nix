@@ -8,11 +8,9 @@ in
     nirimap = callPackage ./nirimap.nix { };
     gnhf = callPackage ./gnhf.nix { };
     check-flake-updates = callPackage ./check-flake-updates.nix { };
-    dix-fzf = callPackage ./dix-fzf.nix { };
   });
   aarch64-darwin = mkSystemPackages "aarch64-darwin" (callPackage: {
     check-flake-updates = callPackage ./check-flake-updates.nix { };
-    dix-fzf = callPackage ./dix-fzf.nix { };
     gnhf = callPackage ./gnhf.nix { };
   });
 }
