@@ -25,11 +25,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build
-    matrix:
-      - name: gleba
-        config: gleba
-      - name: nauvis
-        config: nauvis
+    strategy:
+      matrix:
+        config:
+          - nauvis
+          - gleba
     steps:
       - uses: actions/checkout@v7
       - uses: cachix/install-nix-action@v31
