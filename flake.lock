@@ -525,6 +525,26 @@
         "type": "github"
       }
     },
+    "nh": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793031409,
+        "narHash": "sha256-m042q1bq0D39gsKKkYpJTdeGnoxEyyfeRI86q72/uIE=",
+        "owner": "nix-community",
+        "repo": "nh",
+        "rev": "b832a15fdfd087a7f5a43f1fb5a12dfbad5ce084",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nh",
+        "type": "github"
+      }
+    },
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
@@ -698,6 +718,7 @@
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "hyprland-split-monitor-workspaces": "hyprland-split-monitor-workspaces",
+        "nh": "nh",
         "nix-darwin": "nix-darwin",
         "nix-index-database": "nix-index-database",
         "nixos-wsl": "nixos-wsl",

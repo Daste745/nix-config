@@ -20,6 +20,10 @@
       url = "github:remi-dupre/pinix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nh = {
+      url = "github:nix-community/nh";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     dix-tui = {
       url = "github:daste745/dix-tui";
       inputs.nixpkgs.follows = "nixpkgs";
