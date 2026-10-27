@@ -25,6 +25,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     name: Build
+    matrix:
+      - name: gleba
+        config: gleba
+      - name: nauvis
+        config: nauvis
     steps:
       - uses: actions/checkout@v7
       - uses: cachix/install-nix-action@v31
@@ -35,7 +40,6 @@ jobs:
         with:
           name: daste745
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
-          pathsToPush: nauvis-system gleba-system
+          pathsToPush: ${{ matrix.config }}-system
       - run: |
-          nix build .#nixosConfigurations.nauvis.config.system.build.toplevel -o nauvis-system
-          nix build .#nixosConfigurations.gleba.config.system.build.toplevel -o gleba-system
+          nix build .#nixosConfigurations.${{ matrix.config }}.config.system.build.toplevel -o ${{ matrix.config }}-system
