@@ -35,5 +35,7 @@ jobs:
         with:
           name: daste745
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
-          pathsToPush: gleba-system
-      - run: nix build .#nixosConfigurations.gleba.config.system.build.toplevel -o gleba-system
+          pathsToPush: nauvis-system gleba-system
+      - run: |
+          nix build .#nixosConfigurations.nauvis.config.system.build.toplevel -o nauvis-system
+          nix build .#nixosConfigurations.gleba.config.system.build.toplevel -o gleba-system

@@ -6,6 +6,9 @@
   "languages": {
     "JSONC": {
       "tab_size": 2
+    },
+    "YAML": {
+      "tab_size": 2
     }
   }
 }
