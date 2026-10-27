@@ -64,6 +64,12 @@ in
       auto-optimise-store = true;
       nix-path = [ "nixpkgs=flake:nixpkgs" ];
       use-xdg-base-directories = true;
+      substituters = [
+        "https://daste745.cachix.org"
+      ];
+      trusted-public-keys = [
+        "daste745.cachix.org-1:/khK2BQJP1D6W/f64PXX9wbX7YcGelbQwopBpATigUM="
+      ];
     };
     registry = {
       nixpkgs.flake = inputs.nixpkgs;
