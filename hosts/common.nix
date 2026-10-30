@@ -23,7 +23,6 @@ in
   environment.systemPackages = with pkgs; [
     git
     inputs.agenix.packages.${system}.default
-    inputs.pinix.packages.${system}.default
     inputs.dix-tui.packages.${system}.default
   ];
 

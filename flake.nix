@@ -16,10 +16,6 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    pinix = {
-      url = "github:remi-dupre/pinix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nh = {
       url = "github:nix-community/nh";
       inputs.nixpkgs.follows = "nixpkgs";

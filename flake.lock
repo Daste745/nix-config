@@ -667,26 +667,6 @@
         "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.zst"
       }
     },
-    "pinix": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1755156568,
-        "narHash": "sha256-fuLOLww23Y+aDu2a4zKYfnP+ufN4azTvWtr6P1rTOj8=",
-        "owner": "remi-dupre",
-        "repo": "pinix",
-        "rev": "94b12321b32e8b4788d6e3ae91f514ef0285e6bc",
-        "type": "github"
-      },
-      "original": {
-        "owner": "remi-dupre",
-        "repo": "pinix",
-        "type": "github"
-      }
-    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -723,7 +703,6 @@
         "nix-index-database": "nix-index-database",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_2",
-        "pinix": "pinix",
         "ulauncher": "ulauncher",
         "zen-browser": "zen-browser"
       }
