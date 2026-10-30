@@ -1,13 +1,3 @@
-{ pkgs, ... }:
-let
-  inherit (pkgs.stdenv.hostPlatform) isLinux;
-  configDir = "~/.nix-config";
-  nrsAbbr =
-    if isLinux then
-      "sudo pixos-rebuild switch --flake ${configDir}"
-    else
-      "sudo darwin-rebuild switch --flake ${configDir} &| nom";
-in
 {
   home.shell.enableFishIntegration = true;
 
@@ -32,9 +22,8 @@ in
       chmod = "chmod -v";
 
       # Nix
-      nrs = nrsAbbr;
       ns = {
-        expansion = "pix shell nixpkgs#%";
+        expansion = "rom shell nixpkgs#%";
         setCursor = "%";
       };
 
