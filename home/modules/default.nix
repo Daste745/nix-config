@@ -26,7 +26,7 @@ in
     nil
     nixfmt
     nixfmt-tree
-    nix-output-monitor
+    rom
     nix-sweep
     comma
     dix
