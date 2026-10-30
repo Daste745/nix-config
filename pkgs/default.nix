@@ -7,7 +7,6 @@ let
   ];
   mkPackages = callPackage: {
     check-flake-updates = callPackage ./check-flake-updates.nix { };
-    gnhf = callPackage ./gnhf.nix { };
     nirimap = callPackage ./nirimap.nix { };
     volnoti = callPackage ./volnoti.nix { };
   };
