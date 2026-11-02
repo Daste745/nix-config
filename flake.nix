@@ -30,11 +30,6 @@
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-split-monitor-workspaces = {
-      url = "github:Duckonaut/split-monitor-workspaces";
-      inputs.hyprland.follows = "hyprland";
-    };
     ulauncher = {
       url = "github:Ulauncher/Ulauncher";
       inputs.nixpkgs.follows = "nixpkgs";

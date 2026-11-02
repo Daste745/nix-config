@@ -1,7 +1,4 @@
-{ inputs, pkgs, ... }:
-let
-  system = pkgs.stdenv.hostPlatform.system;
-in
+{ pkgs, ... }:
 {
   xdg.terminal-exec = {
     enable = true;
@@ -22,15 +19,10 @@ in
     enable = true;
     config = {
       common.default = [ "gtk" ];
-      hyprland.default = [
-        "gtk"
-        "hyprland"
-      ];
     };
     extraPortals = [
       pkgs.xdg-desktop-portal-gtk
       pkgs.xdg-desktop-portal-gnome
-      inputs.hyprland.packages.${system}.xdg-desktop-portal-hyprland
     ];
   };
 }

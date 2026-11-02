@@ -47,7 +47,6 @@ in
     inputs.nix-index-database.homeModules.nix-index
     ../../../assets
     ../../../home
-    # ./hyprland
     ./niri
     ./ulauncher
     ./ashell.nix
