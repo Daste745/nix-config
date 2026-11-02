@@ -225,6 +225,27 @@
         "type": "github"
       }
     },
+    "rom": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1793567976,
+        "narHash": "sha256-DDoke7/RqXX/1ccS3No2DnkXo8Im8eokrGZyCDayHlk=",
+        "owner": "manic-systems",
+        "repo": "rom",
+        "rev": "f6ae054a7dcabd8c7fa3638dc96d4669ffe7a990",
+        "type": "github"
+      },
+      "original": {
+        "owner": "manic-systems",
+        "ref": "v0.4.0",
+        "repo": "rom",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "agenix": "agenix",
@@ -236,6 +257,7 @@
         "nix-index-database": "nix-index-database",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs",
+        "rom": "rom",
         "ulauncher": "ulauncher",
         "zen-browser": "zen-browser"
       }

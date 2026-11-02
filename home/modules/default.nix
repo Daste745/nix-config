@@ -26,7 +26,7 @@ in
     nil
     nixfmt
     nixfmt-tree
-    rom
+    inputs.rom.packages.${system}.default
     nix-sweep
     comma
     dix

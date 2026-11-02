@@ -20,6 +20,10 @@
       url = "github:nix-community/nh";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    rom = {
+      url = "github:manic-systems/rom/v0.4.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     dix-tui = {
       url = "github:daste745/dix-tui";
       inputs.nixpkgs.follows = "nixpkgs";
