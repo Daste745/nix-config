@@ -48,11 +48,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1793314826,
-        "narHash": "sha256-/q1hUe6MquJ5mECpeHfBSSQZlwRATf8Qp7j+d0qiVdg=",
+        "lastModified": 1793921945,
+        "narHash": "sha256-4Ojpaf2U306ViAz5PGQoau68HHD5/556PcrIs9lky7Q=",
         "owner": "daste745",
         "repo": "dix-tui",
-        "rev": "efb7fee5a3833a59ed12f70be62540df14b6170b",
+        "rev": "b031e271f568bebc29da2774366cfc86e005ae38",
         "type": "github"
       },
       "original": {
