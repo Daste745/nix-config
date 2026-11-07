@@ -3,7 +3,7 @@
     ../../modules/homelab
     ../../modules/tailscale.nix
     ./hardware.nix
-    ./disks.nix
+    ./disks
   ];
 
   system.stateVersion = "26.05";
