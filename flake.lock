@@ -121,15 +121,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1793576535,
-        "narHash": "sha256-YTRHibnanvLrmGPVMowNbKkbrksxBW3hErla5Kis/mo=",
+        "lastModified": 1794467389,
+        "narHash": "sha256-MZk0y+/pHzZahqL162aLfTaHaeNVa4rONRyRFnPPsGs=",
         "owner": "nix-community",
         "repo": "nh",
-        "rev": "c063ba16c9d954a0f42ba9be5fb2b5810a4de8fc",
+        "rev": "a815b13dde7b72eac24442e1f9b1dfb67494f07f",
         "type": "github"
       },
       "original": {
         "owner": "nix-community",
+        "ref": "v4.5.0",
         "repo": "nh",
         "type": "github"
       }
@@ -232,16 +233,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1793567976,
-        "narHash": "sha256-DDoke7/RqXX/1ccS3No2DnkXo8Im8eokrGZyCDayHlk=",
+        "lastModified": 1794230842,
+        "narHash": "sha256-UQMxdZKSqb6EyYCIIre2xPnR+leWf8lmtiMT915PJbc=",
         "owner": "manic-systems",
         "repo": "rom",
-        "rev": "f6ae054a7dcabd8c7fa3638dc96d4669ffe7a990",
+        "rev": "b87cfb8683b8096e4ebb0e10ef6eb6d89edd84c4",
         "type": "github"
       },
       "original": {
         "owner": "manic-systems",
-        "ref": "v0.4.0",
+        "ref": "v0.5.0",
         "repo": "rom",
         "type": "github"
       }
