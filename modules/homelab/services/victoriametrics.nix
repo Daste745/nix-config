@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  username,
   ...
 }:
 let
@@ -25,7 +24,7 @@ in
 
     services.victoriametrics = {
       enable = true;
-      basicAuthUsername = username;
+      basicAuthUsername = "admin";
       basicAuthPasswordFile = config.age.secrets.victoriametrics-password.path;
       retentionPeriod = "1"; # 1 month
       prometheusConfig = {
