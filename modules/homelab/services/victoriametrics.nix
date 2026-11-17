@@ -27,6 +27,50 @@ in
       enable = true;
       basicAuthUsername = username;
       basicAuthPasswordFile = config.age.secrets.victoriametrics-password.path;
+      prometheusConfig = {
+        global = {
+          scrape_interval = "30s";
+        };
+        scrape_configs = [
+          {
+            job_name = "node";
+            metrics_path = "/metrics";
+            static_configs = [
+              {
+                targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ];
+                labels = {
+                  type = "node";
+                  instance = "gleba";
+                };
+              }
+            ];
+          }
+          {
+            job_name = "victoriametrics";
+            metrics_path = "/metrics";
+            static_configs = [
+              {
+                targets = [ "127.0.0.1:8428" ];
+                labels = {
+                  type = "victoriametrics";
+                  instance = "gleba";
+                };
+              }
+            ];
+            basic_auth = {
+              username = config.services.victoriametrics.basicAuthUsername;
+              password_file = "/run/credentials/victoriametrics.service/basic_auth_password";
+            };
+          }
+        ];
+      };
+    };
+
+    # TODO)) Move to a separate module when needed on more hosts
+    services.prometheus.exporters.node = {
+      enable = true;
+      listenAddress = "127.0.0.1";
+      enabledCollectors = [ "systemd" ];
     };
 
     systemd.services.victoriametrics.unitConfig.RequiresMountFor = [
