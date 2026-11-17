@@ -1,6 +1,7 @@
 {
   inputs,
   username,
+  lib,
   ...
 }:
 {
@@ -16,4 +17,6 @@
     ../../assets
     ../../home
   ];
+
+  services.syncthing.enable = lib.mkForce false;
 }
