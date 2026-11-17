@@ -61,6 +61,17 @@ in
               username = config.services.victoriametrics.basicAuthUsername;
               password_file = "/run/credentials/victoriametrics.service/basic_auth_password";
             };
+            metric_relabel_configs = [
+              {
+                source_labels = [
+                  "__name__"
+                  "version"
+                ];
+                regex = "vm_app_version;(.*)";
+                target_label = "version";
+                replacement = "victoria-metrics-$1";
+              }
+            ];
           }
         ];
       };

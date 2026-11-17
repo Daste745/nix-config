@@ -1,9 +1,48 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   name = "grafana";
   cfg = config.homelab.services.${name};
   domain = "grafana.kdng.net";
   port = config.services.grafana.settings.server.http_port;
+
+  # Consider something like this:
+  # https://github.com/alarsyo/nixos-config/blob/main/pkgs/grafana-dashboards/node-exporter.nix
+  # for dashboards not available via the Grafana API
+
+  grafanaDashboard =
+    {
+      id,
+      rev,
+      hash,
+    }:
+    pkgs.fetchurl {
+      url = "https://grafana.com/api/dashboards/${toString id}/revisions/${toString rev}/download";
+      inherit hash;
+    };
+
+  dashboards = pkgs.linkFarm "grafana-dashboards" [
+    {
+      name = "node-exporter-full.json";
+      path = grafanaDashboard {
+        id = 1860;
+        rev = 46;
+        hash = "sha256-5Y3cXcU11MkB+U2pZIvD49Wue2946Y4YW86LKJlhzqM=";
+      };
+    }
+    {
+      name = "victoriametrics.json";
+      path = grafanaDashboard {
+        id = 10229;
+        rev = 61;
+        hash = "sha256-k/RFtLoTBeuLhPne9UpPBQrd9a9Pg51Z5kSz+smnwxo=";
+      };
+    }
+  ];
 in
 {
   options.homelab.services.${name} = {
@@ -47,7 +86,17 @@ in
             }
           ];
         };
-        # TODO)) dashboards.settings
+        dashboards.settings = {
+          apiVersion = 1;
+          providers = [
+            {
+              name = "nix";
+              disableDeletion = true;
+              allowUiUpdates = false;
+              options.path = dashboards;
+            }
+          ];
+        };
       };
     };
 
