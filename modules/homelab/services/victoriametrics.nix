@@ -27,6 +27,7 @@ in
       enable = true;
       basicAuthUsername = username;
       basicAuthPasswordFile = config.age.secrets.victoriametrics-password.path;
+      retentionPeriod = "1"; # 1 month
       prometheusConfig = {
         global = {
           scrape_interval = "30s";
