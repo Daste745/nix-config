@@ -21,7 +21,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     rom = {
-      url = "github:manic-systems/rom/v0.5.0";
+      url = "github:manic-systems/rom/v0.6.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dix-tui = {
