@@ -14,11 +14,17 @@
             extraArgs = [ "-f" ]; # Override existing partition
             subvolumes = {
               "/data" = {
+                mountpoint = "/data";
                 mountOptions = [
                   "compress=zstd"
                   "noatime"
                 ];
-                mountpoint = "/data";
+              };
+              "/data/victoriametrics" = {
+                mountpoint = "/var/lib/private/victoriametrics";
+                mountOptions = [
+                  "noatime"
+                ];
               };
             };
           };

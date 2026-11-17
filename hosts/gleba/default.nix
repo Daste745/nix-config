@@ -30,6 +30,7 @@
   homelab.services = {
     whoami.enable = true;
     glance.enable = true;
+    victoriametrics.enable = true;
   };
 
   home-manager.users.${username} = ./home.nix;

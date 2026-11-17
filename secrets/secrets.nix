@@ -16,4 +16,8 @@ in
     keys.user.gleba
     keys.user.thinkpad
   ];
+  "victoriametrics-password.age".publicKeys = [
+    keys.bootstrap
+    keys.system.gleba
+  ];
 }
