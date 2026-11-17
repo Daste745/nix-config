@@ -16,6 +16,10 @@ in
     keys.user.gleba
     keys.user.thinkpad
   ];
+  "caddy-env.age".publicKeys = [
+    keys.bootstrap
+    keys.system.gleba
+  ];
   "victoriametrics-password.age".publicKeys = [
     keys.bootstrap
     keys.system.gleba
