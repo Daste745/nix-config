@@ -20,4 +20,12 @@ in
     keys.bootstrap
     keys.system.gleba
   ];
+  "grafana-admin-password.age".publicKeys = [
+    keys.bootstrap
+    keys.system.gleba
+  ];
+  "grafana-secret-key.age".publicKeys = [
+    keys.bootstrap
+    keys.system.gleba
+  ];
 }

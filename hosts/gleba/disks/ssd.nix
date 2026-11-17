@@ -26,6 +26,12 @@
                   "noatime"
                 ];
               };
+              "/data/grafana" = {
+                mountpoint = "/var/lib/grafana";
+                mountOptions = [
+                  "noatime"
+                ];
+              };
             };
           };
         };

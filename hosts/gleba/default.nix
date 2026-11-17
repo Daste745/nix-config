@@ -30,6 +30,7 @@
   homelab.services = {
     whoami.enable = true;
     glance.enable = true;
+    grafana.enable = true;
     victoriametrics.enable = true;
   };
 
