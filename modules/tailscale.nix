@@ -1,4 +1,4 @@
-{
+{ config, ... }: {
   services.tailscale = {
     enable = true;
     extraUpFlags = [
@@ -6,5 +6,8 @@
     ];
   };
 
-  networking.firewall.trustedInterfaces = [ "tailscale0" ];
+  networking.firewall = {
+    trustedInterfaces = [ config.services.tailscale.interfaceName ];
+    allowedUDPPorts = [ config.services.tailscale.port ];
+  };
 }

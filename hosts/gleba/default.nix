@@ -1,4 +1,4 @@
-{ username, ... }: {
+{ lib, username, ... }: {
   imports = [
     ../../modules/homelab
     ../../modules/tailscale.nix
@@ -24,6 +24,15 @@
       "wheel"
     ];
     home = "/home/${username}";
+  };
+
+  services.tailscale = {
+    useRoutingFeatures = "both";
+    extraUpFlags = lib.mkForce [
+      "--accept-routes"
+      "--advertise-exit-node"
+      "--advertise-routes=192.168.1.110/32"
+    ];
   };
 
   homelab.proxy.enable = true;
