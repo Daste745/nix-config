@@ -43,6 +43,14 @@ let
         hash = "sha256-k/RFtLoTBeuLhPne9UpPBQrd9a9Pg51Z5kSz+smnwxo=";
       };
     }
+    {
+      name = "victorialogs.json";
+      path = grafanaDashboard {
+        id = 22084;
+        rev = 12;
+        hash = "sha256-7ZwB8CrnE8T5GXGY7rDlXFxkrJvxYclBBQbA2TwswUs=";
+      };
+    }
   ];
 in
 {

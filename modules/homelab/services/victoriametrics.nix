@@ -91,6 +91,18 @@ in
               username = config.services.victorialogs.basicAuthUsername;
               password_file = "/run/credentials/victoriametrics.service/victorialogs_password";
             };
+            metric_relabel_configs = [
+              # HACK: The VictoriaLogs Grafana dashboard expects `version` labels to be prefixed with `victoria-logs-`
+              {
+                source_labels = [
+                  "__name__"
+                  "version"
+                ];
+                regex = "vm_app_version;(.*)";
+                target_label = "version";
+                replacement = "victoria-logs-$1";
+              }
+            ];
           }
         ];
       };
