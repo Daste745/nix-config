@@ -66,6 +66,27 @@ in
           admin_password = "$__file{${config.age.secrets.grafana-admin-password.path}}";
           secret_key = "$__file{${config.age.secrets.grafana-secret-key.path}}";
         };
+        plugins = {
+          disable_plugins = [
+            "cloudwatch"
+            "elasticsearch"
+            "stackdriver"
+            "influxdb"
+            "jaeger"
+            "mssql"
+            "mysql"
+            "opentsdb"
+            "zipkin"
+            "loki"
+            "tempo"
+            "grafana-azure-monitor-datasource"
+            "grafana-postgresql-datasource"
+            "grafana-pyroscope-datasource"
+            "grafana-testdata-datasource"
+            "grafana-pyroscope-app"
+            "grafana-exploretraces-app"
+          ];
+        };
       };
       provision = {
         enable = true;
