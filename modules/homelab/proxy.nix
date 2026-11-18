@@ -22,6 +22,9 @@ in
       };
       environmentFile = config.age.secrets.caddy-env.path;
       globalConfig = ''
+        metrics {
+          per_host
+        }
         cert_issuer acme {
           dns cloudflare {env.CLOUDFLARE_API_TOKEN}
           resolvers 1.1.1.1 1.0.0.1

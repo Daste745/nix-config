@@ -51,6 +51,19 @@ let
         hash = "sha256-7ZwB8CrnE8T5GXGY7rDlXFxkrJvxYclBBQbA2TwswUs=";
       };
     }
+    {
+      name = "caddy-standalone.json";
+      # HACK: Replace `${DS_PROMETHEUS}` placeholders with `victoriametrics`
+      path = pkgs.runCommand "caddy-standalone.json" { } ''
+        sed -E 's/\$\{DS_[A-Z0-9_]+\}/victoriametrics/g' ${
+          grafanaDashboard {
+            id = 25216;
+            rev = 1;
+            hash = "sha256-L9B8L1J6Yu0Tdidl1E5huJKZpm7qgxjx1hZKCzaV2bY=";
+          }
+        } > $out
+      '';
+    }
   ];
 in
 {

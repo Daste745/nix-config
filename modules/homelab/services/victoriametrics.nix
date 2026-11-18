@@ -34,27 +34,25 @@ in
         scrape_configs = [
           {
             job_name = "node";
-            metrics_path = "/metrics";
             static_configs = [
               {
                 targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ];
                 labels = {
                   # TODO)) Is `type` needed? All targets have the same `job` label anyway
                   type = "node";
-                  instance = "gleba";
+                  instance = config.networking.hostName;
                 };
               }
             ];
           }
           {
             job_name = "victoriametrics";
-            metrics_path = "/metrics";
             static_configs = [
               {
                 targets = [ "127.0.0.1:8428" ];
                 labels = {
                   type = "victoriametrics";
-                  instance = "gleba";
+                  instance = config.networking.hostName;
                 };
               }
             ];
@@ -77,13 +75,12 @@ in
           }
           {
             job_name = "victorialogs";
-            metrics_path = "/metrics";
             static_configs = [
               {
                 targets = [ "127.0.0.1:9428" ];
                 labels = {
                   type = "victorialogs";
-                  instance = "gleba";
+                  instance = config.networking.hostName;
                 };
               }
             ];
@@ -97,6 +94,18 @@ in
                 regex = "vm_app_version;(.*)";
                 target_label = "version";
                 replacement = "victoria-logs-$1";
+              }
+            ];
+          }
+          {
+            job_name = "caddy";
+            static_configs = [
+              {
+                targets = [ "127.0.0.1:2019" ];
+                labels = {
+                  type = "caddy";
+                  instance = config.networking.hostName;
+                };
               }
             ];
           }
