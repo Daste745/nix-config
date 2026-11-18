@@ -122,11 +122,6 @@ in
               uid = "victorialogs";
               type = "victoriametrics-logs-datasource";
               url = "http://127.0.0.1:9428";
-              basicAuth = true;
-              basicAuthUser = config.services.victorialogs.basicAuthUsername;
-              secureJsonData = {
-                basicAuthPassword = "$__file{${config.age.secrets.victorialogs-password-grafana.path}}";
-              };
             }
           ];
         };
@@ -159,10 +154,6 @@ in
       };
       victoriametrics-password-grafana = {
         file = ../../../secrets/victoriametrics-password.age;
-        owner = "grafana";
-      };
-      victorialogs-password-grafana = {
-        file = ../../../secrets/victorialogs-password.age;
         owner = "grafana";
       };
     };

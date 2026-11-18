@@ -87,10 +87,6 @@ in
                 };
               }
             ];
-            basic_auth = {
-              username = config.services.victorialogs.basicAuthUsername;
-              password_file = "/run/credentials/victoriametrics.service/victorialogs_password";
-            };
             metric_relabel_configs = [
               # HACK: The VictoriaLogs Grafana dashboard expects `version` labels to be prefixed with `victoria-logs-`
               {
@@ -115,15 +111,9 @@ in
       enabledCollectors = [ "systemd" ];
     };
 
-    systemd.services.victoriametrics = {
-      unitConfig.RequiresMountFor = [
-        "/var/lib/private/victoriametrics"
-      ];
-      # Required for scraping metrics from victorialogs
-      serviceConfig.LoadCredential = [
-        "victorialogs_password:${config.age.secrets.victorialogs-password.path}"
-      ];
-    };
+    systemd.services.victoriametrics.unitConfig.RequiresMountFor = [
+      "/var/lib/private/victoriametrics"
+    ];
 
     age.secrets.victoriametrics-password = {
       file = ../../../secrets/victoriametrics-password.age;

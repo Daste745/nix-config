@@ -24,20 +24,21 @@ in
 
     services.victorialogs = {
       enable = true;
-      basicAuthUsername = "admin";
-      basicAuthPasswordFile = config.age.secrets.victorialogs-password.path;
+      listenAddress = "127.0.0.1:9428";
+      # TODO)) Setup auth via caddy
       extraOptions = [
         "-retentionPeriod=30d"
       ];
     };
 
+    services.journald.upload = {
+      enable = true;
+      settings.Upload.URL = "http://127.0.0.1:9428/insert/journald";
+    };
+
     systemd.services.victorialogs.unitConfig.RequiresMountFor = [
       "/var/lib/private/victorialogs"
     ];
-
-    age.secrets.victorialogs-password = {
-      file = ../../../secrets/victorialogs-password.age;
-    };
 
     services.caddy.virtualHosts.${domain}.extraConfig = ''
       reverse_proxy * ${config.services.victorialogs.listenAddress}
