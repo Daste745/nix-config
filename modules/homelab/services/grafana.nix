@@ -14,6 +14,7 @@ let
   # https://github.com/alarsyo/nixos-config/blob/main/pkgs/grafana-dashboards/node-exporter.nix
   # for dashboards not available via the Grafana API
 
+  # https://grafana.com/grafana/dashboards/
   grafanaDashboard =
     {
       id,
@@ -67,6 +68,9 @@ in
           secret_key = "$__file{${config.age.secrets.grafana-secret-key.path}}";
         };
         plugins = {
+          preinstall_sync = [
+            "victoriametrics-logs-datasource"
+          ];
           disable_plugins = [
             "cloudwatch"
             "elasticsearch"
@@ -105,6 +109,17 @@ in
                 basicAuthPassword = "$__file{${config.age.secrets.victoriametrics-password-grafana.path}}";
               };
             }
+            {
+              name = "VictoriaLogs";
+              uid = "victorialogs";
+              type = "victoriametrics-logs-datasource";
+              url = "http://127.0.0.1:9428";
+              basicAuth = true;
+              basicAuthUser = config.services.victorialogs.basicAuthUsername;
+              secureJsonData = {
+                basicAuthPassword = "$__file{${config.age.secrets.victorialogs-password-grafana.path}}";
+              };
+            }
           ];
         };
         dashboards.settings = {
@@ -136,6 +151,10 @@ in
       };
       victoriametrics-password-grafana = {
         file = ../../../secrets/victoriametrics-password.age;
+        owner = "grafana";
+      };
+      victorialogs-password-grafana = {
+        file = ../../../secrets/victorialogs-password.age;
         owner = "grafana";
       };
     };

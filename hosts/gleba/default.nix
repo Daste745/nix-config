@@ -31,6 +31,7 @@
     whoami.enable = true;
     glance.enable = true;
     grafana.enable = true;
+    victorialogs.enable = true;
     victoriametrics.enable = true;
   };
 

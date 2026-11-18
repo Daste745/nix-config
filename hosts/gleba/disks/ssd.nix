@@ -20,6 +20,12 @@
                   "noatime"
                 ];
               };
+              "/data/victorialogs" = {
+                mountpoint = "/var/lib/private/victorialogs";
+                mountOptions = [
+                  "noatime"
+                ];
+              };
               "/data/victoriametrics" = {
                 mountpoint = "/var/lib/private/victoriametrics";
                 mountOptions = [

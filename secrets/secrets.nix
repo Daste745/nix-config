@@ -20,6 +20,10 @@ in
     keys.bootstrap
     keys.system.gleba
   ];
+  "victorialogs-password.age".publicKeys = [
+    keys.bootstrap
+    keys.system.gleba
+  ];
   "victoriametrics-password.age".publicKeys = [
     keys.bootstrap
     keys.system.gleba

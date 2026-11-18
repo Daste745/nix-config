@@ -39,6 +39,7 @@ in
               {
                 targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ];
                 labels = {
+                  # TODO)) Is `type` needed? All targets have the same `job` label anyway
                   type = "node";
                   instance = "gleba";
                 };
@@ -62,6 +63,7 @@ in
               password_file = "/run/credentials/victoriametrics.service/basic_auth_password";
             };
             metric_relabel_configs = [
+              # HACK: The VictoriaMetrics Grafana dashboard expects `version` labels to be prefixed with `victoria-metrics-`
               {
                 source_labels = [
                   "__name__"
@@ -72,6 +74,23 @@ in
                 replacement = "victoria-metrics-$1";
               }
             ];
+          }
+          {
+            job_name = "victorialogs";
+            metrics_path = "/metrics";
+            static_configs = [
+              {
+                targets = [ "127.0.0.1:9428" ];
+                labels = {
+                  type = "victorialogs";
+                  instance = "gleba";
+                };
+              }
+            ];
+            basic_auth = {
+              username = config.services.victorialogs.basicAuthUsername;
+              password_file = "/run/credentials/victoriametrics.service/victorialogs_password";
+            };
           }
         ];
       };
@@ -84,9 +103,15 @@ in
       enabledCollectors = [ "systemd" ];
     };
 
-    systemd.services.victoriametrics.unitConfig.RequiresMountFor = [
-      "/var/lib/private/victoriametrics"
-    ];
+    systemd.services.victoriametrics = {
+      unitConfig.RequiresMountFor = [
+        "/var/lib/private/victoriametrics"
+      ];
+      # Required for scraping metrics from victorialogs
+      serviceConfig.LoadCredential = [
+        "victorialogs_password:${config.age.secrets.victorialogs-password.path}"
+      ];
+    };
 
     age.secrets.victoriametrics-password = {
       file = ../../../secrets/victoriametrics-password.age;
