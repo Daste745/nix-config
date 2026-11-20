@@ -27,6 +27,7 @@ in
     nixfmt
     nixfmt-tree
     inputs.rom.packages.${system}.default
+    nix-tree
     comma
     dix
     customPkgs.check-flake-updates
