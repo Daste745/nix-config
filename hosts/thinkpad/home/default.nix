@@ -56,7 +56,6 @@ in
     ./swaylock.nix
     ./swaync.nix
     ./trayscale.nix
-    ./volnoti.nix
     # ./waybar.nix
     ./wofi.nix
   ];
